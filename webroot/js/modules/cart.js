@@ -37,6 +37,10 @@ const cart = {
 			this._overview.classList.add('visible');
 		}
 	},
+	closeOverview: function(){
+		this._overview.classList.remove('visible');
+		this._overview.innerHTML = '';
+	},
 	voucher: async function() {		
 		this._overview.classList.add('process');
 		const submitter = this._ev.submitter || document.activeElement;

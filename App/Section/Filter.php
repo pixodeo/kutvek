@@ -7,14 +7,14 @@ use Core\Request\UrlQueryResult;
 use Domain\Table\Section;
 use Library\HTML\{TraitSanitize, TraitPagination};
 use stdClass;
-use Core\Library\TraitCookie;
+
 
 /**
  * Filtre les produits de la section en cours 
  */
 final class Filter extends Action implements UrlQueryResult {
 	
-    use TraitSanitize, TraitPagination, TraitCookie;
+    use TraitSanitize, TraitPagination;
     private  false|object $_customer = false;
     private false|object $_params = false;  
     public stdClass $queryResult;
@@ -30,42 +30,32 @@ final class Filter extends Action implements UrlQueryResult {
     public function __invoke()        
     {
         $this->_response = $this->_response->withHeader('Content-Type', 'application/json;charset=utf-8'); 
-        $queryParams = $this->getRequest()->getQueryParams();        
-        $this->_filters($queryParams);
-        
+        $queries = $this->getRequest()->getQueryParams();        
+        $this->_filters($queries);        
         $this->_table = new Section($this->_setDb());
         $this->_table->setRoute($this->_route); 
         $this->_table->setSection($this->queryResult);        
-        $this->_items = $this->_table->itemsInSectionWithFilters();
-        if(array_key_exists('page', $queryParams)) $this->setCurrentPage((int)$queryParams['page']);    
+        $this->_items = $this->_table->itemsInSectionWithFilters();    
+        if(array_key_exists('page', $queries)) $this->setCurrentPage((int)$queries['page']);    
         $this->paginate();
         $slices = $this->getSlices();   
-        $cards =$this->_table->cards($slices);
+        $cards = $this->_table->cards($slices);
         $this->_view = 'widgets.pagination';
         $pagination = $this->partial();
         $this->_path = dirname(__FILE__);
         $this->_view = 'cards';
-        $this->_cards = $this->partial(compact('cards'));
-        $json =   json_encode(['queryResult'=>$this->queryResult, 'queryParams' => $queryParams, 'cards'=>$this->_cards, 'pagination' => $pagination],JSON_UNESCAPED_SLASHES);
+        $body = $this->partial(compact('cards'));
+        $json =   json_encode(['cards'=>$body, 'pagination' => $pagination],JSON_UNESCAPED_SLASHES);
         $this->_response->getBody()->write($json);
-        return $this->_response;
-
-        $cookie = false;
-        $countryCurrencyToken = $this->getRequest()->getCookieParams()['country_currency'] ?? false;        
-        if ($countryCurrencyToken) {
-           $cookie = $this->getCookie($countryCurrencyToken);
-           $this->setCountry($cookie->country);
-           $this->setCurrency($cookie->currency);                   
-        }
-        $this->_response = $this->_response->withHeader('Content-Type', 'application/json;charset=utf-8');   
-        $this->getContent($slug);
-        $behavior = $this->loadBehavior();
-        
-        $json = json_encode(['slug'=>$slug, 'data'=>$behavior($filter)]);
-        $this->_response->getBody()->write($json);
-        return $this->_response;
+        return $this->_response;       
     }
 
+    /**
+     * paramètres de filtres envoyés via url 
+     * 
+     *
+     * @param      <type>  $queries  The queries
+     */
     private function _filters($queries) {
         $queries = array_filter($queries);
         foreach($queries as $k => $query){
@@ -92,10 +82,7 @@ final class Filter extends Action implements UrlQueryResult {
         }
     }
 
-    public function setQueryResult(stdClass $query): void {$this->queryResult = $query; }
-
-
-    
+    public function setQueryResult(stdClass $query): void {$this->queryResult = $query; }    
 
     public function setCustomer(){
         $session_token = $this->getRequest()->getCookieParams()['session_token'] ?? false;

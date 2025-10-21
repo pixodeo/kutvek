@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="<?=$this->getLang();?>" data-layout="section">
+<html lang="<?=$this->getLang();?>" data-layout="sections">
 <head>	
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,9 +11,9 @@
 	<link rel="stylesheet" href="<?= $this->auto_version('/css/front/basics.css') ?>" type="text/css" media="screen">	
 	<link rel="stylesheet" href="<?= $this->auto_version('/css/front/header.css'); ?>" type="text/css" media="screen">	
 	<link rel="stylesheet" href="<?= $this->auto_version('/css/front/tabs.css'); ?>" type="text/css" media="screen">
-	<link rel="stylesheet" href="<?= $this->auto_version('/css/front/fields-v2.css'); ?>" type="text/css" media="screen">
 	<link rel="stylesheet" href="<?= $this->auto_version('/css/front/popup.css'); ?>" type="text/css" media="screen">
-	<link rel="stylesheet" href="<?= $this->auto_version('/css/front/grid.css'); ?>" type="text/css" media="screen">	
+	<link rel="stylesheet" href="<?= $this->auto_version('/css/front/grid.css'); ?>" type="text/css" media="screen">
+	<link rel="stylesheet" href="<?= $this->auto_version('/css/cart-overview.css') ?>" type="text/css" media="screen">	
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,300&amp;family=Oswald:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
@@ -121,12 +121,10 @@
                     <input type="checkbox" id="see-phone" hidden />
                     <a class="phone" href="tel:<?= $this->intlphone;?>"><span ><?=$this->phone; ?></span></a>
                 </div>   <!--  $this->widgetSlugs($this->getContent()->slugs); -->
-                </div>          
-                <?php $obf = $this->uri('cart.read', ['queries'=>['order'=>':order']]); ?>
-                <span data-count="0" id="cart-btn" class="cart action click" data-ctrl="cart.read" data-obf="<?= base64_encode($obf) ?>">
-                    <span class="icon material-symbols-rounded">&#xe8cc;</span>                    
-                </span>
-                <a href="#" class="menu click" data-ctrl="app.menu" data-target="main-nav"><span class="icon material-symbols-rounded">&#xe5d2;</span></a>
+            </div>          
+                <?php $obf = base64_encode($this->uri('cart.overview', ['queries'=>['id'=>':id']])); ?>
+                <a id="shopping-cart" class="click" data-obf="<?=$obf;?>" data-count="0" href="#" data-ctrl="cart.overview"><span class="icon material-symbols-rounded">&#xe8cc;</span></a>
+	            <a href="#" class="menu click" data-ctrl="app.menu" data-target="main-nav"><span class="icon material-symbols-rounded">&#xe5d2;</span></a>
             </div>
         </div>
     </div>  
@@ -136,6 +134,7 @@
 		<?= $this->_content; ?>
 	</main>
 	<?= $this->footer(); ?>
+	<aside id="cart-preview" class="cart-overview"></aside>
 	<template id="item-template">
 		<div class="item">
 			<img src="" alt="">

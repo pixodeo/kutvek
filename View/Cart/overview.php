@@ -1,5 +1,5 @@
 <div class="overview-header">
-    <a href="/"><span class="material-symbols-rounded">&#xef7d;</span></a><span class="overview-title" data-i18n="my-cart">Mon panier</span>     
+    <a href="#" data-ctrl="cart.closeOverview" class="click"><span class="material-symbols-rounded">&#xef7d;</span></a><span class="overview-title" data-i18n="my-cart">Mon panier</span>     
 </div>
 <div class="grid-checkout">
     <div id="items" class="checkout-items" data-qty="<?=count($cart->items);?>">

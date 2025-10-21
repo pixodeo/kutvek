@@ -112,7 +112,6 @@ class Section extends Catalog {
 
 	}
 
-
 	public function categories(){
 		$this->setEntity(null);
 		$categories =json_decode($this->section->categories,true);	
@@ -156,7 +155,7 @@ class Section extends Catalog {
 	public function itemsInSectionWithFilters(): array {
 		$this->setEntity(null);
 		$params = ['store' => $this->section->department_store];
-		$plh_1 = $this->namedPlaceHolder($this->section->types, 't');		
+		$plh_1 = $this->namedPlaceHolder($this->section->product_types, 't');		
 		$plh_2 = $this->namedPlaceHolder($this->section->categories, 'c');
 		$params = array_merge($params, $plh_1->values,$plh_2->values);				
 		$sql = "SELECT i.item
@@ -165,32 +164,32 @@ class Section extends Catalog {
 			WHERE i.behavior IN ({$plh_1->place_holder})
 			AND i.department IN ({$plh_2->place_holder})			
 		";		
-		if($this->section->family !== null && count($this->section->family) > 0):			
+		if(isset($this->section->family) && count($this->section->family) > 0):			
 			$holder = $this->namedPlaceHolder($this->section->family, 'fam');
 			$sql .= " AND i.family IN ({$holder->place_holder}) ";
 			$params = array_merge($params, $holder->values);
 		endif; 
-		if($this->section->brand !== null && count($this->section->brand) > 0):			
+		if(isset($this->section->brand) && count($this->section->brand) > 0):			
 			$holder = $this->namedPlaceHolder($this->section->brand, 'brand');
 			$sql .= " AND i.brand IN ({$holder->place_holder}) ";
 			$params = array_merge($params, $holder->values);
-		endif; 
-		if($this->section->model !== null && count($this->section->model) > 0):			
+		endif;
+		if(isset($this->section->model) && count($this->section->model) > 0):			
 			$holder = $this->namedPlaceHolder($this->section->model, 'model');
 			$sql .= " AND i.model IN ({$holder->place_holder}) ";
 			$params = array_merge($params, $holder->values);
 		endif; 
-		if($this->section->vehicle !== null && count($this->section->vehicle) > 0):			
+		if(isset($this->section->vehicle) && count($this->section->vehicle) > 0):			
 			$holder = $this->namedPlaceHolder($this->section->vehicle, 'vehicle');
 			$sql .= " AND i.vehicle IN ({$holder->place_holder}) ";
 			$params = array_merge($params, $holder->values);
 		endif; 
-		if($this->section->color !== null && count($this->section->color) > 0):			
+		if(isset($this->section->color) && count($this->section->color) > 0):			
 			$holder = $this->namedPlaceHolder($this->section->color, 'color');
 			$sql .= " AND i.color IN ({$holder->place_holder}) ";
 			$params = array_merge($params, $holder->values);
 		endif; 
-		if($this->section->design !== null && count($this->section->design) > 0):			
+		if(isset($this->section->design) && count($this->section->design) > 0):			
 			$holder = $this->namedPlaceHolder($this->section->design, 'design');
 			$sql .= " AND i.design IN ({$holder->place_holder}) ";
 			$params = array_merge($params, $holder->values);

@@ -28,34 +28,30 @@ final class Read extends AppAction implements UrlQueryResult {
 			$this->_table = new Section($this->_setDb());		
 			$this->_table->setRoute($this->_route);		
 			$queries = $this->getRequest()->getQueryParams();			
-        	$slug = $this->_route->slug; 
-
+        	$slug = $this->_route->slug;
         	$section = $this->_table->readBySlug($slug);
 			if(!$section):
 				$this->_middleware = new ProductRead($this->_router);				
 				return $this->handle($this->getRequest());           
 			endif;
-			// si on est sur du xhr/fetch js on envoie à filter
-			$xhr = $this->getRequest()->getHeaderLine('x-requested-with');	
-			$withFilters = (int)$this->getRequest()->getHeaderLine('x-filtering');			
-			if($xhr === 'XMLHttpRequest' && $withFilters > 0):
-				$middleware = new Filter($this->_router);
-				$queryResult = new stdClass;
-				//
-				$queryResult->department_store = $this->section->department_store;
-				$queryResult->categories = $this->section->categories;
-				$queryResult->types = $this->section->types;
-				$middleware->setQueryResult($queryResult);
-				$this->_middleware = $middleware;	
-				return $this->handle($this->getRequest());
-			endif;
 			$this->section = $section;
+			// si on est sur du xhr/fetch js on envoie à filter			
+			$withFilters = (int)$this->getRequest()->getHeaderLine('x-filtering');			
+			if($withFilters > 0):
+				$middleware = new Filter($this->_router);
+				$queryResult = (object)[
+					'department_store' 	=> $this->section->department_store,
+					'categories'		=> $this->section->categories,
+					'product_types'		=> $this->section->product_types
+				];				
+				$middleware->setQueryResult($queryResult);
+				$this->_middleware = $middleware;
+				return $this->handle($this->getRequest());
+			endif;			
 			$this->meta_title = $this->section->meta_title;
             $this->meta_description = $this->section->meta_description ?? $this->section->short_desc;   
 			if(array_key_exists('page', $queries)) $this->setCurrentPage((int)$queries['page']);			
-			
-			//$this->l10ns = $this->section->l10ns;
-			
+			//$this->l10ns = $this->section->l10ns;			
 			$this->_items = $this->section->items;			
 			$this->paginate();
 			$slices = $this->getSlices();	

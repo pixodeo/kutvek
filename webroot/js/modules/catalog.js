@@ -92,7 +92,9 @@ const catalog = {
             document.location.reload();
             return;
         }  
-        const headers = { 'X-Requested-With': 'XMLHttpRequest', 'X-Filtering': '1' }  
+        // Lorsqu'on filtre, on repars à zéro niveau pagination, ne pas envoyer le paramètre 
+        url.searchParams.delete('page');
+        const headers = {'X-Filtering': '1' }  
         const req = await fetch(url,{ method: 'GET', mode: 'cors', credentials: 'include',headers: headers});
         if(req.status === 200){
             const json = await req.json();
@@ -107,33 +109,22 @@ const catalog = {
             return;
         }
         const json = await req.json();
-        console.log(json.msg);
+        console.error(json.msg);
         return; 
-    },
+    },    
     paginate: async function () { 
         const form = document.getElementById('form-filter');
-        const url = new URL(form.action || window.location.href);
-        const formData = new FormData(form);
+        const origin = new URL(form.action || window.location.href).origin;       
         const current = this._elem.getAttribute('data-page');
+        const decode = decodeURIComponent(window.atob(this._elem.getAttribute("data-obf")));
+        const url = `${origin}${decode}`;     
+        
         document.querySelector('.pagination').setAttribute('data-current', current);
-        console.log('page');        
-        formData.forEach((val, key) => {
-            // Réunir les valeurs sous une même clé séparées par des virgules
-            if (url.searchParams.has(key)) {               
-                let actualParams = url.searchParams.getAll(key);
-                actualParams.push(val);
-                url.searchParams.set(key, actualParams.join(','));
-            } else {
-                url.searchParams.append(key, val);
-            }
-        });
-        if(current > 0) url.searchParams.append('page', current);
-        if (url.searchParams.size === 0) {
-            url.search = '';            
-            document.location.reload();
-            return;
-        }       
-        const req = await fetch(url,{ method: 'GET', mode: 'cors', credentials: 'include',headers: { 'X-Requested-With': 'XMLHttpRequest' }});
+        const oldCurrent = document.querySelector('div.page.current');
+        if(oldCurrent) oldCurrent.classList.remove('current');
+        this._elem.parentNode.classList.add('current');              
+        const headers = { 'X-Filtering': '1' }       
+        const req = await fetch(url,{ method: 'GET', mode: 'cors', credentials: 'include',headers: headers}); 
         if(req.status === 200){
             const json = await req.json();
             let frag = document.createRange().createContextualFragment(json.cards); 
@@ -143,13 +134,13 @@ const catalog = {
             const pagination = parent.querySelector('.pagination');           
             parent.replaceChild(frag.querySelector('#products'), products);
             parent.replaceChild(frag_pagination, pagination);
-            //history.replaceState({}, '', url);
             this.obflinks();
             return;
         }
         const json = await req.json();
-        console.log(json.msg);
-        return; 
+        console.error(json.msg);
+        return;       
+          
     },
     /**
      * Coche les filtres récupérés via loadFilData et existants dans l'url

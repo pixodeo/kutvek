@@ -8,4 +8,3 @@
 	</div>
 <?php endforeach; ?>
 </div>
-<pre><?php print_r($cards) ?></pre>

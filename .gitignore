@@ -1,3 +1,4 @@
 # Fichiers de base de données volumineux
 DB_demo/*.sql.gz
 *.sql.gz
+sftp-config.json
