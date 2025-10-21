@@ -1,0 +1,23 @@
+select `g`.`id` AS `id`,
+(select case when `vp`.`currency` = 3 then min(`vp`.`price` * 1.20) else min(`vp`.`price`) end 
+	from `vehicle_price_currencies` `vp` 
+	where `vp`.`vehicle` = `g`.`vehicle` 
+	and `vp`.`currency` = `cur`.`currency_id` 
+	and `vp`.`valid_since` <= current_timestamp() 
+	and (`vp`.`valid_until` is null or current_timestamp() <= `vp`.`valid_until`) 
+	and `vp`.`template_type` in (1,2,3) order by `vp`.`id` desc limit 1) 
+AS `price`,
+`cur`.`currency_id` AS `currency_id`,
+`cur`.`currency_lib` AS `currency_code` 
+from `graphic_kits` `g` 
+join `currency` `cur` on(`cur`.`currency_id` in (1,2,3,4))
+UNION ALL 
+SELECT p.item  AS 'id',
+p.price,
+`cur`.`currency_id` AS `currency_id`,
+`cur`.`currency_lib` AS `currency_code` 
+FROM prices p 
+join `currency` `cur` on(`cur`.`currency_id` = p.currency)
+WHERE `p`.`valid_since` <= current_timestamp() 
+AND (`p`.`valid_until` is null or current_timestamp() <= `p`.`valid_until`)
+AND NOT EXISTS(SELECT gk.id FROM graphic_kits gk WHERE gk.id = p.item LIMIT 1)

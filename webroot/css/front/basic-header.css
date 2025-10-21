@@ -1,0 +1,489 @@
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+span.menu {
+    display: block;
+    text-align: right;
+}
+
+.primary-header {
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    background-color: #000000;
+    color: #ffffff;
+    top: 0;
+    z-index: 10;
+    height: 5.6rem;
+   /*justify-content: center;*/
+    
+}
+
+
+
+.primary-header .baseline {
+    height: 6.4rem;
+    display: flex;
+    align-items: center;
+    background-color: #000000;
+}
+
+.primary-header .infos {
+    display: none;
+}
+
+
+.baseline .logo {
+    padding-left:.8rem;
+}
+.baseline .logo-kutvek {
+    height: 4.8rem;
+    width: 5.92rem;
+}
+
+.primary-header .contact-us {
+    display: inline-flex;
+    align-items: center;
+    letter-spacing: .85px;
+}
+
+.primary-header .contact-us img {
+    height: 2rem;
+    margin-right: 0.8rem;
+}
+
+.message-bar {
+    display: none;
+}
+
+
+
+body.opened .primary-header {height:auto;}
+body.opened nav.main-nav {
+    transform: translateX(0);
+    height: 100vh;
+    overflow-y: auto;
+}
+
+body.opened nav.main-nav div label > span {
+    display: initial;
+}
+
+
+
+.secondary-nav {
+    display: none;
+
+}
+.secondary-nav > ul li {display: inline-block;}
+
+.user-actions {
+    display: flex;
+    
+}
+
+.user-actions .action:not(:last-child) {
+    margin-right: 1rem;
+}
+
+.user-actions .icon,
+.menu .icon {
+    line-height: 3.6rem;
+    width: 3.6rem;
+    height: 3.6rem;
+    font-size: 3.2rem;
+    text-align: center;
+}
+
+.user-account > .obf {
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.user-actions .cart {
+    position: relative;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    width: 3.6rem;
+    height: 3.6rem;
+    font-size: 2.4rem;
+    text-align: center;
+}
+
+.user-actions  a.phone {
+    position: absolute;
+    bottom: -4.8rem;
+    visibility: hidden;
+    height: 0rem;background-color: #FFFFFF;
+    color: #212121;
+    font-weight: 600;
+    text-align: center;    
+    transition: height .2s;
+    width: 100%;
+    left: 0;    
+}
+
+#see-phone:checked + a {
+    visibility: visible;
+    
+    height: 4.8rem;
+    
+    line-height: 4.8rem;
+}
+
+.user-actions .contact-us::after,
+.trads-container li.current > a::after {
+    content: '\e5cf';
+    font-family: 'Material Symbols Rounded';
+}
+
+.trads-container {
+    position: relative;
+    width: 4.4rem;
+    height: 3.6rem;
+    z-index: 100
+}
+
+.trads-container > ul {
+    display: flex;
+    position: absolute;
+    top: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    list-style: none;
+    list-style-type: none;
+    margin: 0;
+    height: 100%;
+    overflow-y: hidden;
+    color: #000000;
+    padding-left: 0;
+}
+
+.trads-container > ul > li {
+    order: 2;
+    height: 100%;
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    padding-left: .4rem;
+}
+
+.trads-container > ul > li.current {
+    order: 1;
+}
+
+.trads-container > ul > li a {
+    font-size: 2rem;
+    font-family: 'Oswald';
+    text-transform: uppercase;
+    opacity: .67;
+}
+
+.trads-container > ul > li.current > a {
+    pointer-events: none;
+    opacity: 1;
+}
+
+.trads-container li > a::after {
+    content: ' ';
+    min-width: 1.6rem;
+    font-family: 'Material Symbols Rounded';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1.6rem;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+    padding: 0;
+}
+
+.trads-container > ul:hover {
+    overflow-y: initial;
+}
+  
+
+.account-circle {
+    font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 48;
+}
+
+.material-symbols-rounded {
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 48;
+}
+
+.primary-header .logo-footer {
+    display: none;
+}
+
+.baseline > div.red {
+    display: flex;   
+    align-self: stretch;  
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0%;  
+    justify-content: flex-end;
+    align-items: center;
+
+}
+
+
+
+
+@media only screen and (min-width: 1024px) {
+
+    a.menu,
+    span.menu {
+        display: none;
+    }
+
+    .message-bar {
+        background-color: #5c5c5c;
+        height: 3.2rem;
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+
+    .message-bar > span {
+        width: 100%;
+    }
+
+    .message-bar > a:first-of-type {
+        margin: 0 .8rem 0 auto;
+    }
+
+    .message-bar > a {
+        margin-right: .8rem;
+    }
+
+    .message-bar img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .primary-header {
+        position: relative;
+        padding: 0;
+        height:auto;
+        justify-content: initial;
+    }
+
+    .primary-header .infos {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        background-color: black;
+        padding: 0.8rem 20rem 0;
+        font-size: 1.6rem;
+        font-family: 'Oswald';
+        letter-spacing: .8px;
+    }
+
+    .primary-header .baseline {
+        height: auto;
+    }
+
+    .primary-header .infos > div:not(:last-child) {
+        margin-right: 3rem;
+    }
+
+    .primary-header .infos img.picto.phone {
+        height: 24px;
+        width: 28px;
+        vertical-align: middle;
+        margin-right: .8rem;
+    }
+
+    .user-actions {
+        margin: 0 20rem 0 auto;
+        padding-top: 0.4rem;
+        display: inline-flex;
+    }
+
+    .user-actions .contact-us {
+        display: none;
+    }
+
+    .user-icon,
+    .user-account {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+    }
+
+    .user-account > .obf {
+        position: initial;
+        width: auto;
+        height: auto;
+        overflow: initial;
+        opacity: 1;
+    }
+
+    .user-actions .icon:not(:last-child) {
+        margin-right: .8rem;
+    }
+
+    .user-actions .trads-container {
+        display: none;
+    }
+
+    .trust {
+        padding-top: 0.8rem;
+    }
+
+    .trads-container {
+        position: relative;
+        width: 4.4rem;
+        height: 3.6rem;
+        z-index: 100;
+    }
+
+    .trads-container > ul {
+        display: flex;
+        position: absolute;
+        top: 0;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        margin: 0;
+        padding-left: 0;
+        list-style: none;
+        list-style-type: none;
+        height: 100%;
+        overflow-y: hidden;
+        color: #FFFFFF;
+        text-transform: uppercase;
+    }
+
+    .trads-container > ul:hover {
+        overflow-y: initial;
+    }
+
+    .trads-container > ul > li {
+        order: 2;
+        height: 100%;
+        width: 100%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: black;
+        padding-left: 0.4rem;
+    }
+
+    .trads-container > ul > li.current {
+        order: 1;
+    }
+
+    .trads-container > ul > li a {
+        font-size: 2rem;
+        font-family: 'Oswald';
+        text-transform: uppercase;
+        opacity: .67;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .trads-container > ul > li.current a {
+        opacity: 1;
+    }
+
+    .trads-container > ul > li.current > a {
+        pointer-events: none;
+    }
+
+    
+
+    .primary-header .baseline {
+        padding-left: 24rem;
+    }
+
+    .baseline > div.red {
+        /*margin: 0 0 0 1.6rem;*/
+        background-color: red;
+        align-self: initial;
+        justify-content: inherit;
+        
+    }
+
+    .baseline > div.red > ul {
+        display: inline-flex;
+        list-style: none;
+        list-style-type: none;
+        text-transform: uppercase;
+    }
+
+    .baseline > div.red > ul a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .primary-header .logo-kutvek {
+        width:69px;
+        height: 56px;
+    }
+
+    .primary-header .logo-footer {
+        height: 32px;
+        width: 219px;
+        display: initial;
+    }
+
+    .baseline > div.red::before {
+        display: inline-block;
+        content: "";
+        height: 0;
+        width: 0;
+        border-top: 4.8rem solid #000000;
+        border-right: 4.8rem solid transparent;
+    }
+
+    
+    .secondary-nav {
+        display: flex;
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 0%;
+        margin-left: 3.2rem;
+    }
+
+    .secondary-nav ul {
+        display: flex;
+        margin: 0;
+        width: 100%;
+    }
+
+    .secondary-nav li {
+
+        margin-right: 3.2rem;
+        list-style-type: none;
+    }
+
+    .secondary-nav ul >li:nth-child(4) {
+        margin-left:auto;
+    }
+
+
+
+    .secondary-nav ul li a,
+    .secondary-nav ul li span {
+        font-family: 'Oswald';
+        font-size: 2rem;
+        height: auto;
+        display: inline-flex;
+        text-transform: uppercase;
+    }
+}

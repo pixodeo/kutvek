@@ -1,0 +1,176 @@
+
+ul {list-style-type: '- '}
+ul > li {padding-bottom:1.2rem;}
+.lower {
+	font-family: 'Montserrat';
+	text-transform: none !important;
+    font-weight: 400 !important;
+    font-size: 1.6rem !important;
+    margin-bottom: 0.8rem !important;
+    margin-top: 0 !important;
+
+}
+.banner  {
+	height:32rem;
+	margin-top:3.2rem;	
+	text-align: center;
+}
+.banner img {
+	height: 32rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.section-title {
+	font-family: 'Oswald';
+	text-transform: uppercase;
+    font-weight: 600;
+    font-size: 3.2rem;
+    margin-top:0;
+    
+}
+.vehicle-info {
+  margin-bottom:3.2rem;
+  font-size: 1.4rem;
+  font-style: italic;
+  font-weight: 300;
+}
+h2.short-desc {
+  font-size: 1.6rem;
+    font-family: 'Montserrat';
+    margin: 0 0 2.4rem;
+}
+
+.subtitle {
+	font-family: 'Oswald';
+	font-size: 2rem;
+	font-weight: 500;
+	text-transform: uppercase;
+  
+}
+
+.top-description {
+	margin-bottom:3.2rem;
+}
+
+.widget-custom {margin-bottom:3.2rem;}
+.cards {
+	margin-top:3.2rem;
+}
+
+
+.column-filter {
+  position: sticky;
+  top: 5.6rem;
+  background-color: white;
+  z-index: 9;
+  padding-top:.8rem;
+}
+
+span.filters {
+    margin-right: 0;
+    margin-left: auto;
+    margin-bottom: 0.8rem;
+}
+
+
+
+/*.bloc-widgets-filter a:first-of-type {
+  margin-bottom: .8rem;
+}
+
+
+
+.widget-filter {
+  
+  padding: 1.2rem 0.8rem 0.8rem 1.2rem;
+}
+
+.widget-filter > .title {
+  display: flex;
+  justify-content: space-between;
+  font-family: din_promedium;
+  margin-top: 0;
+}
+
+.widget-filter > .accordion_tabs {
+  position: relative;
+}
+
+.widget-filter > .accordion_tabs > label.pointer {
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  top: 0.4rem;
+}
+
+.bloc-widgets-filter ul, .widget-filter ul {
+  margin: 0; 
+  padding: 0; 
+  list-style: none; 
+  list-style-type: none;
+}
+
+.bloc-widgets-filter ul > li, .widget-filter ul > li {padding-right: .8rem;}
+
+.widget-filter .field-wrapper {
+  flex-direction: row;
+}*/
+
+
+.bloc-widgets-filter .widget-filter { border-bottom: 1px solid #dddddd;}
+.bloc-widgets-filter .widget-filter:not(:last-child) { margin-bottom: 1.6rem;}
+.widget-filter > div > span {
+  
+  text-transform: uppercase;
+    font-size: 1.4rem;
+    font-family: 'Montserrat';
+    font-weight: 600;
+}
+
+
+.bottom-description {
+	margin-top:2.4rem;
+	margin-bottom:3.2rem;
+}
+
+.widget-filter-modal ul {
+  list-style:none;
+  list-style-type: none;
+}
+.widget-filter-modal .checkbox {
+  flex-direction: row !important;
+}
+.widget-filter-modal .checkbox > label {
+  text-transform: capitalize !important;
+  font-size: 2rem;
+}
+.widget-filter-modal .checkbox > label::before {
+  content:'';
+  padding:0;
+}
+.widget-filter-modal .checkbox > input{
+    order: 1;
+    margin: 0 0 0 auto;
+}
+
+@media only screen and (min-width: 800px) {  
+  .bloc-widgets-filter {
+
+    margin-right: 3.2rem;
+  }  
+  h2.short-desc {
+    margin: 0 0 4rem;
+  }
+  span.filters { 
+    margin-left: 0;
+
+    margin-bottom: 0.8rem;
+  }
+  .filter-js {
+
+  position:sticky;
+  top: 5.6rem;
+  }
+}

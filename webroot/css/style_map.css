@@ -1,0 +1,271 @@
+.map-module-container {
+  --map-primary-color: #2f2f2f;
+  --map-primary-hover: #333333;
+  --map-secondary-color: #FF0000;
+  --map-text-color: #333333;
+  --map-head-color: #DC1F31;
+  --map-light-text: #555555;
+  --map-background: #ffffff;
+  --map-border-color: #eeeeee;
+  --map-input-border: #cccccc;
+
+  --map-spacing-small: 0.3em;
+  --map-spacing-medium: 0.5em;
+  --map-spacing-large: 1em;
+  --map-border-radius: 0;
+  
+  overflow: auto;
+  max-width: 100vw;
+}
+
+.map-module-container ul {
+  margin: 0;
+}
+
+.map-title::after {
+   
+    content: "";
+    border-bottom: 0.2rem solid #FF0000;
+    padding-top: .8rem;
+    width: 16rem;
+    display: block;
+
+}
+
+/* Conteneur de la carte */
+.map-container { 
+  width: 100%;
+  height: 500px;
+  margin-bottom: var(--map-spacing-large); 
+  border-radius: var(--map-border-radius);
+  overflow: hidden;
+  border: 1px solid var(--map-border-color);
+  
+}
+
+.map-stores-section { 
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: var(--map-spacing-medium);
+}
+
+/* Liste des magasins */
+.map-store-list { 
+  list-style: none; 
+  padding: 0; 
+}
+
+.map-store-item {
+  margin-bottom: var(--map-spacing-large);
+  border: 1px solid var(--map-border-color);
+  padding: var(--map-spacing-medium);
+  border-radius: var(--map-border-radius);
+  background-color: var(--map-background);
+  color: var(--map-text-color);
+  cursor: pointer;
+}
+
+.map-store-item:hover {
+  background-color: #f9f9f9;
+}
+
+/* Conteneur pour le titre et l'adresse */
+.map-store-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.map-store-title {
+  font-weight: bold;
+  color: var(--map-head-color);
+  padding-bottom:.8rem;
+}
+
+.map-store-address {
+  font-size: 0.8em;
+  color: var(--map-light-text);
+}
+
+/* Bouton pour centrer la carte */
+.map-center-btn { 
+  background: var(--map-primary-color); 
+  color: white; 
+  border: none; 
+  border-radius: var(--map-border-radius); 
+  padding: var(--map-spacing-small) var(--map-spacing-medium); 
+  cursor: pointer; 
+  margin-top: var(--map-spacing-medium); 
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.map-center-btn:hover { 
+  background: var(--map-primary-hover); 
+}
+
+/* Nouveau bouton SÃ©lectionner */
+.map-select-btn {
+  height: 3.2rem;
+  background: var(--map-primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--map-border-radius);
+  padding: var(--map-spacing-small) var(--map-spacing-medium);
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: var(--map-spacing-medium);
+  flex-shrink: 0;
+  float: right;
+}
+
+.map-select-btn:hover {
+  background: #232323;
+}
+
+/* Style pour le bouton SÃ©lectionner DANS un popup Leaflet */
+.leaflet-popup-content .map-select-btn-popup {
+  margin-top: var(--map-spacing-medium);
+}
+
+/* Style pour l'item de la liste sÃ©lectionnÃ© */
+.map-store-item.selected {
+  background-color: #f1f1f1; 
+  border-left: 5px solid var(--map-secondary-color);
+  box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+
+
+}
+
+/* Section des dÃ©tails dans un item de la liste */
+.map-store-details {
+  margin-top: var(--map-spacing-medium);
+  padding-top: var(--map-spacing-medium);
+  border-top: 1px dashed var(--map-border-color);
+  font-size: 0.9em;
+}
+
+.map-store-details p {
+  margin: var(--map-spacing-small) 0;
+}
+
+.map-store-details .details-opening-hours {
+  list-style: none;
+  padding-left: 0; /* Ou var(--map-spacing-medium) pour un lÃ©ger indent */
+  font-size: 0.95em;
+}
+
+.map-store-details .details-opening-hours li {
+  margin-bottom: var(--map-spacing-small);
+  color: var(--map-light-text);
+}
+
+/* Formulaire de recherche */
+.map-search-form { 
+  margin-bottom: var(--map-spacing-large);
+  display: flex; 
+  gap: 10px; 
+}
+
+.map-search-input { 
+  flex: 1; 
+  padding: var(--map-spacing-medium); 
+  border: 1px solid var(--map-input-border); 
+  border-radius: var(--map-border-radius); 
+  color: var(--map-text-color);
+}
+
+.map-search-input:focus {
+  border-color: var(--map-secondary-color);
+  outline: none;
+}
+
+.map-search-button { 
+  background: var(--map-primary-color); 
+  color: white; 
+  border: none; 
+  border-radius: var(--map-border-radius); 
+  padding: var(--map-spacing-medium) var(--map-spacing-large); 
+  cursor: pointer; 
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.map-search-button:hover { 
+  background: var(--map-primary-hover); 
+}
+
+/* Layout gÃ©nÃ©ral */
+.map-layout { 
+  display: flex; 
+  flex-direction: column; 
+  gap: var(--map-spacing-large);
+  max-height: 100%;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: var(--map-border-radius);
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .map-layout { 
+    flex-direction: row; 
+  }
+  
+  .map-container { 
+    flex: 2; 
+  }
+  
+  .map-stores-section { 
+    flex: 1; 
+  }
+}
+
+
+
+.hidden {
+  display: none !important;
+}
+
+.map-store-main-content { 
+  margin-bottom: var(--map-spacing-small); 
+}
+
+.map-store-details-toggle-container {
+  margin-bottom: var(--map-spacing-medium); /* Espace avant la section des dÃ©tails si elle est visible */
+  text-align: left; /* Ou center, right selon le design souhaitÃ© */ 
+  clear: both;
+}
+
+.map-store-toggle-details {
+  font-size: 0.9em;
+  color: var(--map-primary-color);
+  text-decoration: underline;
+  cursor: pointer;
+  
+}
+
+.map-store-toggle-details:hover {
+  color: var(--map-secondary-color);
+}
+
+.map-store-details {
+  margin-top: 0; /* Le conteneur du toggle gÃ¨re la marge supÃ©rieure */
+}
+
+/* Masquer la carte sur les petits Ã©crans */
+@media (max-width: 767px) {
+  .map-container {
+    display: none !important; /* Masquer la carte */
+  }
+
+  
+  .map-stores-section {
+    max-height: none; /* Permettre Ã  la liste de s'Ã©tendre si besoin */
+    width: 100%; /* Prendre toute la largeur */
+    flex: none; /* Annuler le flex de la vue desktop */
+  }
+}

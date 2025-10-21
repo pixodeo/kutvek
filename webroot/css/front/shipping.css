@@ -1,0 +1,23 @@
+body {background-color: #dddddd;}
+.cart-card {
+display: inline-flex;
+max-width: 26rem;
+width: 26rem;
+min-width: 26rem;
+padding-right: 1.6rem;
+text-align: left;
+align-items: center;
+background-color:transparent;
+}
+.cart-item{
+	display: inline-flex;
+	max-width: 100%;
+	padding: 1.6rem;
+	background-color: #ffffff;
+}
+.cart-item > img {
+	max-height: 6.4rem;
+
+}
+.cart-item-desc {overflow: hidden;}
+.cart-item-desc > span {display: block; font-size: 1.4rem; overflow: hidden;white-space: nowrap;text-overflow: ellipsis;padding-left:.8rem}

@@ -1,0 +1,177 @@
+ul.tabs:not(.grid){display: flex;}
+ul.tabs {
+	
+	border-bottom: 1px solid #000000;
+	list-style-type: none;
+	margin:2.4rem 0 0;
+	padding:0;
+}
+
+ul.tabs li {	
+	display: inline-flex;
+	margin: 0 0 -0.1rem 0;
+	font-family: din_procondensed_bold, Oswald;
+	font-size: 1.6rem;
+	padding:0;
+}
+
+ul.product-desc {
+	border-color: transparent;
+}
+
+ul.product-desc a {
+	border-color: transparent !important;
+	font-size: 2rem;
+	padding-bottom: 0;
+}
+
+
+
+.tabs_content.product-desc {
+	border-color: transparent !important;
+	padding: 0rem 0.8rem 0.8rem 0.8rem;
+}
+
+
+
+.tabs > li > a {
+	display: inline-flex;
+	align-items: center;
+    box-shadow: none;
+    background-color: inherit;
+    letter-spacing: normal;
+    border: 1px solid transparent;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    padding: 0.8rem;
+    text-transform: uppercase;
+    opacity: .5;
+}
+.tabs.tabs-checkout > li > a {
+	opacity: 1;
+}
+
+.tabs a .icon {margin-right: .4rem;}
+.tabs a .icon.voucher {transform: rotate(-45deg);}
+
+.tabs:after {
+	display:table;
+	content:' ';
+	clear: both;
+}
+
+.tabs li.active > a {
+	color: #000;
+    border-color: #000 #000 #fff;
+	opacity: 1;
+	transition: opacity .3s;	
+}
+
+.tabs.tabs-checkout li.active > a {
+	color: #1997c6;
+    border-color: #000 #000 #fff;
+	opacity: 1;
+	transition: opacity .3s;	
+}
+
+.tabs .disabled > a:focus, .tabs .disabled > a:hover {
+    color: #777;   
+    cursor: not-allowed;
+    
+}
+.tabs_content {
+	/* ! pas de padding dans le container car box shadow bug padding sur les contenus */
+	position: relative;	
+	z-index: 3; /* pos relative et z-index pour passer au dessus des onglets et reduire le box shadow */		
+	background-color: #ffffff;
+	margin-bottom: 2rem;
+}
+.tab_content {
+	display:none;
+}
+
+.tab_content.active {display:block;}
+.backoffice ul {
+	border-bottom: 1px solid #1997c6;
+}
+
+.accordion_tabs {display: flex;flex-wrap: wrap; align-items: center; justify-content: space-between;}
+.accordion_tabs > div, .accordion_tabs > ul {width: 100%;  height: 0; overflow: hidden;}
+
+/*label[for="apply-voucher"] + input {}*/
+
+.accordion_tabs > input {display: none;}
+.accordion_tabs > input + label.link {text-decoration: underline;}
+.accordion_tabs > input + label:hover {cursor: pointer;}
+.accordion_tabs > input + label > span {
+	transition: transform .3s;
+}
+.accordion_tabs > input + label > span:not(.filters) {
+	font-size: 2.4rem;
+}
+.accordion_tabs > input:disabled + label { display:none; }
+.accordion_tabs > input:checked + label > span:last-of-type {
+	transform: rotate(-180deg);
+}
+
+.accordion_tabs > input:checked + label  + div, .accordion_tabs > input:checked + label + ul, .accordion_tabs > input:checked + div.accordion_content {
+    height: auto;
+    /*padding-top: .8rem;
+    padding-bottom: .8rem;
+    padding-left: .8rem;*/
+}
+
+.accordion_tabs > input:checked + label  + div::-webkit-scrollbar {
+    width: 4px;
+}
+.accordion_tabs > input:checked + label  + div::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,0.33);
+}
+.accordion_tabs > input:checked + label  + div::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 2px rgb(0 0 0 / 30%);
+    border-radius: 2px;
+}
+.tab-disabled {
+	display: none !important;
+}
+#mockups-confirm, #in-progress {
+	padding-top: 2.4rem;
+}
+label.dropdown {
+	display: inline-flex;
+    /* line-height: 4rem; */
+    width: 4rem;
+    height: 4rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: .4rem;
+    background-color: #000000;
+    border-width: .1rem;
+    border-style: solid;
+    color: #FFFFFF;
+    margin-left: 1.6rem;
+}
+
+label.dropdown .material-symbols-rounded {
+	font-size: 3.2rem;
+	font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+}
+
+@media only screen and (min-width: 641px) {
+	.tabs_content{		
+		border-left-width: 0.1rem;
+    	border-left-color: #000;
+    	border-left-style: solid;
+	}
+	.title.accordion_tabs > input:checked + label + div, .title.accordion_tabs > input:checked + label + ul {    
+    	max-height: 24rem;
+    	overflow-y: auto;
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	.tabs_content {
+		padding: 1.6rem .8rem .8rem .8rem;		
+	}
+	.tabs a { padding: .8rem .8rem 1.6rem;}
+}

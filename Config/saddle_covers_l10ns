@@ -1,0 +1,27 @@
+SELECT i.id, 
+df.full_designation AS 'df_full_designation',
+s_type.designation AS 'saddle_type_name',
+null AS 'family_name'   
+FROM saddle_covers g
+JOIN  items i ON i.id = g.id
+LEFT JOIN l10ns l10n ON l10n.id = 1               
+LEFT JOIN designs d ON d.id = g.design
+LEFT JOIN color_l10ns color ON (color.color = g.color AND color.l10n = l10n.id)            
+LEFT JOIN category_default_content df ON (
+    df.l10n = l10n.id
+    AND df.category = (
+        SELECT c.id
+        FROM categories node 
+        LEFT JOIN  categories c ON ((c.node_left <= node.node_left AND c.node_right >= node.node_right) AND c.workspace = node.workspace)
+        LEFT JOIN category_default_content df ON (df.category = c.id AND df.l10n = l10n.id)
+        WHERE node.id = i.department
+        AND df.category IS NOT NULL
+        ORDER BY c.node_left DESC
+        LIMIT 1
+   )
+)
+LEFT JOIN vue_files f ON (f.product = i.id AND f.cover = 'on')
+LEFT JOIN behaviors b ON b.id = i.behavior
+LEFT JOIN licences l ON l.id = i.license
+LEFT JOIN product_type_l10ns s_type ON (s_type.product_type = g._type AND s_type.l10n = l10n.id)
+GROUP BY g.id;

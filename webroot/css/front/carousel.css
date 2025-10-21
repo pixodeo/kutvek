@@ -1,0 +1,86 @@
+.gallery {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    background-color: #000000;
+}
+
+.main-gallery #main-slider {
+    /*align-items: center;*/
+}
+
+.gallery > .slider {
+    display: flex;
+    width: 200%;
+    height: 100%;
+    margin: 0;
+    position: relative;
+    padding: 0;
+    will-change: transform;
+    transition: transform .7s;
+    transform: translateX(0%);
+}
+
+.slider {
+    position: relative;
+}
+
+.main-gallery > .slider img {
+    width: 100%;
+}
+
+.gallery-cursor {
+    width: 100%;
+    justify-content: center;
+    position: absolute;
+    bottom: 0rem;
+    z-index: 1;
+}
+
+.gallery-cursor.p-thumbs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.gallery-cursor div:not(:last-child) {
+    margin-right: .9rem;
+}
+
+.cursor {
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 1rem;
+    background-color: #999999;
+}
+
+.cursor.active {
+    background-color: white;
+}
+
+
+.p-thumbs {
+    white-space: nowrap;
+    overflow-x: auto;
+    margin: 2.4rem 0;
+}
+
+@media only screen and (min-width: 640px) {
+    .p-thumbs {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: stretch;
+    }
+}
+
+@media only screen and (min-width: 1281px) {
+    .p-thumbs {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: stretch;
+        margin: 2.4rem 0;
+    }
+}

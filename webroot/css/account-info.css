@@ -1,0 +1,133 @@
+.logout {
+    margin-top:3.2rem;
+    margin-bottom:3.2rem;
+}
+ol.breadcrumb {
+    margin-top: 1.6rem;
+    margin-bottom: 2.4rem;
+    display: flex;
+    height: 4rem;
+    align-items: center;
+}
+.breadcrumb li {
+    display: inline-flex;
+    align-items: center;
+}
+.breadcrumb li:not(:last-child) {
+    text-transform: uppercase;
+}
+.breadcrumb li:not(:last-child)::after {
+    content: "navigate_next";
+    font-family: 'Material Symbols Rounded';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2.4rem;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+}
+
+div.bloc-update {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+div.bloc-update .field-wrapper {
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+.bloc-info .title{
+    font-family: 'Oswald';
+    font-weight: 400;
+    font-size: 3.2rem;
+}
+.bloc-info hr {
+    margin-bottom: 1rem;
+    border: 0;
+    border-bottom-width: 0.1rem;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+.bloc-radio {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin: 0 0 1.6rem;
+}
+.bloc-radio > .desc {
+    margin: 0 auto 0 0;
+    text-transform: initial;
+    font-weight: initial;
+    letter-spacing: initial;
+}
+
+
+
+.bloc-radio input[type="radio"]{margin-right: 1.6rem;}
+.phones {padding-top: .8rem; font-weight: 500;}
+a.action {color:#1976D2;font-weight: 500;font-size: 1.4rem;}
+a.action:hover {text-decoration: underline;}
+a.action:not(:last-child)::after {
+    content: '|';
+    padding: 0 .4rem;    
+}
+
+.address-grid {
+
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: .8rem;
+    
+}
+
+.address-card {
+    display:inline-flex;
+    flex-direction: column;
+    font-size: 1.4rem;
+    border-radius: 0.4rem;
+    border-width: 0.1rem;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.4);
+    padding: 0.8rem;
+    min-height: 16rem;
+}
+.address-card .username {
+    font-weight: 500;    
+    margin-bottom: .8rem;
+    /*border-bottom: 1px solid grey;*/
+
+}
+
+.address-card .actions {padding-top:.8rem;margin:auto 0 0 0;}
+
+.default {text-align: right;}
+.default .icon {color:#4CAF50; vertical-align: bottom;font-variation-settings: 'FILL' 0, 'wght' 700, 'GRAD' 200, 'opsz' 48;}
+@media only screen and (min-width: 1024px){
+    .logout {margin-bottom:4.8rem;}
+    .bloc-info {
+        padding: 0 0.8rem 0.8rem 1.6rem;
+        margin: 0 auto 2.4rem;
+        border-width: 0.2rem;
+        border-style: dashed;
+        min-height: 30rem;
+        border-radius: 0.2rem;
+        border-color: rgba(0, 0, 0, .2);
+    }
+
+    .bloc-info.auto{
+        min-height: unset;
+    }
+
+    .address-grid {       
+        grid-template-columns: repeat(2, 1fr);  
+        column-gap: 2.4rem; 
+        row-gap: 2.4rem;     
+    }
+    .address-card {padding: 1.6rem;}
+}

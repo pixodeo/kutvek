@@ -1,0 +1,826 @@
+*[disabled]:hover {cursor: not-allowed;}
+/** BOUTONS **/
+
+button:not(.CybotCookiebotDialogBodyButton), .btn:not(.CybotCookiebotDialogBodyButton)
+{
+    display: inline-flex;
+    height: 3.6rem;
+    outline: 0;
+    padding: 0 .8rem;
+    align-items: center;
+    -webkit-tap-highlight-color: transparent;
+    border: none;   
+    color: inherit;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color .2s ease-out;
+    font-size: 1.2rem;
+    font-weight: 500;
+    min-width: 6.4rem;
+    text-transform: uppercase;
+    -webkit-font-smoothing: inherit;
+    letter-spacing: inherit;
+    overflow: visible;
+    background: none;
+    cursor: pointer;
+}
+
+button.primary, .btn.primary {
+    color: #1997c6;
+}
+
+button > .icon, .btn > .icon {font-size: 1.8rem;margin-right: .8rem;}
+
+button.outlined, .btn.outlined, button.contained, .btn.contained
+{
+    border-radius: .1rem;
+    padding: 0 1.6rem;
+} 
+
+button.outlined, .btn.outlined
+{
+    border-width: .1rem;
+    border-style: solid;
+    border-color: #333333;    
+}
+
+button.icon, .btn.icon {padding-left: 1.2rem;}
+button.square, .btn.square, button.circle, .btn.circle {
+    min-width: unset;
+    width: 3.6rem !important;
+    justify-content: center;
+    padding: 0;
+}
+
+button.circle, .btn.circle {border-radius: 50%;}
+.btn.square .icon, .btn.circle .icon{
+   font-size: 1.6rem;
+   margin: 0;
+}
+.contained.primary {background-color: #1997c6 !important;color:white !important;}
+.contained.validate { background-color: #018849 !important;color: white !important;}
+.contained.validate:hover { background-color: #006637 !important;}
+
+.contained.warning {background-color:#ff0000 !important; color:#ffffff !important;}
+.contained.dark {background-color:#000000 !important; color:#ffffff !important;}
+.contained.white {background-color: #ffffff !important; color:#000000 !important;}
+.outlined.white{background-color: #ffffff !important; color:#000000 !important;border-color: #000000 !important;}
+
+.btn.paypal {
+    width: 100%;
+    height: 4.4rem;
+    color: white;
+    border-radius: .4rem;
+    background-color: cadetblue;
+    justify-content: center;
+}
+
+.btn.wide, button.wide {
+    display: flex;
+    /* margin: 0 2.4rem; */
+    text-align: center;
+    justify-content: center;
+}
+
+button.xs, .btn.xs {
+    height: 2.4rem;
+    font-size: 1rem;
+    padding: 0 0.8rem !important;
+    min-width: auto;
+}
+
+
+.btn > span, button > span { 
+    transition: opacity .8s; 
+}
+
+.btn.validate.in-progress:hover, button.validate.in-progress:hover { 
+    background-color: #018849 !important;
+}
+
+
+
+.btn > span.load, button > span.load{ 
+    opacity: 0;
+}
+
+
+
+.btn.in-progress > span.load, button.in-progress > span.load{ 
+    opacity: 1;
+}
+
+.btn.in-progress > span:not(.load), button.in-progress > span:not(.load) { 
+    opacity: .4; 
+}
+
+.field {
+    position: relative;
+    height: 72px;
+    padding: 16px 0 8px 0;
+}
+
+.field-wrapper {
+    display: flex;    
+    flex-direction: column;
+    margin-bottom: .8rem;  
+}
+.field-wrapper.checkbox {justify-content: initial;}
+.field-wrapper.no-flex {display: block;}
+.field-wrapper.column {
+    flex-direction: column;
+    padding-right: 0;
+}
+
+.field-wrapper > label {
+    font-family: Oswald;
+    /*text-transform: capitalize;*/
+    letter-spacing: .40px;
+
+}
+.field-wrapper.small > label,  .field-wrapper .label {max-width: 12rem;}
+.field-wrapper.large > label,  .field-wrapper .label {max-width: 18rem;}
+.field-wrapper.xlarge > label,  .field-wrapper .label { max-width: 20rem;}
+.field-wrapper.column > label,  .field-wrapper.column .label {
+    width: 100%;  
+    max-width: 100%;
+}
+
+.field-wrapper.full-width > label
+{   
+    max-width: initial;
+    margin: 0 auto 0 0;
+}
+
+
+.field-wrapper.justify-start {
+    justify-content:  flex-start;
+    justify-content: start;
+}
+.field-wrapper.with-flag label
+{   
+    max-width: initial;
+    margin-right: .8rem;
+}
+.field-wrapper > label::before {
+    content: "*";
+    padding: 0 .4rem 0 0; 
+    color: rgba(0, 0, 0, 0);
+    font-size: 1.2em;  
+      
+}
+
+.field-wrapper > label.required::before {
+    color: #ff0000;     
+}
+
+.field-wrapper:not(.checkbox) > label::after, .field-wrapper:not(.no-colon) > label::after, 
+{
+    content: " : ";
+    padding: .4rem .4rem;    
+}
+label.no-colon::after {
+    content: none !important;
+}
+.field-wrapper > label.hat{width: 100%;max-width: initial;margin-bottom: 1.6rem;}
+
+.field-wrapper > label > .flag {width: 3.2rem; height: 3.2rem; border-radius: 50%;}
+
+.drop-zone label::after{content: none !important;} 
+.field-wrapper > .field-input, .field-wrapper > .drop-zone {min-width: calc(100% - 16rem)}
+
+
+
+
+.field-wrapper.small > .field-input, .field-wrapper > .drop-zone {min-width: calc(100% - 12rem)}
+.field-wrapper.large > .field-input, .field-wrapper > .drop-zone {min-width: calc(100% - 18rem)}
+.field-wrapper.xlarge > .field-input, .field-wrapper > .drop-zone {min-width: calc(100% - 20rem)}
+
+
+
+.field-wrapper > .field-input.widgetTypo {padding-right: 1.6rem;}
+.field-wrapper.column > .field-input  {width: 100%;max-width: initial !important;}
+.field-wrapper.auto > .field-input {min-width: initial !important;}
+.field-wrapper .preview { width: 100%; margin-top: 1.6rem;}
+
+.field-wrapper.no-flex > .field-input {min-width: initial !important;}
+
+.fieldset-wrapper {
+    border-radius: .1rem;
+    margin: 0;
+    border-width: .1rem;
+    border-color: #000000;
+}
+.fieldset-wrapper legend {
+    font-family: 'Oswald';
+    font-size: 1.2em;
+    padding: 0 1.2rem 0 0;
+    margin-bottom: 1.2rem;
+}
+fieldset > legend:before {
+    display: inline-block;
+    content: '*';
+    color: #FF0000;
+    opacity: 0;
+    width: 1.2rem;
+}
+.fieldset-wrapper input[type="radio"], .fieldset-wrapper input[type="checkbox"] {display: inline-block; margin-left: 1.6rem;}
+.fieldset-wrapper label {padding-left: .8rem;}
+
+.drag-drop div.input {
+    height: 7.2rem;
+    width: 100%;
+    display: inline-flex;
+    padding: 0.8rem;
+    border-width: 0.1rem;
+    border-color: rgba(0,0,0,.87);
+    border-style: solid;
+    border-radius: 0.2rem;
+    align-items: center;
+}
+.drag-drop label {height: 4.8rem;}
+.drag-drop input[type='file'] {display: none;}
+.drag-drop .input-filename {font-size: 1.2rem;padding-left:.8rem;}
+/**
+Group d'action 
+**/
+
+
+.btns-group, .btns-end {display: flex;justify-content: flex-end;}
+.btns-end {margin-top: 2.4rem;}
+.btns-end .btn:not(:last-child) {margin-right: 1.6rem;}
+.btns-carts .btn:not(:last-child) {margin-bottom: 1.6rem;}
+.btns-group .btn {
+    border-left-width: .1rem;    
+    border-left-style: solid;
+    border-top-width: .1rem;  
+    border-top-style: solid;
+    border-bottom-width: .1rem;    
+    border-bottom-style: solid;
+    transition: color 100ms, background-color 200ms;
+}
+
+.btns, .btns-login {
+    display: flex;
+    margin-bottom: 1.6rem;
+    margin-top: 1.6rem;
+    align-items: flex-end;
+    justify-content: end;
+    justify-content: flex-end;
+    width: 100%;
+  }
+.btns.action { display: block;}
+
+.btns .btn:not(:last-child), .btns-login .btn:not(:last-child) {
+    margin-right: 2.4rem;
+  }
+
+.btns-group .btn:first-child {    
+    border-top-left-radius: .4rem;
+    border-bottom-left-radius: .4rem;
+}
+.btns-group .btn:last-child {    
+    border-top-right-radius: .4rem;
+    border-bottom-right-radius: .4rem;
+    border-right-width: .1rem;    
+    border-right-style: solid;
+}
+
+.btns-group.primary .btn, .btns-group.primary > .button {
+    border-color: #1997c6;
+    color: #1997c6 !important;
+    background-color:#ffffff !important;
+}
+.btns-group.primary  .btn:hover, .btns-group.primary  button:hover {
+    background-color: #1997c6 !important;
+    color:#ffffff !important;
+}
+
+form.row .field-input:not(:last-child)
+{
+    margin-right: .8rem;
+}
+form.row .line {
+    display: flex;
+    width: 100%;
+    margin-bottom: .8rem;
+    align-items: center;
+}
+form.row .line.submit {    
+    margin-top: .8rem;
+    justify-content:flex-end;
+}
+form.row .label {font-weight: bolder; text-transform: uppercase; letter-spacing: .2px;}
+
+.field-textarea {height:auto;}
+  
+div.textarea{
+    position: relative;
+    width:auto;
+    height: auto;
+    line-height: 1.6rem;
+    white-space: pre-wrap;
+    word-wrap:break-word;
+    font-family: "Open Sans";
+    color: rgba(0,0,0,0);  
+}
+
+div.textarea textarea{
+    position: absolute;
+    top:0;
+    left:0;    
+    width: 100%;
+    height: 100%;
+    resize: none;
+    overflow: hidden;
+    color: rgba(0,0,0,.85); 
+}
+
+div.textarea, div.textarea textarea{
+    font-family: "Open Sans";
+    font-size: 16px;
+    font-size: 1.6rem;      
+    padding: 10px;
+    padding: 1rem; 
+}
+
+.field-label {  
+    position: relative;  
+    margin: 0;  
+    padding-left: 1.6rem;
+    display: block;  
+    color: #bfbfbf;  
+    color:rgba(0,0,0,.65);  
+    line-height: 16px;  
+    font-size: 16px;  
+    font-weight: 400;  
+    -webkit-transform: translateY(24px);  
+    -ms-transform: translateY(24px);  
+    transform: translateY(24px);  
+    -webkit-transition: -webkit-transform 0.3s, color 0.3s;  
+    transition: transform 0.3s, color 0.3s;  
+    -webkit-transform-origin: 0 50%;  
+    -ms-transform-origin: 0 50%;  
+    transform-origin: 0 50%;
+} 
+  
+.field-input {  
+    position: relative;    
+    height: 5.6rem;   
+    font-size: 1.2rem;       
+    background: transparent;      
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none; 
+    outline: none;
+    color:rgba(0,0,0,.87);
+    border-radius: .2rem;
+    padding-right: .4rem;
+    padding-left: .4rem;
+    border-width: .1rem;
+    border-color: rgba(0,0,0,.87);
+    transition: color .3s, border-color .3s;
+    border-style: solid;  
+} 
+
+.field-input.checkbox, .field-input[type="checkbox"] {appearance: checkbox; height: initial; width: initial;padding: 0; min-width: initial !important;resize: vertical;}
+
+.field-input.textarea {height: auto;min-height: 12rem; width: 100%; max-width: 100%;resize: vertical;}
+
+input.field-input:read-only, input.field-input.readonly, input.field-input:disabled, input.field-input.disabled {
+      border-color: transparent;  
+      height: auto;
+      font-size: 1.6rem;
+      color: rgba(0, 0, 0, 1.0);
+}
+
+input.field-input:invalid {
+    /*border-color: rgba(255,0,0,.87);
+    border-width: .1rem;*/
+}
+
+
+select.field-input {
+    -webkit-appearance: menulist;
+    -moz-appearance: menulist;
+    appearance: menulist;
+    border-image: none;
+}
+
+.field-input.no-border {border-color: transparent;
+}
+  
+.field.filed::after, .field.filed::before {  
+    content: '';  
+    height: 2px;  
+    width: 100%;  
+    position: absolute;  
+    bottom: 6px;  
+    left: 0;  
+    background-color: #e7e7e7; 
+}
+  
+.field.filed.errors::before {  
+    content: '';  
+    height: 2px;  
+    width: 100%;  
+    position: absolute;  
+    bottom: 6px;  
+    left: 0;  
+    background-color: #ff0000;  
+    background-color: rgba(255,0,0,.5); 
+}
+ 
+.field.filed::after {  
+    background-color: rgb(38, 166, 154);  
+    -webkit-transform: scaleX(0);  
+    -ms-transform: scaleX(0);  
+    transform: scaleX(0);  
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: transform 0.3s; 
+}
+
+.field-wrapper div.errors
+{
+    color: #ff0000;
+    color: rgba(255,0,0,.9);
+    font-size: 1.2rem;
+}  
+
+
+
+span.color-element {
+    display: flex; 
+    width:  100%;
+    align-items: center; 
+    justify-content: center; 
+    font-family: Oswald; 
+    font-weight: 500; 
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    padding: .4rem .8rem;
+    border-style:  solid;
+    border-width: .1rem;
+    border-color: transparent;
+}
+
+.widget.input-color {display: flex; flex-wrap: wrap; padding-top: 1.6rem;}
+.widget.input-color > input[type="radio"] {display: none;}
+.widget.input-color > input[type="radio"] + label {
+    display: inline-flex;
+    width: 8.8rem;
+    height: 8.8rem;
+    border-width: 0.1rem;
+    border-style: solid;
+    border-color: transparent;
+    border-radius: 0.4rem;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    text-align: center;
+    text-transform: uppercase;
+    flex-wrap: wrap;
+    font-weight: 500;
+    font-family: 'OSWALD';
+    margin-bottom: 0.8rem;
+    transition: opacity .3s;
+}
+.widget.input-color > input[type="radio"] + label:hover{ cursor: pointer; opacity: 1 !important; }
+.widget.input-color > input[type="radio"] + label:not(:last-of-type) {margin-right: .8rem;}
+.widget.input-color > span {
+    width: 4rem;
+    height: 4rem;
+    border: 0.2rem solid black;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.2rem;
+    font-weight: 500;
+    margin-right: 5.6rem;
+    font-family: 'Oswald';
+}
+.field-input.radio.color {display: none;}
+
+.field-input.radio.color:checked + label {border-width: 0.3rem; border-color: blue;}
+/**
+DROP FILE ZONE
+*/
+.files-area 
+{    
+    max-width: 76rem;
+    margin: 3.2rem auto;
+    padding: 0 1.6rem 1.6rem;    
+}
+
+.drop-zone {
+    padding: 1.2rem;
+    background-color:#E9ECEF;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.drop-zone > span {width:100%; display: inline-flex; align-items:center; justify-content: space-around; font-size: 1.4rem;}
+.preview {
+    display: flex;
+    overflow: hidden;
+    overflow-x: auto; 
+    align-items: center; 
+}
+
+.preview > .obj {
+    width: 9rem;
+    height: 6rem;
+}
+
+.preview > .obj.illustrator {
+    background-image: url(https://dev.kutvek.com/pictures/pictos/illustrator.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+}
+
+.preview > .obj.pdf {
+    background-image: url(https://dev.kutvek.com/pictures/pictos/acrobat-reader.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+}
+
+.preview > .one {
+    background-size: auto  !important;
+    background-position: top left !important;
+    width: auto !important;
+    height: 3.6rem !important;
+    padding-left: 4rem !important;
+    line-height: 3.6rem !important;
+}
+
+.preview > .obj:not(:last-child), .preview > .mockup-link:not(:last-child)  {
+    margin-right: .8rem;
+}
+
+.preview > .obj > img {
+    max-width: 100%;
+    height: 9rem;
+}
+
+
+.preview > .mockup-link.mockup-selected  {
+    padding: .8rem;
+    background-color: white;
+    border-color: green;
+    border-width: .3rem;
+    border-style: solid;
+    border-radius: .4rem;
+   
+}
+/**
+SWITCH
+*/
+.switch-container {
+    display: inline-flex;
+    
+    justify-content: center;
+    align-items: center;
+    height: 4.8rem;
+     
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    overflow: hidden;
+}
+
+.switch-container .label {
+    cursor: pointer;
+    opacity: 1;
+    position: relative;
+    width: 5.6rem;
+}
+.switch-container .label:before {
+    content: '';
+    display: block;
+    width: 5.6rem;
+    height: 2.4rem;
+    background-color: #E0E0E0;
+    border-radius: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+.switch-container.check .label:before {
+    background-color: #bdbdbd;
+}
+.switch-container .label:after {
+    content: '';
+    position: absolute;
+    top: -0.1rem;
+    transform: translateX(0);
+    /* left: 0; */    
+    height: 2.6rem;
+    width: 2.6rem;
+    border-radius: 50%;
+    box-shadow: 0 1px 4.1666666667px rgb(0 0 0 / 35%), 0 0 0 0 rgb(0 0 0 / 0%);
+    transition: transform 0.4s ease, -webkit-transform 0.4s ease;
+}
+.switch-container .label:after {
+    background-color: #BDBDBD;
+}
+.switch-container input[type='checkbox']:checked + label .label:before {
+    background-color: #AED581;
+}
+.switch-container input[type='checkbox']:checked + label .label:after {
+    background-color: #7CB342;
+    -webkit-transform: translateX(3rem);
+    transform: translateX(3rem);
+}
+/** 
+Select  
+*/
+    div.select-wrapper{
+      position: relative;
+      z-index: 100;
+    }
+  
+    div.select-wrapper span.caret {
+      color: initial;
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      height: 1.6rem;
+      margin: auto 0;
+      font-family: 'FontAwesome';
+      font-size: 1.6rem;
+      line-height: 1.6rem;
+    }
+    div.select-wrapper:hover, input.field-select:hover{cursor: pointer;}
+    .field.select{}
+  
+    .field.select> ul.opts-list
+    {    
+      position: relative;
+      margin: -2.5rem 0 0 0;      
+      list-style: none;
+      list-style-type: none;
+      width: 100%;
+      background-color: white;
+      display: none;
+      padding:0;
+      z-index: 100;
+      box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2); 
+    }
+
+  .field.select> ul.opts-list >li{
+     
+      width: 100%;
+      height :32px;
+      line-height: 32px;
+      font-size: 1.6rem;
+      cursor: pointer;
+      background-color: transparent;
+      margin: 0;  
+      padding: 0 1.6rem;  
+  
+    }
+  
+    .field.select> ul.opts-list >li.selected{
+     
+      
+      background-color: #ddd;
+     
+  
+    }
+  
+    .field.select> ul.opts-list >li:hover{
+     
+     background-color: #eee; 
+  
+    }
+  
+  
+  
+  /* Field is activated
+  
+     ========================================================================== */
+  
+.filed.has-label .field-label {
+    -webkit-transform: translateY(0) scale(0.75);
+    -ms-transform: translateY(0) scale(0.75);
+    transform: translateY(0) scale(0.75); 
+}
+
+.outlined.has-label .field-label {
+    -moz-transform: translate(12px, 8px) scale(0.75);
+    -webkit-transform: translate(12px, 8px) scale(0.75);
+    -ms-transform: translate(12px, 8px) scale(0.75);
+    transform: translate(12px, 8px) scale(0.75);
+    padding: 0 .4rem;
+    background-color: white;
+    display: inline-block;
+    z-index: 2;
+}
+  
+  
+  
+  /* Field is focused
+  
+     ========================================================================== */
+  
+.is-focused .field-label {
+  
+    color: rgb(38, 166, 154) 
+} 
+  
+.field.is-focused::after {  
+    -webkit-transform: scaleX(1);  
+    -ms-transform: scaleX(1);  
+    transform: scaleX(1);
+}
+
+
+/**
+ * Widget selection typo
+ */
+.widgetTypo label.value {
+    display: flex;
+    align-items: center;
+    height: 3.6rem;
+    text-align: center;
+    max-width: initial;
+    padding: 0.2rem 0.4rem;   
+}
+
+.widgetTypo label.value img {
+    max-height: 100%;
+}
+
+.widgetTypo:hover,.widgetTypo img:hover {cursor: pointer;}
+
+.widgetTypo label.value:after{content: '';}
+.widgetTypo:after {
+    content: '';    
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    right: 0.6rem;
+    height: 0.45rem;   
+    width: 0.45rem;
+    border-style: solid;
+    border-width: 0.2rem 0.2rem 0 0;
+    color: black;
+    font-weight: 500;em 0.14em 0 0;
+    color: black;
+    transform: translateY(-50%) rotate(135deg);
+}
+
+.opt-list {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0.4rem;
+    position: absolute;
+    top: 3.6rem;
+    left: 0;
+    background-color: white;
+    z-index: 2;
+    list-style: none;
+    margin: 0;
+    padding: 0 0 4.8rem 0;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    min-width: 100%;
+    max-height: 10.4rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: max-height .1s;
+}
+.opt-list > li {padding: .2rem .4rem;}
+.opt-list > li:not(:last-child){margin-bottom: .4rem;}
+.widget-hide {visibility: hidden; max-height: 0;}
+
+
+@media only screen and (min-width: 700px) {
+  .btns-carts .btn:not(:last-child){margin-bottom: 0;}
+
+}
+@media only screen and (min-width: 1024px) {
+  
+
+  .field-wrapper {    
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding-right: .8rem;
+    margin-bottom: 1.2rem;  
+    }
+    .field-wrapper > label,  .field-wrapper .label {
+    display: inline-flex;
+    align-items: center;      
+    max-width: 16rem;     
+    
+ }
+ label.checkbox {max-width: calc(100% - 4rem) !important;}
+ .field-input {height: 4rem;}
+ .drag-drop label {height: 4rem;}
+}

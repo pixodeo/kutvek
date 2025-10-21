@@ -1,0 +1,22 @@
+RewriteEngine On
+AuthName "L'accès à ce répertoire est sécurisé."
+AuthUserFile "/usr/local/apache2/htdocs/com.kutvek-kitgraphik.demo/.htpasswd"
+AuthType Basic
+Require valid-user
+
+# Miniatures avec densité
+RewriteRule ^images/produits/original/(.*)_w([0-9]{2,3})d([0-9]{1})x\.(jpe?g|png|gif|svg|webp)$ crop_0.php?file=$1&size=$2&ext=$4&dest=$0&density=$3 [QSA,L]
+
+# Miniatures sans densité
+RewriteRule ^images/produits/original/(.*)_w([0-9]{2,3})\.(jpe?g|png|gif|svg|webp)$ crop_0.php?file=$1&size=$2&ext=$3&dest=$0&density=1 [QSA,L]
+
+RewriteRule ^webroot/img/ranges/(.*)_w([0-9]{2,3})\.(jpe?g|png|gif|svg|webp)$ crop_0.php?file=$1&size=$2&ext=$3&dest=$0&density=1&snowmobile=1 [QSA,L]
+
+RewriteRule ^img\/(pictos|logos)\/(.*)_w([0-9]{2,3})d([0-9]{1})x\.(jpe?g|png|gif|svg|webp)$ index.php?pictos.php?folder=$1&file=$2&size=$3&ext=$5&dest=$0&density=$4 [QSA,L]
+#
+RewriteRule ^img\/(pictos|logos)\/(.*)_w([0-9]{2,3})\.(jpe?g|png|gif|svg|webp)$ pictos.php?folder=$1&file=$2&size=$3&ext=$4&dest=$0 [QSA,L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule    ^(.*)$ index.php?url=$1 [QSA,L]
+

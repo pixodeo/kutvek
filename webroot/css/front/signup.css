@@ -1,0 +1,157 @@
+/*.accordion_tabs > div {height: auto !important;}*/
+
+.choice-account {
+display: flex;
+flex-direction: column;
+    
+    padding: 2.4rem;
+
+
+}
+input[name="product_info"] {opacity: 0;}
+.switch-container > input {
+  display: none;
+}
+
+.card {
+    background-color: #ffffff;
+    padding: 2.4rem 0 1.6rem;
+    
+}
+
+.sr-only {
+    position: absolute;
+    margin: -1px 0 0 -1px;
+    padding: 0;
+    display: block;
+    width: 1px;
+    height: 1px;
+    font-size: 1px;
+    line-height: 1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+    outline: 0;
+}
+
+.card:first-of-type {margin-bottom:3.2rem;}
+
+.alert-message {
+  text-align: center;
+    color: #ff0000;
+    margin-bottom: 1.6rem;
+    min-height: 4.8rem;
+    font-size:1.6rem;
+    font-weight: 600;
+}
+.subscribe {
+    display: inline-flex;
+    font-family: Oswald;
+    letter-spacing: .40px;
+
+}
+.subscribe .label {margin-right: 1.6rem;}
+
+p + hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-bottom-width: 0.1rem;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+small, .small {
+  font-size: 1.4rem;
+}
+.welcome > p {margin-bottom: 1.6rem;}
+
+
+
+.if-pro {
+  font-weight: 600;
+ 
+}
+
+.pro-info {
+  font-weight: 500;  
+  font-size: 1.4rem;
+   margin-bottom: 2.4rem;
+}
+
+.dealer-conditions {
+ 
+  font-size: 1.4rem;
+  font-style: italic;
+}
+
+
+
+.designation {   
+    font-size: 3.2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-family: 'Oswald';
+    
+    
+}
+.designation + hr {
+    margin-top: 1rem;
+    margin-bottom: 2.4rem;
+    border: 0;
+    border-bottom-width: 0.1rem;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.welcome {
+  margin-bottom: 3.2rem;
+}
+
+
+@media only screen and (min-width: 1024px) {  
+
+  .choice-account {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  
+
+  .choice-account > .type-account:not(:last-child){margin-right: 4.8rem;}
+  .titles {    
+    margin: 1.6rem 0; 
+  }
+ 
+  .gradient {
+  position :absolute;
+  top: 0;
+  bottom: 0;
+  right:3.2rem;
+  left:3.2rem;
+   background: linear-gradient(to bottom, #FFFFFF 2.8rem, #9E9E9E 2.9rem 0.2rem,#ffffff 3.1rem 100%);
+   z-index: 0;
+  }
+
+  .signup-card {
+  padding: 2.4rem 1.6rem;
+    /* margin: 0 auto 2.4rem; */
+    border-width: 0.1rem;
+    /* border-style: ridge; */
+    min-height: 30rem;
+    background-color: #FAFAFA;
+    margin-bottom: 3.2rem;
+}
+
+  .card {
+    
+    padding: 5.6rem 1.6rem 1.6rem;
+    /*border-width: 0.1rem;
+    border-style: solid;
+    border-radius: 1.2rem;*/
+  }
+
+  
+
+
+}

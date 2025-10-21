@@ -1,0 +1,24 @@
+.pell {
+	width: 100%;
+    /* min-height: 4.8rem; */
+    /* margin: 0px; */
+    outline: none;
+    
+    /* background-color: #eee; */
+    /* border-radius: 2.4em;*/    
+}
+
+.writing-area {    
+    width: 100%;
+    min-height: 4.8rem;
+    margin: 0px;
+    outline: none;
+    padding: 1.2rem 1.2rem 1.2rem 2.4rem;    
+    background-color: #eee;
+    border-radius: 2.4em;
+}
+.writing-area:focus{
+	outline: none;
+}
+
+.btn.action {align-self: end; align-self: flex-end;}

@@ -1,0 +1,132 @@
+body {
+    overflow-y: auto;
+}
+
+img._xs {
+    max-height: 6rem;
+    width: auto;
+}
+
+img._s {
+    max-height: 9rem;
+    width: auto;
+}
+
+img._m {
+    max-height: 12rem;
+    width: auto;
+}
+
+img._l {
+    max-height: 15rem;
+    width: auto;
+}
+
+img._xl {
+    max-height: 18rem;
+    width: auto;
+}
+
+img._xxl {
+    max-height: 21rem;
+    width: auto;
+}
+
+header.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 6rem;
+    position: unset;
+}
+
+header.main .logo {
+    order: 1;
+}
+
+header.main .baseline {
+    display: flex;
+    align-self: end;
+    align-self: flex-end;
+    padding-top: 0.4rem;
+    padding-right: 0.4rem
+}
+
+footer.main-footer {
+    padding: 1.6rem 0 0;
+    width: 100%;
+    align-self: end;
+    align-self: flex-end;
+    border-top-color: #000000;
+    border-top-style: solid;
+    border-top-width: 0.1rem;
+    background-color: rgb(0, 0, 0);
+}
+
+footer.main-footer .logo {
+    text-align: center;
+    padding: 1.6rem 0 1.2rem;
+}
+
+footer.main-footer .logo > img {
+    height: 6.4rem;
+    vertical-align: initial;
+}
+
+footer.main-footer .social-medias {
+    background-color: rgb(255, 255, 255);
+    padding: 2.4rem 0 1.6rem;
+    text-align: center;
+}
+
+.social-medias > a {
+    display: inline-block;
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+    border-width: 0.2rem;
+    line-height: 3.2rem;
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    text-align: center;
+}
+
+.social-medias > a:not(:last-of-type) {
+    margin-right: 1.2rem;
+}
+
+.social-medias > a img {
+    height: 1.8rem;
+    width: 1.8rem;
+    vertical-align: initial;
+}
+
+.alert-message {
+    color: red;
+    padding: 1.6rem;
+}
+
+.welcome > p {margin-bottom: 1.6rem;}
+
+@media only screen and (min-width: 700px) {}
+
+@media only screen and (min-width: 768px) {
+    header.main .logo {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    header {
+        position: sticky;
+    }
+}
+
+@media only screen and (min-width: 1281px) {
+    .main-row {
+        min-height: calc(100vh - 35.181rem);
+
+        padding: 0 3.2rem 0 4.8rem;
+    }
+}

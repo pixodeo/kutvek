@@ -1,0 +1,301 @@
+.finish-desc {
+    margin-bottom: 2.4rem;
+    padding-left: 1.2rem;
+    font-size: 1.4rem;
+}
+.finish-desc p {margin-bottom: 1.2rem;margin-top: 0;}
+.finish-desc .material-symbols-rounded {vertical-align: sub;}
+
+.product .titles {
+    font-size: 1.4rem;
+}
+.accordion_tabs.info .icon {color:#FFA726;vertical-align: text-bottom;}
+.shelve-title {
+    color: #000000;
+    font-family: Oswald;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 3.2rem;
+    letter-spacing: 1px;   
+    text-align: center;
+    position: relative;
+    padding-bottom: 1.6rem;
+}
+
+.shelve-title::after {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    width: 50%;
+    max-width: 12rem;
+    height: .4rem;
+    left: 50%;
+    border-radius: .2rem;
+    background-color: #ff0000;
+    transform: translateX(-50%);
+}
+
+.brands {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 2.4rem;
+}
+
+
+
+ul.brands{justify-content: center; background-color: rgb(92,92,92);}
+
+ul.brands > li {
+    text-transform: uppercase;
+    font-family: Oswald;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.7rem;
+    line-height: 4.6rem;
+    font-weight: 300;
+    letter-spacing: 0.40px;
+    color: #FFFFFF;
+}
+ul.brands > li:not(:last-child){margin-right: 3.6rem;}
+ul.brands > li a:hover::after {
+
+
+   content: '';
+    /* font-size: 1.5rem; */
+    position: absolute;
+    z-index: 1;
+    bottom: 11%;
+    right: 50%;
+    height: 0.8rem;
+    width: 0.8rem;
+    transform: translateX(50%);
+    /* width: 0.45em; */
+    /* border-style: solid; */
+    /* border-width: 0.14em 0.14em 0 0; */
+    /* color: black; */
+    border-radius: 50%;
+    background-color: white;
+}
+.brands .brand {
+    position: relative;
+    display: inline-flex;
+    width: 45%;
+    height: 16rem;
+    padding: 1.6rem;
+    border-width: .2rem;
+    border-style: solid;
+    border-color: #000000;
+    border-radius: .4rem;    
+    justify-content: center;
+    margin-bottom: 1.6rem;
+    
+    
+}
+
+ul.brands > li > a {position: relative;}
+
+.brands  .brand a { 
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    color: #000000;
+    font-family: Oswald;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 3.2rem;
+    letter-spacing: 1px;
+    
+    transition: font-size .4s ease-in-out;
+    text-align: center;
+    
+}
+
+.brands .brand a:hover {
+    font-size: 4.8rem;
+}
+
+
+
+/**
+ *  Les cards 
+ */
+
+/*div.product-item-container {
+    display: flex;
+    flex-wrap: wrap;
+    
+}*/
+div.product-item-container {
+   display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+    column-gap: 1.2rem;
+    row-gap: 1.6rem; 
+    
+}
+span.offer {
+    text-align: right;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding-right: 0.8rem;
+}
+span.offer > img {
+    height: 3.2rem;
+    width: auto;
+}
+.product-item-container figure.product-item {    
+    /*-moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 32rem;
+    max-width: 32rem;
+    margin-bottom: 1.6rem;
+}
+
+figure.product-item img {
+    transition: opacity 0.7s linear;
+}
+
+figure.product-item img.visual {
+    object-fit: contain;
+    max-width: 100%;
+    height: auto;
+}
+
+figure.product-item img.visual:not(:first-of-type) {
+    visibility: hidden;
+    height: 0;
+    opacity: 0;
+}
+
+.product-item-container figure.product-item hr {
+    width: 100%;
+    border-top-width: .2rem;
+    border-top-style: solid;
+    border-top-color: rgba(0,0,0,.56);
+    opacity: .3;
+}
+.product-item-container figure.product-item > figcaption {
+    display: flex;
+/*    padding: 0 0 .75rem;*/
+    flex-flow: column;
+    min-height: 12rem;
+}
+
+
+.product-item-container figure.product-item > figcaption > p {
+    display: flex;     
+}
+
+p.prices {
+    flex:1;
+    align-items: end;
+    justify-content: flex-end;
+}
+.product-item-container figure.product-item > figcaption > .item {
+    margin: 0 0 0.8rem;
+    font-size: 2rem;
+    font-weight: 400;   
+    line-height: 1.2;
+    text-transform: uppercase;
+    font-family: Oswald;
+   
+    letter-spacing: .2px;
+}
+span.price {
+    font-size: 1.6rem;
+    color: #616161;
+    font-family: Montserrat;
+    font-weight: 600;
+    padding: 0;
+}
+
+span.price.stroke {
+    text-decoration: line-through;
+    text-decoration-color: #ff0000;
+    font-size: 1.4rem;
+    margin-right: 2.4rem;
+}
+
+
+.amount {
+    align-items: center;
+
+}
+
+.pro-rebate {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0;
+    margin-left: auto;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 500;    
+}
+.pro-rebate > .percent {
+    color:#FF0000;
+    font-weight: 600;
+}
+
+
+figure.product-item > a {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.tile {
+    width: 16rem;
+    height: 16rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #00000080;
+    color: white;
+    font-weight: 400;
+    font-size: 1.8rem;
+    margin: 2rem;
+}
+
+li.field-wrapper {flex-direction: row !important;}
+
+
+@media only screen and (min-width: 640px) {
+    .product-item-container figure.product-item:not(:last-child){
+        margin-right: 2.4rem;
+    }
+}
+
+
+@media only screen and (min-width: 1024px) {
+    .accordion_tabs.info{
+        margin-left: 16rem;   
+    }
+
+    
+    
+}
+
+
+@media only screen and (min-width: 1920px) {
+    .accordion_tabs.info{
+        margin-left: 16rem;   
+    }
+
+    
+    .product-item-container figure.product-item > figcaption > .item {
+        padding-right: 5.6rem;
+    }
+}

@@ -1,0 +1,90 @@
+.store-header {display: flex;flex-direction: column;}
+.store-header h1 {order:2;}
+
+.store .category {
+    display: block;
+    text-align: center;
+}
+.store > .items {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    color: black;
+}
+.direct-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* text-align: center; */
+    background-color: rgba(255,255, 255,1);
+    border-radius: 0.2rem;
+    font-size: 2rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    border: 4px solid black;    
+    font-family: Oswald;
+    padding: .4rem;
+    letter-spacing: 1px;
+    -webkit-box-shadow: 3px 3px 12px -5px rgba(0,0,0,0.78);
+    box-shadow: 3px 3px 12px -5px rgba(0,0,0,0.78);
+}
+.direct-links:hover {
+    color: white;
+    background-color: black;
+}
+.links-group {
+    margin-top:2.4rem;
+    margin-bottom:3.6rem;
+}
+.links-group > .link {
+    display: inline-flex;
+    padding: 0 .8rem;
+    color: #ffffff;
+    background-color: #000000;
+    height: 4rem;
+    align-items: center;
+    border-width: .1rem;
+    border-style: solid;
+    border-color: #000000;
+    border-radius: .4rem;
+    font-weight: 600;
+    text-decoration: unset;
+    margin-bottom: .8rem;
+    margin-top: .8rem;
+    text-transform: uppercase;
+    /* letter-spacing: .2px; */
+    font-size: 1.2rem;
+}
+.links-group > .link:not(:last-child) {
+    margin-right: 2.4rem;
+}
+@media only screen and (min-width: 1024px) {
+    .store {
+        margin: 3.2rem 0 0;
+        position: relative;
+    }
+    .store .category {
+        position: absolute;
+        top: 50%;
+        padding-left: 2.4rem;
+        display: flex;
+        color: white;
+        font-size: 10rem;
+        transform: translateY(-50%);
+        margin: 0;
+        background: linear-gradient(90deg, rgb(0 0 0 / 45%) 0%, rgba(255,255,255,0) 100%);
+        height: 100%;
+        align-items: center;
+    }
+    .store > .items {
+        width: 100%;
+        padding: 1.6rem .8rem;
+        position: absolute;
+        bottom: 0;
+        grid-template-columns: repeat(auto-fit, minmax(12rem, 12rem));
+    }
+    .direct-links {
+        border-radius: .4rem;
+        border: initial;
+    }
+}

@@ -1,0 +1,2341 @@
+[
+    {
+        "id": 10322908,
+        "code": "4713S",
+        "is_active": true,
+        "shop_type": "P",
+        "extra_data": {
+            "shop_type": "P"
+        },
+        "name": "CARREFOUR MARKET",
+        "street": "AVENUE TREVOUX",
+        "house_number": "",
+        "postal_code": "01000",
+        "city": "ST DENIS LES BOURG",
+        "latitude": "46.201991",
+        "longitude": "5.199274",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "chronopost",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [
+                "08:30 - 12:00",
+                "12:00 - 20:00"
+            ],
+            "1": [
+                "08:30 - 12:00",
+                "12:00 - 20:00"
+            ],
+            "2": [
+                "08:30 - 12:00",
+                "12:00 - 20:00"
+            ],
+            "3": [
+                "08:30 - 12:00",
+                "12:00 - 20:00"
+            ],
+            "4": [
+                "08:30 - 12:00",
+                "12:00 - 20:00"
+            ],
+            "5": [
+                "08:30 - 12:00",
+                "12:00 - 20:00"
+            ],
+            "6": []
+        },
+        "open_tomorrow": true,
+        "open_upcoming_week": true,
+        "general_shop_type": "undefined"
+    },
+    {
+        "id": 10294204,
+        "code": "8588R",
+        "is_active": true,
+        "shop_type": "P",
+        "extra_data": {
+            "shop_type": "P"
+        },
+        "name": "DARBON MENAGER SERVICE",
+        "street": "RUE DE L'EST",
+        "house_number": "1",
+        "postal_code": "01000",
+        "city": "BOURG EN BRESSE",
+        "latitude": "46.193490",
+        "longitude": "5.240430",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "chronopost",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [],
+            "1": [
+                "08:00 - 12:00",
+                "12:00 - 18:00"
+            ],
+            "2": [
+                "08:00 - 12:00",
+                "12:00 - 18:00"
+            ],
+            "3": [
+                "08:00 - 12:00",
+                "12:00 - 18:00"
+            ],
+            "4": [
+                "08:00 - 12:00",
+                "12:00 - 18:00"
+            ],
+            "5": [
+                "08:00 - 10:00",
+                "10:00 - 12:00"
+            ],
+            "6": []
+        },
+        "open_tomorrow": true,
+        "open_upcoming_week": true,
+        "general_shop_type": "undefined"
+    },
+    {
+        "id": 13680265,
+        "code": "164AK",
+        "is_active": true,
+        "shop_type": "P",
+        "extra_data": {
+            "shop_type": "P"
+        },
+        "name": "APM 01 AUTO PNEU MECA 01",
+        "street": "AVENUE AMEDEE MERCIER",
+        "house_number": "102",
+        "postal_code": "01000",
+        "city": "BOURG EN BRESSE",
+        "latitude": "46.200666",
+        "longitude": "5.251636",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "chronopost",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [
+                "09:00 - 12:00",
+                "14:00 - 19:00"
+            ],
+            "1": [
+                "09:00 - 12:00",
+                "14:00 - 19:00"
+            ],
+            "2": [
+                "09:00 - 12:00",
+                "14:00 - 19:00"
+            ],
+            "3": [
+                "09:00 - 12:00",
+                "14:00 - 19:00"
+            ],
+            "4": [
+                "09:00 - 12:00",
+                "14:00 - 19:00"
+            ],
+            "5": [
+                "09:00 - 12:00",
+                "14:00 - 19:00"
+            ],
+            "6": []
+        },
+        "open_tomorrow": true,
+        "open_upcoming_week": true,
+        "general_shop_type": "undefined"
+    },
+    {
+        "id": 10294199,
+        "code": "6544P",
+        "is_active": true,
+        "shop_type": "P",
+        "extra_data": {
+            "shop_type": "P"
+        },
+        "name": "LES INDISPENSABLES",
+        "street": "BOULEVARD DE BROU",
+        "house_number": "112",
+        "postal_code": "01000",
+        "city": "BOURG EN BRESSE",
+        "latitude": "46.200556",
+        "longitude": "5.232778",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "chronopost",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [],
+            "1": [
+                "10:00 - 12:30",
+                "14:30 - 19:00"
+            ],
+            "2": [
+                "10:00 - 12:30",
+                "14:30 - 19:00"
+            ],
+            "3": [
+                "10:00 - 12:30",
+                "14:30 - 19:00"
+            ],
+            "4": [
+                "10:00 - 12:30",
+                "14:30 - 19:00"
+            ],
+            "5": [
+                "10:00 - 13:00",
+                "14:30 - 19:00"
+            ],
+            "6": []
+        },
+        "open_tomorrow": true,
+        "open_upcoming_week": true,
+        "general_shop_type": "undefined"
+    },
+    {
+        "id": 10330201,
+        "code": "0259X",
+        "is_active": true,
+        "shop_type": "P",
+        "extra_data": {
+            "shop_type": "P"
+        },
+        "name": "Consigne Pickup Gare Bourg enBresse",
+        "street": "AVENUE PIERRE SEMARD",
+        "house_number": "12",
+        "postal_code": "01000",
+        "city": "BOURG EN BRESSE",
+        "latitude": "46.200496",
+        "longitude": "5.214945",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "chronopost",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [
+                "00:01 - 12:00",
+                "12:00 - 23:59"
+            ],
+            "1": [
+                "00:01 - 12:00",
+                "12:00 - 23:59"
+            ],
+            "2": [
+                "00:01 - 12:00",
+                "12:00 - 23:59"
+            ],
+            "3": [
+                "00:01 - 12:00",
+                "12:00 - 23:59"
+            ],
+            "4": [
+                "00:01 - 12:00",
+                "12:00 - 23:59"
+            ],
+            "5": [
+                "00:01 - 12:00",
+                "12:00 - 23:59"
+            ],
+            "6": [
+                "00:01 - 12:00",
+                "12:00 - 23:59"
+            ]
+        },
+        "open_tomorrow": true,
+        "open_upcoming_week": true,
+        "general_shop_type": "undefined"
+    },
+    {
+        "id": 11236763,
+        "code": "7567V",
+        "is_active": true,
+        "shop_type": "P",
+        "extra_data": {
+            "shop_type": "P"
+        },
+        "name": "CN PRESSING",
+        "street": "Avenue de trevoux",
+        "house_number": "1250",
+        "postal_code": "01000",
+        "city": "ST DENIS LES BOURG",
+        "latitude": "46.200089",
+        "longitude": "5.191124",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "chronopost",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [],
+            "1": [
+                "08:30 - 12:30",
+                "12:30 - 18:00"
+            ],
+            "2": [
+                "08:30 - 12:30",
+                "12:30 - 18:00"
+            ],
+            "3": [
+                "08:30 - 12:30",
+                "12:30 - 18:00"
+            ],
+            "4": [
+                "08:30 - 12:30",
+                "12:30 - 18:00"
+            ],
+            "5": [
+                "08:30 - 12:30",
+                "12:30 - 18:00"
+            ],
+            "6": []
+        },
+        "open_tomorrow": true,
+        "open_upcoming_week": true,
+        "general_shop_type": "undefined"
+    },
+    {
+        "id": 12128794,
+        "code": "9846X",
+        "is_active": true,
+        "shop_type": "P",
+        "extra_data": {
+            "shop_type": "P"
+        },
+        "name": "Consigne Pickup Laverie Brou Bourg",
+        "street": "AVENUE PABLO PICASSO",
+        "house_number": "14",
+        "postal_code": "01000",
+        "city": "BOURG EN BRESSE",
+        "latitude": "46.199972",
+        "longitude": "5.247485",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "chronopost",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [
+                "07:00 - 22:00"
+            ],
+            "1": [
+                "07:00 - 22:00"
+            ],
+            "2": [
+                "07:00 - 22:00"
+            ],
+            "3": [
+                "07:00 - 22:00"
+            ],
+            "4": [
+                "07:00 - 22:00"
+            ],
+            "5": [
+                "07:00 - 22:00"
+            ],
+            "6": [
+                "07:00 - 22:00"
+            ]
+        },
+        "open_tomorrow": true,
+        "open_upcoming_week": true,
+        "general_shop_type": "undefined"
+    },
+    {
+        "id": 12629092,
+        "code": "8741Y",
+        "is_active": true,
+        "shop_type": "P",
+        "extra_data": {
+            "shop_type": "P"
+        },
+        "name": "GroupHAKA",
+        "street": "BOULEVARD EDOUARD HERRIOT",
+        "house_number": "2",
+        "postal_code": "01000",
+        "city": "BOURG EN BRESSE",
+        "latitude": "46.209769",
+        "longitude": "5.227078",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "chronopost",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [
+                "09:00 - 12:00",
+                "14:30 - 18:00"
+            ],
+            "1": [
+                "09:00 - 12:00",
+                "14:30 - 18:00"
+            ],
+            "2": [
+                "09:00 - 12:00",
+                "14:30 - 18:00"
+            ],
+            "3": [
+                "09:00 - 12:00",
+                "14:30 - 18:00"
+            ],
+            "4": [
+                "09:00 - 12:00",
+                "14:30 - 18:00"
+            ],
+            "5": [
+                "09:00 - 12:00",
+                "14:30 - 18:00"
+            ],
+            "6": []
+        },
+        "open_tomorrow": true,
+        "open_upcoming_week": true,
+        "general_shop_type": "undefined"
+    },
+    {
+        "id": 12592459,
+        "code": "6947X",
+        "is_active": true,
+        "shop_type": "P",
+        "extra_data": {
+            "shop_type": "P"
+        },
+        "name": "Consigne Autovision Bourg en Bresse",
+        "street": "RUE RADIOR",
+        "house_number": "205",
+        "postal_code": "01000",
+        "city": "BOURG EN BRESSE",
+        "latitude": "46.226380",
+        "longitude": "5.231420",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "chronopost",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [
+                "08:00 - 18:00"
+            ],
+            "1": [
+                "08:00 - 18:00"
+            ],
+            "2": [
+                "08:00 - 18:00"
+            ],
+            "3": [
+                "08:00 - 18:00"
+            ],
+            "4": [
+                "08:00 - 18:00"
+            ],
+            "5": [
+                "08:00 - 12:00"
+            ],
+            "6": []
+        },
+        "open_tomorrow": true,
+        "open_upcoming_week": true,
+        "general_shop_type": "undefined"
+    },
+    {
+        "id": 10773963,
+        "code": "5482U",
+        "is_active": true,
+        "shop_type": "P",
+        "extra_data": {
+            "shop_type": "P"
+        },
+        "name": "ACCUEIL E.LECLERC BRESSEDIS",
+        "street": "rue du Capitaine Dhonne",
+        "house_number": "360",
+        "postal_code": "01000",
+        "city": "BOURG EN BRESSE",
+        "latitude": "46.220554",
+        "longitude": "5.244496",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "chronopost",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [
+                "09:00 - 12:00",
+                "12:00 - 20:00"
+            ],
+            "1": [
+                "09:00 - 12:00",
+                "12:00 - 20:00"
+            ],
+            "2": [
+                "09:00 - 12:00",
+                "12:00 - 20:00"
+            ],
+            "3": [
+                "09:00 - 12:00",
+                "12:00 - 20:00"
+            ],
+            "4": [
+                "09:00 - 12:00",
+                "12:00 - 20:00"
+            ],
+            "5": [
+                "09:00 - 12:00",
+                "12:00 - 20:00"
+            ],
+            "6": []
+        },
+        "open_tomorrow": true,
+        "open_upcoming_week": true,
+        "general_shop_type": "undefined"
+    },
+    {
+        "id": 13053661,
+        "code": "525EA",
+        "is_active": true,
+        "shop_type": "P",
+        "extra_data": {
+            "shop_type": "P"
+        },
+        "name": "BOUCHERIE ANDRE",
+        "street": "AVENUE DE BAD KREUZNACH",
+        "house_number": "37",
+        "postal_code": "01000",
+        "city": "BOURG EN BRESSE",
+        "latitude": "46.215631",
+        "longitude": "5.244001",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "chronopost",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [
+                "08:30 - 12:00",
+                "12:00 - 19:00"
+            ],
+            "1": [
+                "08:30 - 12:00",
+                "12:00 - 19:00"
+            ],
+            "2": [
+                "08:30 - 12:00",
+                "12:00 - 19:00"
+            ],
+            "3": [
+                "08:30 - 12:00",
+                "12:00 - 19:00"
+            ],
+            "4": [
+                "08:30 - 12:00",
+                "12:00 - 19:00"
+            ],
+            "5": [
+                "08:30 - 12:00",
+                "12:00 - 19:00"
+            ],
+            "6": [
+                "08:30 - 12:00"
+            ]
+        },
+        "open_tomorrow": true,
+        "open_upcoming_week": true,
+        "general_shop_type": "undefined"
+    },
+    {
+        "id": 13005753,
+        "code": "8402X",
+        "is_active": true,
+        "shop_type": "P",
+        "extra_data": {
+            "shop_type": "P"
+        },
+        "name": "Consigne Blachere Bourg en Bresse",
+        "street": "RUE DU STAND",
+        "house_number": "56",
+        "postal_code": "01000",
+        "city": "BOURG EN BRESSE",
+        "latitude": "46.195959",
+        "longitude": "5.229241",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "chronopost",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [
+                "00:01 - 23:59"
+            ],
+            "1": [
+                "00:01 - 23:59"
+            ],
+            "2": [
+                "00:01 - 23:59"
+            ],
+            "3": [
+                "00:01 - 23:59"
+            ],
+            "4": [
+                "00:01 - 23:59"
+            ],
+            "5": [
+                "00:01 - 23:59"
+            ],
+            "6": [
+                "00:01 - 23:59"
+            ]
+        },
+        "open_tomorrow": true,
+        "open_upcoming_week": true,
+        "general_shop_type": "undefined"
+    },
+    {
+        "id": 12718101,
+        "code": "8411W",
+        "is_active": true,
+        "shop_type": "P",
+        "extra_data": {
+            "shop_type": "P"
+        },
+        "name": "Tabac La Havane",
+        "street": "RUE NOTRE DAME",
+        "house_number": "8",
+        "postal_code": "01000",
+        "city": "BOURG EN BRESSE",
+        "latitude": "46.205230",
+        "longitude": "5.225976",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "chronopost",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [
+                "08:00 - 19:00"
+            ],
+            "1": [
+                "08:00 - 19:00"
+            ],
+            "2": [
+                "08:00 - 19:00"
+            ],
+            "3": [
+                "08:00 - 19:00"
+            ],
+            "4": [
+                "08:00 - 19:00"
+            ],
+            "5": [
+                "08:00 - 12:30"
+            ],
+            "6": []
+        },
+        "open_tomorrow": true,
+        "open_upcoming_week": true,
+        "general_shop_type": "undefined"
+    },
+    {
+        "id": 10322907,
+        "code": "105245",
+        "is_active": true,
+        "shop_type": "A2P",
+        "extra_data": {
+            "shop_type": "A2P",
+            "is_essential": false
+        },
+        "name": "CARREFOUR MARKET",
+        "street": "AVENUE TREVOUX",
+        "house_number": "",
+        "postal_code": "01000",
+        "city": "ST DENIS LES BOURG",
+        "latitude": "46.201991",
+        "longitude": "5.199274",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "colissimo",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [
+                "08:30 - 12:00",
+                "12:00 - 20:00"
+            ],
+            "1": [
+                "08:30 - 12:00",
+                "12:00 - 20:00"
+            ],
+            "2": [
+                "08:30 - 12:00",
+                "12:00 - 20:00"
+            ],
+            "3": [
+                "08:30 - 12:00",
+                "12:00 - 20:00"
+            ],
+            "4": [
+                "08:30 - 12:00",
+                "12:00 - 20:00"
+            ],
+            "5": [
+                "08:30 - 12:00",
+                "12:00 - 20:00"
+            ],
+            "6": []
+        },
+        "open_tomorrow": true,
+        "open_upcoming_week": true,
+        "general_shop_type": "servicepoint"
+    },
+    {
+        "id": 10210851,
+        "code": "010530",
+        "is_active": true,
+        "shop_type": "BPR",
+        "extra_data": {
+            "shop_type": "BPR",
+            "is_essential": true
+        },
+        "name": "BUREAU DE POSTE BOURG EN BRESSE PREFECTURE",
+        "street": "AVENUE ALPHONSE MUSCAT",
+        "house_number": "1",
+        "postal_code": "01000",
+        "city": "BOURG EN BRESSE",
+        "latitude": "46.202794",
+        "longitude": "5.220568",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "colissimo",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [
+                "09:00 - 18:00"
+            ],
+            "1": [
+                "09:00 - 18:00"
+            ],
+            "2": [
+                "09:00 - 18:00"
+            ],
+            "3": [],
+            "4": [
+                "09:00 - 18:00"
+            ],
+            "5": [
+                "09:00 - 12:30"
+            ],
+            "6": []
+        },
+        "open_tomorrow": true,
+        "open_upcoming_week": true,
+        "general_shop_type": "post_office"
+    },
+    {
+        "id": 10210852,
+        "code": "097538",
+        "is_active": true,
+        "shop_type": "A2P",
+        "extra_data": {
+            "shop_type": "A2P",
+            "is_essential": true
+        },
+        "name": "DARBON MENAGER SERVICE",
+        "street": "RUE DE L EST",
+        "house_number": "1",
+        "postal_code": "01000",
+        "city": "BOURG EN BRESSE",
+        "latitude": "46.193489",
+        "longitude": "5.240429",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "colissimo",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [],
+            "1": [
+                "08:00 - 12:00",
+                "12:00 - 18:00"
+            ],
+            "2": [
+                "08:00 - 12:00",
+                "12:00 - 18:00"
+            ],
+            "3": [
+                "08:00 - 12:00",
+                "12:00 - 18:00"
+            ],
+            "4": [
+                "08:00 - 12:00",
+                "12:00 - 18:00"
+            ],
+            "5": [
+                "08:00 - 10:00",
+                "10:00 - 12:00"
+            ],
+            "6": []
+        },
+        "open_tomorrow": true,
+        "open_upcoming_week": true,
+        "general_shop_type": "servicepoint"
+    },
+    {
+        "id": 13593118,
+        "code": "367653",
+        "is_active": true,
+        "shop_type": "A2P",
+        "extra_data": {
+            "shop_type": "A2P",
+            "is_essential": false
+        },
+        "name": "APM 01 AUTO PNEU MECA 01",
+        "street": "AVENUE AMEDEE MERCIER",
+        "house_number": "102",
+        "postal_code": "01000",
+        "city": "BOURG EN BRESSE",
+        "latitude": "46.200666",
+        "longitude": "5.251636",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "colissimo",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [
+                "09:00 - 12:00",
+                "14:00 - 19:00"
+            ],
+            "1": [
+                "09:00 - 12:00",
+                "14:00 - 19:00"
+            ],
+            "2": [
+                "09:00 - 12:00",
+                "14:00 - 19:00"
+            ],
+            "3": [
+                "09:00 - 12:00",
+                "14:00 - 19:00"
+            ],
+            "4": [
+                "09:00 - 12:00",
+                "14:00 - 19:00"
+            ],
+            "5": [
+                "09:00 - 12:00",
+                "14:00 - 19:00"
+            ],
+            "6": []
+        },
+        "open_tomorrow": true,
+        "open_upcoming_week": true,
+        "general_shop_type": "servicepoint"
+    },
+    {
+        "id": 10715818,
+        "code": "042661",
+        "is_active": true,
+        "shop_type": "BPR",
+        "extra_data": {
+            "shop_type": "BPR",
+            "is_essential": false
+        },
+        "name": "BUREAU DE POSTE BOURG LES VENNES AP",
+        "street": "RUE LA FONTAINE",
+        "house_number": "11",
+        "postal_code": "01000",
+        "city": "BOURG EN BRESSE",
+        "latitude": "46.189240",
+        "longitude": "5.228296",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "colissimo",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [
+                "09:30 - 12:00",
+                "13:30 - 17:00"
+            ],
+            "1": [
+                "08:30 - 12:00",
+                "13:30 - 17:00"
+            ],
+            "2": [
+                "08:30 - 12:00",
+                "13:30 - 17:00"
+            ],
+            "3": [],
+            "4": [
+                "08:30 - 12:00",
+                "13:30 - 17:00"
+            ],
+            "5": [],
+            "6": []
+        },
+        "open_tomorrow": true,
+        "open_upcoming_week": true,
+        "general_shop_type": "post_office"
+    },
+    {
+        "id": 10210846,
+        "code": "003635",
+        "is_active": true,
+        "shop_type": "A2P",
+        "extra_data": {
+            "shop_type": "A2P",
+            "is_essential": false
+        },
+        "name": "LES INDISPENSABLES",
+        "street": "BOULEVARD DE BROU",
+        "house_number": "112",
+        "postal_code": "01000",
+        "city": "BOURG EN BRESSE",
+        "latitude": "46.200555",
+        "longitude": "5.232777",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "colissimo",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [],
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": []
+        },
+        "open_tomorrow": false,
+        "open_upcoming_week": false,
+        "general_shop_type": "servicepoint"
+    },
+    {
+        "id": 10260530,
+        "code": "097072",
+        "is_active": true,
+        "shop_type": "A2P",
+        "extra_data": {
+            "shop_type": "A2P",
+            "is_essential": false
+        },
+        "name": "CONSIGNE PICKUP GARE BOURG ENBRESSE",
+        "street": "AVENUE PIERRE SEMARD",
+        "house_number": "12",
+        "postal_code": "01000",
+        "city": "BOURG EN BRESSE",
+        "latitude": "46.200496",
+        "longitude": "5.214945",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "colissimo",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [
+                "00:01 - 12:00",
+                "12:00 - 23:59"
+            ],
+            "1": [
+                "00:01 - 12:00",
+                "12:00 - 23:59"
+            ],
+            "2": [
+                "00:01 - 12:00",
+                "12:00 - 23:59"
+            ],
+            "3": [
+                "00:01 - 12:00",
+                "12:00 - 23:59"
+            ],
+            "4": [
+                "00:01 - 12:00",
+                "12:00 - 23:59"
+            ],
+            "5": [
+                "00:01 - 12:00",
+                "12:00 - 23:59"
+            ],
+            "6": [
+                "00:01 - 12:00",
+                "12:00 - 23:59"
+            ]
+        },
+        "open_tomorrow": true,
+        "open_upcoming_week": true,
+        "general_shop_type": "servicepoint"
+    },
+    {
+        "id": 11236766,
+        "code": "486904",
+        "is_active": true,
+        "shop_type": "A2P",
+        "extra_data": {
+            "shop_type": "A2P",
+            "is_essential": true
+        },
+        "name": "CN PRESSING",
+        "street": "AVENUE DE TREVOUX",
+        "house_number": "1250",
+        "postal_code": "01000",
+        "city": "ST DENIS LES BOURG",
+        "latitude": "46.200088",
+        "longitude": "5.191123",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "colissimo",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [],
+            "1": [
+                "08:30 - 12:30",
+                "12:30 - 18:00"
+            ],
+            "2": [
+                "08:30 - 12:30",
+                "12:30 - 18:00"
+            ],
+            "3": [
+                "08:30 - 12:30",
+                "12:30 - 18:00"
+            ],
+            "4": [
+                "08:30 - 12:30",
+                "12:30 - 18:00"
+            ],
+            "5": [
+                "08:30 - 12:30",
+                "12:30 - 18:00"
+            ],
+            "6": []
+        },
+        "open_tomorrow": true,
+        "open_upcoming_week": true,
+        "general_shop_type": "servicepoint"
+    },
+    {
+        "id": 12110159,
+        "code": "556642",
+        "is_active": true,
+        "shop_type": "A2P",
+        "extra_data": {
+            "shop_type": "A2P",
+            "is_essential": true
+        },
+        "name": "CONSIGNE PICKUP LAVERIE BROU BOURG",
+        "street": "AVENUE PABLO PICASSO",
+        "house_number": "14",
+        "postal_code": "01000",
+        "city": "BOURG EN BRESSE",
+        "latitude": "46.199972",
+        "longitude": "5.247485",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "colissimo",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [
+                "07:00 - 22:00"
+            ],
+            "1": [
+                "07:00 - 22:00"
+            ],
+            "2": [
+                "07:00 - 22:00"
+            ],
+            "3": [
+                "07:00 - 22:00"
+            ],
+            "4": [
+                "07:00 - 22:00"
+            ],
+            "5": [
+                "07:00 - 22:00"
+            ],
+            "6": [
+                "07:00 - 22:00"
+            ]
+        },
+        "open_tomorrow": true,
+        "open_upcoming_week": true,
+        "general_shop_type": "servicepoint"
+    },
+    {
+        "id": 10210847,
+        "code": "010970",
+        "is_active": true,
+        "shop_type": "BPR",
+        "extra_data": {
+            "shop_type": "BPR",
+            "is_essential": true
+        },
+        "name": "BUREAU DE POSTE BOURG EN BRESSE FONTAINE BERNARD B",
+        "street": "RUE BERNARD",
+        "house_number": "14",
+        "postal_code": "01000",
+        "city": "BOURG EN BRESSE",
+        "latitude": "46.205896",
+        "longitude": "5.228136",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "colissimo",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [],
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": []
+        },
+        "open_tomorrow": false,
+        "open_upcoming_week": false,
+        "general_shop_type": "post_office"
+    },
+    {
+        "id": 12623855,
+        "code": "827510",
+        "is_active": true,
+        "shop_type": "A2P",
+        "extra_data": {
+            "shop_type": "A2P",
+            "is_essential": true
+        },
+        "name": "GROUPHAKA",
+        "street": "BOULEVARD EDOUARD HERRIOT",
+        "house_number": "2",
+        "postal_code": "01000",
+        "city": "BOURG EN BRESSE",
+        "latitude": "46.209769",
+        "longitude": "5.227078",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "colissimo",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [
+                "09:00 - 12:00",
+                "14:30 - 18:00"
+            ],
+            "1": [
+                "09:00 - 12:00",
+                "14:30 - 18:00"
+            ],
+            "2": [
+                "09:00 - 12:00",
+                "14:30 - 18:00"
+            ],
+            "3": [
+                "09:00 - 12:00",
+                "14:30 - 18:00"
+            ],
+            "4": [
+                "09:00 - 12:00",
+                "14:30 - 18:00"
+            ],
+            "5": [
+                "09:00 - 12:00",
+                "14:30 - 18:00"
+            ],
+            "6": []
+        },
+        "open_tomorrow": true,
+        "open_upcoming_week": true,
+        "general_shop_type": "servicepoint"
+    },
+    {
+        "id": 12547598,
+        "code": "558662",
+        "is_active": true,
+        "shop_type": "A2P",
+        "extra_data": {
+            "shop_type": "A2P",
+            "is_essential": true
+        },
+        "name": "CONSIGNE AUTOVISION BOURG EN BRESSE",
+        "street": "RUE RADIOR",
+        "house_number": "205",
+        "postal_code": "01000",
+        "city": "BOURG EN BRESSE",
+        "latitude": "46.226380",
+        "longitude": "5.231420",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "colissimo",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [
+                "08:00 - 18:00"
+            ],
+            "1": [
+                "08:00 - 18:00"
+            ],
+            "2": [
+                "08:00 - 18:00"
+            ],
+            "3": [
+                "08:00 - 18:00"
+            ],
+            "4": [
+                "08:00 - 18:00"
+            ],
+            "5": [
+                "08:00 - 12:00"
+            ],
+            "6": []
+        },
+        "open_tomorrow": true,
+        "open_upcoming_week": true,
+        "general_shop_type": "servicepoint"
+    },
+    {
+        "id": 10773964,
+        "code": "901968",
+        "is_active": true,
+        "shop_type": "A2P",
+        "extra_data": {
+            "shop_type": "A2P",
+            "is_essential": true
+        },
+        "name": "ACCUEIL E LECLERC BRESSEDIS",
+        "street": "AVENUE CAPITAINE DHONNE",
+        "house_number": "360",
+        "postal_code": "01000",
+        "city": "BOURG EN BRESSE",
+        "latitude": "46.220554",
+        "longitude": "5.244496",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "colissimo",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [
+                "09:00 - 12:00",
+                "12:00 - 20:00"
+            ],
+            "1": [
+                "09:00 - 12:00",
+                "12:00 - 20:00"
+            ],
+            "2": [
+                "09:00 - 12:00",
+                "12:00 - 20:00"
+            ],
+            "3": [
+                "09:00 - 12:00",
+                "12:00 - 20:00"
+            ],
+            "4": [
+                "09:00 - 12:00",
+                "12:00 - 20:00"
+            ],
+            "5": [
+                "09:00 - 12:00",
+                "12:00 - 20:00"
+            ],
+            "6": []
+        },
+        "open_tomorrow": true,
+        "open_upcoming_week": true,
+        "general_shop_type": "servicepoint"
+    },
+    {
+        "id": 13039564,
+        "code": "363681",
+        "is_active": true,
+        "shop_type": "A2P",
+        "extra_data": {
+            "shop_type": "A2P",
+            "is_essential": false
+        },
+        "name": "BOUCHERIE ANDRE",
+        "street": "AVENUE DE BAD KREUZNACH",
+        "house_number": "37",
+        "postal_code": "01000",
+        "city": "BOURG EN BRESSE",
+        "latitude": "46.215631",
+        "longitude": "5.244001",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "colissimo",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [
+                "08:30 - 12:00",
+                "12:00 - 19:00"
+            ],
+            "1": [
+                "08:30 - 12:00",
+                "12:00 - 19:00"
+            ],
+            "2": [
+                "08:30 - 12:00",
+                "12:00 - 19:00"
+            ],
+            "3": [
+                "08:30 - 12:00",
+                "12:00 - 19:00"
+            ],
+            "4": [
+                "08:30 - 12:00",
+                "12:00 - 19:00"
+            ],
+            "5": [
+                "08:30 - 12:00",
+                "12:00 - 19:00"
+            ],
+            "6": [
+                "08:30 - 12:00"
+            ]
+        },
+        "open_tomorrow": true,
+        "open_upcoming_week": true,
+        "general_shop_type": "servicepoint"
+    },
+    {
+        "id": 10210850,
+        "code": "019290",
+        "is_active": true,
+        "shop_type": "BPR",
+        "extra_data": {
+            "shop_type": "BPR",
+            "is_essential": true
+        },
+        "name": "BUREAU DE POSTE BOURG EN BRESSE MAGINOT BP",
+        "street": "AVENUE MAGINOT",
+        "house_number": "45",
+        "postal_code": "01000",
+        "city": "BOURG EN BRESSE",
+        "latitude": "46.210095",
+        "longitude": "5.227309",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "colissimo",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [
+                "09:00 - 12:00",
+                "14:00 - 17:00"
+            ],
+            "1": [
+                "09:00 - 12:00",
+                "14:00 - 17:00"
+            ],
+            "2": [
+                "09:00 - 12:00",
+                "14:00 - 17:00"
+            ],
+            "3": [],
+            "4": [
+                "09:00 - 12:00",
+                "14:00 - 17:00"
+            ],
+            "5": [
+                "09:00 - 12:00"
+            ],
+            "6": []
+        },
+        "open_tomorrow": true,
+        "open_upcoming_week": true,
+        "general_shop_type": "post_office"
+    },
+    {
+        "id": 12990393,
+        "code": "827740",
+        "is_active": true,
+        "shop_type": "A2P",
+        "extra_data": {
+            "shop_type": "A2P",
+            "is_essential": true
+        },
+        "name": "CONSIGNE BLACHERE BOURG EN BRESSE",
+        "street": "RUE DU STAND",
+        "house_number": "56",
+        "postal_code": "01000",
+        "city": "BOURG EN BRESSE",
+        "latitude": "46.195959",
+        "longitude": "5.229241",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "colissimo",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [
+                "00:01 - 23:59"
+            ],
+            "1": [
+                "00:01 - 23:59"
+            ],
+            "2": [
+                "00:01 - 23:59"
+            ],
+            "3": [
+                "00:01 - 23:59"
+            ],
+            "4": [
+                "00:01 - 23:59"
+            ],
+            "5": [
+                "00:01 - 23:59"
+            ],
+            "6": [
+                "00:01 - 23:59"
+            ]
+        },
+        "open_tomorrow": true,
+        "open_upcoming_week": true,
+        "general_shop_type": "servicepoint"
+    },
+    {
+        "id": 13019390,
+        "code": "558898",
+        "is_active": true,
+        "shop_type": "A2P",
+        "extra_data": {
+            "shop_type": "A2P",
+            "is_essential": false
+        },
+        "name": "CONSIGNE PICKUP CRF ST DENIS BOURG",
+        "street": "AVENUE DE TREVOUX",
+        "house_number": "596",
+        "postal_code": "01000",
+        "city": "ST DENIS LES BOURG",
+        "latitude": "46.200915",
+        "longitude": "5.199687",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "colissimo",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [
+                "00:01 - 23:59"
+            ],
+            "1": [
+                "00:01 - 23:59"
+            ],
+            "2": [
+                "00:01 - 23:59"
+            ],
+            "3": [
+                "00:01 - 23:59"
+            ],
+            "4": [
+                "00:01 - 23:59"
+            ],
+            "5": [
+                "00:01 - 23:59"
+            ],
+            "6": [
+                "00:01 - 23:59"
+            ]
+        },
+        "open_tomorrow": true,
+        "open_upcoming_week": true,
+        "general_shop_type": "servicepoint"
+    },
+    {
+        "id": 12682015,
+        "code": "828180",
+        "is_active": true,
+        "shop_type": "A2P",
+        "extra_data": {
+            "shop_type": "A2P",
+            "is_essential": true
+        },
+        "name": "TABAC LA HAVANE",
+        "street": "RUE NOTRE DAME",
+        "house_number": "8",
+        "postal_code": "01000",
+        "city": "BOURG EN BRESSE",
+        "latitude": "46.205230",
+        "longitude": "5.225976",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "colissimo",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [
+                "08:00 - 19:00"
+            ],
+            "1": [
+                "08:00 - 19:00"
+            ],
+            "2": [
+                "08:00 - 19:00"
+            ],
+            "3": [
+                "08:00 - 19:00"
+            ],
+            "4": [
+                "08:00 - 19:00"
+            ],
+            "5": [
+                "08:00 - 12:30"
+            ],
+            "6": []
+        },
+        "open_tomorrow": true,
+        "open_upcoming_week": true,
+        "general_shop_type": "servicepoint"
+    },
+    {
+        "id": 11629087,
+        "code": "FR77337",
+        "is_active": true,
+        "shop_type": "C",
+        "extra_data": {
+            "shop_type": "C"
+        },
+        "name": "LOCKER 24/7 NETTO ST DENIS LES",
+        "street": "RUE DES VIARDS",
+        "house_number": "",
+        "postal_code": "01000",
+        "city": "SAINT DENIS LES BOURG",
+        "latitude": "46.204937",
+        "longitude": "5.199188",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "mondial_relay",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [
+                "00:01 - 23:59"
+            ],
+            "1": [
+                "00:01 - 23:59"
+            ],
+            "2": [
+                "00:01 - 23:59"
+            ],
+            "3": [
+                "00:01 - 23:59"
+            ],
+            "4": [
+                "00:01 - 23:59"
+            ],
+            "5": [
+                "00:01 - 23:59"
+            ],
+            "6": [
+                "00:01 - 23:59"
+            ]
+        },
+        "open_tomorrow": true,
+        "open_upcoming_week": true,
+        "general_shop_type": "locker"
+    },
+    {
+        "id": 11803350,
+        "code": "FR18893",
+        "is_active": true,
+        "shop_type": "1",
+        "extra_data": {
+            "shop_type": "1"
+        },
+        "name": "EUROPAREBRISE BOURG EN BRESSE",
+        "street": "RUE JEAN LOUIS CARRA",
+        "house_number": "",
+        "postal_code": "01000",
+        "city": "BOURG EN BRESSE",
+        "latitude": "46.203519",
+        "longitude": "5.245376",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "mondial_relay",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [
+                "09:00 - 12:00",
+                "14:00 - 18:00"
+            ],
+            "1": [
+                "09:00 - 12:00",
+                "14:00 - 18:00"
+            ],
+            "2": [
+                "09:00 - 12:00",
+                "14:00 - 18:00"
+            ],
+            "3": [
+                "09:00 - 12:00",
+                "14:00 - 18:00"
+            ],
+            "4": [
+                "09:00 - 12:00",
+                "14:00 - 18:00"
+            ],
+            "5": [
+                "09:00 - 12:00"
+            ],
+            "6": []
+        },
+        "open_tomorrow": true,
+        "open_upcoming_week": true,
+        "general_shop_type": "servicepoint"
+    },
+    {
+        "id": 12007828,
+        "code": "FR16117",
+        "is_active": true,
+        "shop_type": "C",
+        "extra_data": {
+            "shop_type": "C"
+        },
+        "name": "LOCKER 24/7 LIDL BOURG EN BRESS",
+        "street": "BOULEVARD JOHN KENNEDY",
+        "house_number": "1",
+        "postal_code": "01000",
+        "city": "BOURG EN BRESSE",
+        "latitude": "46.207883",
+        "longitude": "5.237126",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "mondial_relay",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [
+                "00:01 - 23:59"
+            ],
+            "1": [
+                "00:01 - 23:59"
+            ],
+            "2": [
+                "00:01 - 23:59"
+            ],
+            "3": [
+                "00:01 - 23:59"
+            ],
+            "4": [
+                "00:01 - 23:59"
+            ],
+            "5": [
+                "00:01 - 23:59"
+            ],
+            "6": [
+                "00:01 - 23:59"
+            ]
+        },
+        "open_tomorrow": true,
+        "open_upcoming_week": true,
+        "general_shop_type": "locker"
+    },
+    {
+        "id": 14199638,
+        "code": "FR32865",
+        "is_active": true,
+        "shop_type": "C",
+        "extra_data": {
+            "shop_type": "C"
+        },
+        "name": "LOCKER 24/7 BRICO CASH BOURG EN",
+        "street": "AVENUE AMEDEE MERCIER",
+        "house_number": "100",
+        "postal_code": "01000",
+        "city": "BOURG EN BRESSE",
+        "latitude": "46.199260",
+        "longitude": "5.250776",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "mondial_relay",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [
+                "00:01 - 23:59"
+            ],
+            "1": [
+                "00:01 - 23:59"
+            ],
+            "2": [
+                "00:01 - 23:59"
+            ],
+            "3": [
+                "00:01 - 23:59"
+            ],
+            "4": [
+                "00:01 - 23:59"
+            ],
+            "5": [
+                "00:01 - 23:59"
+            ],
+            "6": [
+                "00:01 - 23:59"
+            ]
+        },
+        "open_tomorrow": true,
+        "open_upcoming_week": true,
+        "general_shop_type": "locker"
+    },
+    {
+        "id": 11171038,
+        "code": "FR43068",
+        "is_active": true,
+        "shop_type": "1",
+        "extra_data": {
+            "shop_type": "1"
+        },
+        "name": "LES 3 RELIQUES",
+        "street": "RUE PAUL PIODA",
+        "house_number": "13",
+        "postal_code": "01000",
+        "city": "BOURG EN BRESSE",
+        "latitude": "46.207481",
+        "longitude": "5.225489",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "mondial_relay",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [],
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": []
+        },
+        "open_tomorrow": false,
+        "open_upcoming_week": true,
+        "general_shop_type": "servicepoint"
+    },
+    {
+        "id": 10695853,
+        "code": "FR11867",
+        "is_active": true,
+        "shop_type": "1",
+        "extra_data": {
+            "shop_type": "1"
+        },
+        "name": "MEDIA SERVICES 20",
+        "street": "PLACE JOUBERT",
+        "house_number": "14",
+        "postal_code": "01000",
+        "city": "BOURG EN BRESSE",
+        "latitude": "46.203234",
+        "longitude": "5.221819",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "mondial_relay",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [
+                "08:30 - 18:30"
+            ],
+            "1": [
+                "08:30 - 18:30"
+            ],
+            "2": [
+                "08:30 - 18:30"
+            ],
+            "3": [
+                "08:30 - 18:30"
+            ],
+            "4": [
+                "08:30 - 18:30"
+            ],
+            "5": [
+                "09:00 - 12:30"
+            ],
+            "6": []
+        },
+        "open_tomorrow": true,
+        "open_upcoming_week": true,
+        "general_shop_type": "servicepoint"
+    },
+    {
+        "id": 13317913,
+        "code": "FR27922",
+        "is_active": true,
+        "shop_type": "C",
+        "extra_data": {
+            "shop_type": "C"
+        },
+        "name": "LOCKER 24/7 CARREFOUR MARKET BO",
+        "street": "AVENUE DE MARBOZ",
+        "house_number": "16",
+        "postal_code": "01000",
+        "city": "BOURG EN BRESSE",
+        "latitude": "46.218611",
+        "longitude": "5.229142",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "mondial_relay",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [
+                "00:01 - 23:59"
+            ],
+            "1": [
+                "00:01 - 23:59"
+            ],
+            "2": [
+                "00:01 - 23:59"
+            ],
+            "3": [
+                "00:01 - 23:59"
+            ],
+            "4": [
+                "00:01 - 23:59"
+            ],
+            "5": [
+                "00:01 - 23:59"
+            ],
+            "6": [
+                "00:01 - 23:59"
+            ]
+        },
+        "open_tomorrow": true,
+        "open_upcoming_week": true,
+        "general_shop_type": "locker"
+    },
+    {
+        "id": 13037672,
+        "code": "FR27682",
+        "is_active": true,
+        "shop_type": "1",
+        "extra_data": {
+            "shop_type": "1"
+        },
+        "name": "PAS COMME AILLEURS BOURG EN BRE",
+        "street": "AVENUE DE BAD KREUZNACH",
+        "house_number": "18",
+        "postal_code": "01000",
+        "city": "BOURG EN BRESSE",
+        "latitude": "46.213237",
+        "longitude": "5.242044",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "mondial_relay",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [
+                "08:30 - 19:15"
+            ],
+            "1": [
+                "08:30 - 19:15"
+            ],
+            "2": [
+                "08:30 - 19:15"
+            ],
+            "3": [
+                "08:30 - 19:15"
+            ],
+            "4": [
+                "08:30 - 19:15"
+            ],
+            "5": [
+                "08:30 - 19:15"
+            ],
+            "6": [
+                "08:30 - 12:30"
+            ]
+        },
+        "open_tomorrow": true,
+        "open_upcoming_week": true,
+        "general_shop_type": "servicepoint"
+    },
+    {
+        "id": 10778720,
+        "code": "FR12720",
+        "is_active": true,
+        "shop_type": "1",
+        "extra_data": {
+            "shop_type": "1"
+        },
+        "name": "ATELIER LALA",
+        "street": "RUE SAMARITAINE",
+        "house_number": "20",
+        "postal_code": "01000",
+        "city": "BOURG EN BRESSE",
+        "latitude": "46.204368",
+        "longitude": "5.227544",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "mondial_relay",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [],
+            "1": [
+                "10:00 - 18:00"
+            ],
+            "2": [
+                "10:00 - 13:00"
+            ],
+            "3": [
+                "10:00 - 18:00"
+            ],
+            "4": [
+                "10:00 - 18:00"
+            ],
+            "5": [
+                "10:00 - 18:00"
+            ],
+            "6": []
+        },
+        "open_tomorrow": true,
+        "open_upcoming_week": true,
+        "general_shop_type": "servicepoint"
+    },
+    {
+        "id": 10464539,
+        "code": "FR51063",
+        "is_active": true,
+        "shop_type": "1",
+        "extra_data": {
+            "shop_type": "1"
+        },
+        "name": "DR INFO",
+        "street": "RUE CHARLES ROBIN",
+        "house_number": "22",
+        "postal_code": "01000",
+        "city": "BOURG EN BRESSE",
+        "latitude": "46.204874",
+        "longitude": "5.231122",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "mondial_relay",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [
+                "09:00 - 12:00",
+                "14:00 - 18:00"
+            ],
+            "1": [
+                "09:00 - 12:00",
+                "14:00 - 18:00"
+            ],
+            "2": [
+                "09:00 - 12:00",
+                "14:00 - 18:00"
+            ],
+            "3": [
+                "09:00 - 12:00",
+                "14:00 - 18:00"
+            ],
+            "4": [
+                "09:00 - 12:00",
+                "14:00 - 18:00"
+            ],
+            "5": [
+                "10:00 - 15:00"
+            ],
+            "6": []
+        },
+        "open_tomorrow": true,
+        "open_upcoming_week": true,
+        "general_shop_type": "servicepoint"
+    },
+    {
+        "id": 11627556,
+        "code": "FR14663",
+        "is_active": true,
+        "shop_type": "C",
+        "extra_data": {
+            "shop_type": "C"
+        },
+        "name": "LOCKER STATION LAVAGE HIPPONET",
+        "street": "BIS AVENUE DE MARBOZ",
+        "house_number": "33",
+        "postal_code": "01000",
+        "city": "BOURG EN BRESSE",
+        "latitude": "46.222363",
+        "longitude": "5.227093",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "mondial_relay",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [
+                "04:00 - 22:00"
+            ],
+            "1": [
+                "04:00 - 22:00"
+            ],
+            "2": [
+                "04:00 - 22:00"
+            ],
+            "3": [
+                "04:00 - 22:00"
+            ],
+            "4": [
+                "04:00 - 22:00"
+            ],
+            "5": [
+                "04:00 - 22:00"
+            ],
+            "6": [
+                "04:00 - 22:00"
+            ]
+        },
+        "open_tomorrow": true,
+        "open_upcoming_week": true,
+        "general_shop_type": "locker"
+    },
+    {
+        "id": 10932653,
+        "code": "FR94950",
+        "is_active": true,
+        "shop_type": "1",
+        "extra_data": {
+            "shop_type": "1"
+        },
+        "name": "CHRONOPHONE",
+        "street": "AVENUE ALPHONSE BAUDIN",
+        "house_number": "34",
+        "postal_code": "01000",
+        "city": "BOURG EN BRESSE",
+        "latitude": "46.200326",
+        "longitude": "5.215899",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "mondial_relay",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [
+                "09:30 - 12:30",
+                "14:00 - 19:00"
+            ],
+            "1": [
+                "09:30 - 12:30",
+                "14:00 - 19:00"
+            ],
+            "2": [
+                "09:30 - 12:30",
+                "14:00 - 19:00"
+            ],
+            "3": [
+                "09:30 - 12:30",
+                "14:00 - 19:00"
+            ],
+            "4": [
+                "09:30 - 12:30",
+                "15:00 - 19:00"
+            ],
+            "5": [
+                "09:30 - 12:30",
+                "14:00 - 19:00"
+            ],
+            "6": []
+        },
+        "open_tomorrow": true,
+        "open_upcoming_week": true,
+        "general_shop_type": "servicepoint"
+    },
+    {
+        "id": 10465282,
+        "code": "FR72966",
+        "is_active": true,
+        "shop_type": "1",
+        "extra_data": {
+            "shop_type": "1"
+        },
+        "name": "PRESSE ALIMENTATION",
+        "street": "AVENUE DE LYON",
+        "house_number": "46",
+        "postal_code": "01000",
+        "city": "BOURG EN BRESSE",
+        "latitude": "46.193005",
+        "longitude": "5.213310",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "mondial_relay",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [
+                "08:00 - 12:00",
+                "15:00 - 19:00"
+            ],
+            "1": [
+                "08:00 - 12:00",
+                "15:00 - 19:00"
+            ],
+            "2": [
+                "08:00 - 12:00",
+                "15:00 - 19:00"
+            ],
+            "3": [
+                "08:00 - 12:00"
+            ],
+            "4": [
+                "08:00 - 12:00",
+                "15:00 - 19:00"
+            ],
+            "5": [
+                "08:00 - 12:00"
+            ],
+            "6": [
+                "08:00 - 12:00"
+            ]
+        },
+        "open_tomorrow": true,
+        "open_upcoming_week": true,
+        "general_shop_type": "servicepoint"
+    },
+    {
+        "id": 11627491,
+        "code": "FR14444",
+        "is_active": true,
+        "shop_type": "C",
+        "extra_data": {
+            "shop_type": "C"
+        },
+        "name": "LOCKER 24/7 INTERMARCHE BOURG E",
+        "street": "RUE DU STAND",
+        "house_number": "56",
+        "postal_code": "01000",
+        "city": "BOURG EN BRESSE",
+        "latitude": "46.196549",
+        "longitude": "5.227922",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "mondial_relay",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [
+                "00:01 - 23:59"
+            ],
+            "1": [
+                "00:01 - 23:59"
+            ],
+            "2": [
+                "00:01 - 23:59"
+            ],
+            "3": [
+                "00:01 - 23:59"
+            ],
+            "4": [
+                "00:01 - 23:59"
+            ],
+            "5": [
+                "00:01 - 23:59"
+            ],
+            "6": [
+                "00:01 - 23:59"
+            ]
+        },
+        "open_tomorrow": true,
+        "open_upcoming_week": true,
+        "general_shop_type": "locker"
+    },
+    {
+        "id": 12659064,
+        "code": "FR25611",
+        "is_active": true,
+        "shop_type": "1",
+        "extra_data": {
+            "shop_type": "1"
+        },
+        "name": "LA PERSO DE L AIN ST DENIS LES",
+        "street": "RUE DE CALIDON",
+        "house_number": "565",
+        "postal_code": "01000",
+        "city": "SAINT DENIS LES BOURG",
+        "latitude": "46.213642",
+        "longitude": "5.205550",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "mondial_relay",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [
+                "09:00 - 12:00",
+                "14:00 - 18:00"
+            ],
+            "1": [
+                "09:00 - 12:00",
+                "14:00 - 18:00"
+            ],
+            "2": [
+                "09:00 - 12:00",
+                "14:00 - 18:00"
+            ],
+            "3": [
+                "09:00 - 12:00",
+                "14:00 - 18:00"
+            ],
+            "4": [
+                "09:00 - 12:00",
+                "14:00 - 18:00"
+            ],
+            "5": [
+                "09:00 - 12:00"
+            ],
+            "6": []
+        },
+        "open_tomorrow": true,
+        "open_upcoming_week": true,
+        "general_shop_type": "servicepoint"
+    },
+    {
+        "id": 14199642,
+        "code": "FR32562",
+        "is_active": true,
+        "shop_type": "C",
+        "extra_data": {
+            "shop_type": "C"
+        },
+        "name": "LOCKER 24/7 CLINIQUE CONVERT BO",
+        "street": "AVENUE DE JASSERON",
+        "house_number": "62",
+        "postal_code": "01000",
+        "city": "BOURG EN BRESSE",
+        "latitude": "46.210850",
+        "longitude": "5.253381",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "mondial_relay",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [
+                "00:01 - 23:59"
+            ],
+            "1": [
+                "00:01 - 23:59"
+            ],
+            "2": [
+                "00:01 - 23:59"
+            ],
+            "3": [
+                "00:01 - 23:59"
+            ],
+            "4": [
+                "00:01 - 23:59"
+            ],
+            "5": [
+                "00:01 - 23:59"
+            ],
+            "6": [
+                "00:01 - 23:59"
+            ]
+        },
+        "open_tomorrow": true,
+        "open_upcoming_week": true,
+        "general_shop_type": "locker"
+    },
+    {
+        "id": 11628836,
+        "code": "FR55919",
+        "is_active": true,
+        "shop_type": "C",
+        "extra_data": {
+            "shop_type": "C"
+        },
+        "name": "LOCKER WASHN DRY BOURG EN BRESS",
+        "street": "RUE PREVOTE",
+        "house_number": "7",
+        "postal_code": "01000",
+        "city": "BOURG EN BRESSE",
+        "latitude": "46.205083",
+        "longitude": "5.228361",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "mondial_relay",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [
+                "07:00 - 22:00"
+            ],
+            "1": [
+                "07:00 - 22:00"
+            ],
+            "2": [
+                "07:00 - 22:00"
+            ],
+            "3": [
+                "07:00 - 22:00"
+            ],
+            "4": [
+                "07:00 - 22:00"
+            ],
+            "5": [
+                "07:00 - 22:00"
+            ],
+            "6": [
+                "07:00 - 22:00"
+            ]
+        },
+        "open_tomorrow": true,
+        "open_upcoming_week": true,
+        "general_shop_type": "locker"
+    },
+    {
+        "id": 13955528,
+        "code": "FR30412",
+        "is_active": true,
+        "shop_type": "C",
+        "extra_data": {
+            "shop_type": "C"
+        },
+        "name": "LOCKER 24/7 TERRE DES FLEURS BO",
+        "street": "RUE DES MARGUERITES",
+        "house_number": "9",
+        "postal_code": "01000",
+        "city": "BOURG EN BRESSE",
+        "latitude": "46.206627",
+        "longitude": "5.210919",
+        "email": "",
+        "phone": "",
+        "homepage": "",
+        "carrier": "mondial_relay",
+        "country": "FR",
+        "formatted_opening_times": {
+            "0": [
+                "00:01 - 23:59"
+            ],
+            "1": [
+                "00:01 - 23:59"
+            ],
+            "2": [
+                "00:01 - 23:59"
+            ],
+            "3": [
+                "00:01 - 23:59"
+            ],
+            "4": [
+                "00:01 - 23:59"
+            ],
+            "5": [
+                "00:01 - 23:59"
+            ],
+            "6": [
+                "00:01 - 23:59"
+            ]
+        },
+        "open_tomorrow": true,
+        "open_upcoming_week": true,
+        "general_shop_type": "locker"
+    }
+]

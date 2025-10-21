@@ -1,0 +1,88 @@
+
+/*.fa-link {color: #75e900;}
+.fa-unlink {color: #F44336;}*/
+
+.thumb {height: 8rem;}
+.gallery {
+        position: relative;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    
+
+    .gallery > .slider {
+        display: flex;
+        width: 200%;
+        height: 100%;
+        margin: 0;
+        position: relative;
+        padding: 0;
+        will-change: transform;
+        transition: transform .7s;
+        transform: translateX(0%);
+    }
+
+    .gallery figure {
+        position: relative;
+        width: 50%;        
+        padding-right: 4rem;
+    }
+
+    .gallery figcaption {
+        position: absolute; 
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        top: 1.6rem;
+        right: 0;
+        bottom: 0;      
+        padding-top: 1.6rem;
+        width: 4rem;      
+    } 
+
+    .gallery figcaption a, .gallery figcaption input[type="number"] {width: 3.2rem; height: 3.2rem; border-width: .2rem; border-style:solid; border-color: #000000;border-radius: 50%;line-height: 3.2rem;text-align: center;}
+    .gallery figcaption input[type="number"] {
+        font-weight: bold;
+        font-size: 1.6rem;
+        color: #000000;
+        
+    }
+    .gallery figcaption a:not(:last-child) {margin-bottom: .8rem;}
+    
+
+    .p-thumbs {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: stretch;
+        margin: 2.4rem 0;
+    }
+
+    .p-thumbs > p {display: inline-flex;margin-bottom: 0}
+
+    .p-thumbs > p:not(:last-child) {
+        margin-right: 1.6rem;
+    }
+
+
+    .p-thumbs  img {
+        height: 8rem;
+        width: auto;
+        border-width: 0.1rem;
+        border-style: solid;
+        border-color: transparent;
+        outline-width: 0.1rem;
+        outline-style: solid;
+        outline-color: transparent;
+        transition: border-color .1s, outline-color .1s;
+    }
+
+    .p-thumbs > p span.actions {width: 5rem; padding-left: .8rem;}
+
+    
+    .p-thumbs img.active {
+        border-color: rgba(0,0,0,.3);
+        outline-color: rgb(0,0,0);
+    }
