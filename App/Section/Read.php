@@ -36,14 +36,17 @@ final class Read extends AppAction implements UrlQueryResult {
 				return $this->handle($this->getRequest());           
 			endif;
 			// si on est sur du xhr/fetch js on envoie à filter
-			$xhr = $this->getRequest()->getHeaderLine('x-requested-with');			
-			
-			if($xhr === 'XMLHttpRequest'):
-				$this->_middleware = new Filter($this->_router);
-				$this->queryResult->department_store = $this->section->department_store;
-				$this->queryResult->categories = $this->section->categories;
-				$this->queryResult->types = $this->section->types;
-				$this->_middleware->setQueryResult($this->queryResult);	
+			$xhr = $this->getRequest()->getHeaderLine('x-requested-with');	
+			$withFilters = (int)$this->getRequest()->getHeaderLine('x-filtering');			
+			if($xhr === 'XMLHttpRequest' && $withFilters > 0):
+				$middleware = new Filter($this->_router);
+				$queryResult = new stdClass;
+				//
+				$queryResult->department_store = $this->section->department_store;
+				$queryResult->categories = $this->section->categories;
+				$queryResult->types = $this->section->types;
+				$middleware->setQueryResult($queryResult);
+				$this->_middleware = $middleware;	
 				return $this->handle($this->getRequest());
 			endif;
 			$this->section = $section;

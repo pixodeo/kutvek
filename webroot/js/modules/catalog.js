@@ -76,8 +76,7 @@ const catalog = {
     },
     filter: async function () {        
         const url = new URL(window.location.href);
-        const formData = new FormData(this._elem.form);
-        const params = new URLSearchParams();
+        const formData = new FormData(this._elem.form);        
         formData.forEach((val, key) => {
             // Réunir les valeurs sous une même clé séparées par des virgules
             if (url.searchParams.has(key)) {               
@@ -92,8 +91,9 @@ const catalog = {
             url.search = '';            
             document.location.reload();
             return;
-        }       
-        const req = await fetch(url,{ method: 'GET', mode: 'cors', credentials: 'include',headers: { 'X-Requested-With': 'XMLHttpRequest' }});
+        }  
+        const headers = { 'X-Requested-With': 'XMLHttpRequest', 'X-Filtering': '1' }  
+        const req = await fetch(url,{ method: 'GET', mode: 'cors', credentials: 'include',headers: headers});
         if(req.status === 200){
             const json = await req.json();
             let frag = document.createRange().createContextualFragment(json.cards); 

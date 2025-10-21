@@ -3,11 +3,9 @@ declare(strict_types=1);
 namespace App\Section;
 
 use Core\Action;
-use Core\Component;
 use Core\Request\UrlQueryResult;
 use Domain\Table\Section;
-use Exception;
-use Library\HTML\{TraitString, TraitPagination};
+use Library\HTML\{TraitSanitize, TraitPagination};
 use stdClass;
 use Core\Library\TraitCookie;
 
@@ -16,7 +14,7 @@ use Core\Library\TraitCookie;
  */
 final class Filter extends Action implements UrlQueryResult {
 	
-    use TraitString, TraitPagination, TraitCookie;
+    use TraitSanitize, TraitPagination, TraitCookie;
     private  false|object $_customer = false;
     private false|object $_params = false;  
     public stdClass $queryResult;
