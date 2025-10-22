@@ -6,9 +6,18 @@ use Core\Action;
 use Domain\Table\Checkout;
 use Domain\Entity\Checkout\Cart as CheckoutCart;
 use App\Cart\Voucher\Validator;
+use Core\Routing\RouterInterface;
+use Library\HTML\{Form};
 
 class AddVoucher extends Action {
-	private Checkout $_checkoutTable;	
+	private Checkout $_checkoutTable;
+	public Form $form;
+
+	public function __construct(protected RouterInterface $_router)
+    {       
+        $this->_route = $this->_router->getRoute();
+        $this->form = new Form;
+    }	
 
 	public function __invoke()
 	{

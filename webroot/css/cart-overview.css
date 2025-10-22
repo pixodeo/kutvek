@@ -99,14 +99,9 @@ small.discount {font-weight: 600;text-transform: uppercase;padding: 0 0.8rem;col
 .accordion .header span:first-of-type::first-letter {text-transform: uppercase;}
 .accordion input:checked + .header + .content {padding-top: .8rem; height: calc-size(auto, size);}
 .accordion input:checked + .header > .icon:last-child {transform: rotate(-180deg);}
-
-.form-voucher button {height: 4.8rem; min-width: 32rem; max-width: 36rem;}
-#shipping-amount::first-letter{text-transform: capitalize;}
-input.voucher {
-    height: 4.8rem;
-    min-width: 32rem;
-    max-width: 36rem;
-}
+input.voucher {height: 4.8rem; width:18rem; max-width: 36rem;}
+.form-voucher button {cursor: pointer;}
+#shipping-amount::first-letter{text-transform: capitalize;} 
 .update-screen {
     display: none;
     align-items: center;

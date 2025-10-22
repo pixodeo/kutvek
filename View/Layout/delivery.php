@@ -44,7 +44,7 @@
 	        <div class="opening">            
 	        </div>
 	        <div class="details">
-	        	<input type="radio" name="delivery[cost]" data-ctrl="delivery.setAddress" value="0" id="" class="onchange" data-address="" required form="checkout-next" /> - <b>Gratuit</b>
+	        	<input type="radio" name="delivery[cost]" data-ctrl="delivery.setAddress" value="0" id="" class="onchange" data-address="" required form="checkout-next" /> <label for="">- <b data-i18n="free">Gratuit</b></label>
 	        </div>
 	    </div>
 	</template>

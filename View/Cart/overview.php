@@ -78,8 +78,8 @@
             <form method="post" class="content form-voucher" data-ctrl="cart.voucher">  
                 <div class="promocode-error"><p class="h5"></p><div></div></div>         
                 <input name="code" id="write-promocode" type="text" class="voucher" required="" data-i18n="write-promocode" placeholder="EN MAJUSCULES" />                         
-                <button type="submit" formaction="<?=$this->url('cart.addVoucher',['queries'=>['id' => $cart->id]], 'PUT');?>" class="contained apply" data-i18n="add">Ajouter</button>
-                <button type="submit" formaction="<?=$this->url('cart.deleteVoucher',['queries'=>['id' => $cart->id]], 'PUT');?>" class="contained warning delete hide" disabled="" data-i18n="delete">Supprimer</button>                 
+                <button type="submit" formaction="<?=$this->url('cart.addVoucher',['queries'=>['id' => $cart->id], 'errors'=>1], 'PUT');?>" class="apply primary" data-i18n="add">Ajouter</button>
+                <button type="submit" formaction="<?=$this->url('cart.deleteVoucher',['queries'=>['id' => $cart->id]], 'PUT');?>" class="warning delete hide" disabled="" data-i18n="delete">Supprimer</button>                 
             </form>        
         </div> 
         <?php $url = base64_encode($this->uri($cart->status, ['queries'=>['id'=> $cart->id]]));?> 

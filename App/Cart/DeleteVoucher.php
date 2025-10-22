@@ -3,12 +3,20 @@ declare(strict_types=1);
 namespace App\Cart;
 
 use Core\Action;
+use Core\Routing\RouterInterface;
 use Domain\Table\Checkout;
 use Domain\Entity\Checkout\Cart as CheckoutCart;
+use Library\HTML\{Form};
 
 class DeleteVoucher extends Action {
-	private Checkout $_checkoutTable;	
+	private Checkout $_checkoutTable;
+	public Form $form;	
 
+	public function __construct(protected RouterInterface $_router)
+    {       
+        $this->_route = $this->_router->getRoute();
+        $this->form = new Form;
+    }
 	public function __invoke(int $id)
 	{
 		$this->_checkoutTable = new Checkout($this->_setDb());

@@ -191,8 +191,11 @@ const delivery = {
             const details = listing.querySelector('div.details');
 
             const radio = details.querySelector('input'); 
+            const label = details.querySelector('label'); 
+
             radio.dataPosition = i;  
             radio.id = 'carrier-' + i;
+            label.htmlFor = 'carrier-' + i;
             radio.setAttribute('data-address', currentFeature.properties.id);            
             radio.setAttribute('data-relay', '#' + currentFeature.properties.type + currentFeature.properties.id);     
             radio.setAttribute('data-type',  1);   

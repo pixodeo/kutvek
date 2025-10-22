@@ -9,22 +9,21 @@ use Exception;
 /**
  * Classe de base pour représenter un produit
  */
-final class Validator extends Component {
-	
+final class Validator extends Component {	
 	private false|Voucher $_code = false;
 	protected Checkout $table;
 	private $_body;
 	private int $_orderId;
 
-
-	public function check(){
+	public function check()
+	{
 		$this->_body =  json_decode($this->getRequest()->getBody()->getContents());		
 		$queries = $this->getRequest()->getQueryParams();		
 		$this->_orderId = (int)$queries['id'];
 		$this->_body->customer = $this->_body->customer ?? 0;	
 		$this->table = new Checkout($this->_setDb());
 		$this->table->setRoute($this->_route);
-		$this->_code = $this->_codeInfo($this->_body->code);
+		$this->_code = $this->_codeInfo($this->_body->code);		
 		$checks = [
             'pro'              => $this->checkAccount(),                   
             'validity'         => $this->checkValidity(),
@@ -40,9 +39,8 @@ final class Validator extends Component {
 	            throw new Exception(json_encode($error, JSON_NUMERIC_CHECK, JSON_UNESCAPED_SLASHES));	           
 	            break;
 	        }
-	    }          
-
-        // Tout va bien, on enregistre le code promo
+	    }
+	    // Tout va bien, on enregistre le code promo
         $this->apply();
 	}
 
@@ -70,7 +68,7 @@ final class Validator extends Component {
         AND (c.expire IS NULL OR c.expire >= current_timestamp())";        
      	$query = $this->table->query($sql, ['code' => $code, 'website' => 1, 'l10n' => $this->getL10nId()], true);
      	if($query):
-     		$query->min_purchase = floatval($query->min_purchase);
+     		$query->min_purchase = (float)$query->min_purchase ?? 0;
      	endif;
      	$this->table->setEntity(null);
      	return $query;              
