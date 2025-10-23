@@ -272,6 +272,7 @@ button.icon, .btn.icon {padding-left: 1.2rem;}
 .btn.contained.dark, button.contained.dark {background-color:#000000 !important; color:#ffffff !important;}*/
 .btn.contained.white, button.contained.white {background-color: #ffffff !important; color:#000000 !important;}
 .btn.outlined.white, button.outlined.white{background-color: #ffffff !important; color:#000000 !important;border-color: #000000 !important;}
+.btn.outlined.primary, button.outlined.primary{background-color: #ffffff !important; color:#1997c6 !important;border-color: #1997c6 !important;}
 .btn.square, button.square {width: 4rem;}
 .btn.wide, button.wide {width: 100%;}
 .btn.small, button.small {height: 3.2rem !important;}

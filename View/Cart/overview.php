@@ -48,9 +48,8 @@
             <span id="item-total"><?=$cart->amount->breakdown->item_total->format;?></span>
         </p>
         <p class="cost-line"><b>Taxes : </b><span><?= $cart->amount->breakdown->tax_total->format;?></span></p>   
-    <?php endif; ?>
-        
-       <!--  <p class="cost-line">
+        <?php endif; ?>        
+        <!--  <p class="cost-line">
             <b>Total HT :</b>
             <span><?= $cart->amount->breakdown->item_total->format;?></span>
         </p>  -->

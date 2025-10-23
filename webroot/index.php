@@ -102,6 +102,11 @@ $router->get('/checkout/shipping', 'checkout.shipping')
 $router->get('/checkout/pay', 'checkout.payment')
     ->middleware('PoweredBy');
 
+$router->get('/checkout/:id/add-shipping-address', 'checkout.addShippingAddress')
+    ->with('id', '([0-9]+)');
+$router->post('/checkout/:id/add-shipping-address', 'checkout.addShippingAddress')
+    ->with('id', '([0-9]+)');
+
 $router->post('/checkout/:order/:psp', 'checkout.create')    
     ->with('order', '([0-9]+)')   
     ->with('psp', '([a-z\-]+)')

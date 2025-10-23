@@ -260,7 +260,22 @@ const delivery = {
           '<p>' + currentFeature.properties.address_line_1 + '<br/>' +currentFeature.properties.postalCode + ' &middot; ' + currentFeature.properties.city + '</p>')
         .addTo(this._map);
     },
-    setAddress: async function(){
+    addShippingAddress: async function(){
+        const req = await fetch(this._elem.href, {method: 'GET', mode: 'cors', credentials: 'include'});
+        if(req.ok){
+            const text = await req.text();
+            const old = document.querySelector('#new-address');
+            let modal = document.createRange().createContextualFragment(text);
+            if(old) old.parentNode.replaceChild(modal, old);
+            else document.body.appendChild(modal);
+            document.querySelector('#new-address').classList.add('visible');
+            return;
+        }
+        const json = await req.json();
+        // console.debug(json);
+
+    },
+    setAddress: function(){
         const _id = this._elem.getAttribute('data-address');
         const address = document.querySelector(`[data-id="${_id}"]`);
         document.getElementById('address-id').value = _id;

@@ -19,7 +19,7 @@ class Checkout extends Table {
         $cart->vat = $items[0]->vat;
         $cart->status = $items[0]->status;
         $cart->items = $items;
-        $cart->delivery = $items[0]->delivery !== null ? json_decode($items[0]->delivery) :  (object)['type'=>$items[0]->delivery_name, 'cost' => $items[0]->com_shipping];
+        $cart->delivery = $items[0]->delivery !== null ? json_decode($items[0]->delivery) :  (object)['type'=>$items[0]->delivery_name, 'cost' => $items[0]->com_shipping];        
         $cart->bill = json_decode($items[0]->billing ?? '{}');
         $cart->coupon = json_decode($items[0]->coupon);
         $cart->invoice = $items[0]->invoice;  
@@ -47,7 +47,36 @@ class Checkout extends Table {
                 'rebate',   CASE WHEN bc.rebate IS NOT NULL THEN bc.rebate ELSE '0.00' END,
                 'payLater', CASE WHEN bc.deferred_payment IS NOT NULL THEN bc.deferred_payment ELSE 0 END,
                 'type',  CASE WHEN bc.id IS NOT NULL THEN 'pro' ELSE 'std' END,
-                'email', u.email
+                'email', u.email,
+                'shipping_at',(   
+                    SELECT JSON_OBJECT(
+                    'firstname', CASE WHEN au.firstname IS NOT NULL THEN au.firstname ELSE u.firstname END,
+                    'lastname', UPPER(CASE WHEN au.lastname IS NOT NULL THEN au.lastname ELSE u.lastname END),
+                    'company', UPPER(CASE WHEN au.company IS NOT NULL THEN au.company ELSE bc.company END),
+                    'fullname', CONCAT_WS(' - ', UPPER(CASE WHEN au.company IS NOT NULL THEN au.company ELSE bc.company END), CONCAT_WS(' ', CASE WHEN au.firstname IS NOT NULL THEN au.firstname ELSE u.firstname END, UPPER(CASE WHEN au.lastname IS NOT NULL THEN au.lastname ELSE u.lastname END))),
+                    'phone', CASE WHEN au.cellphone IS NOT NULL THEN  au.cellphone ELSE u.cellphone END,
+                    'phone2', CASE WHEN au.phone IS NOT NULL THEN  au.phone ELSE u.phone END,
+                    'email', au.email,
+                    'address', JSON_OBJECT( 
+                        'id', a.id,                           
+                        'address_line_1', a.line1,
+                        'address_line_2', a.line2,
+                        'admin_area_1', a.line4,
+                        'admin_area_2', a.city,
+                        'postal_code', a.zipcode,
+                        'country_code', UPPER(ac.country_iso),
+                        'country_name',  UPPER(ac.name_fr)
+                    ),
+                    'flag', CONCAT('/img/flags/1x1/', CASE WHEN ac.id IS NULL THEN 'fr' ELSE LOWER(ac.country_iso) END, '.svg')         
+                    )
+                    FROM address_user au
+                    LEFT JOIN  addresses a ON (a.id = au.address)
+                    LEFT JOIN country ac ON ac.id = a.country 
+                    WHERE au.user = u.id
+                    AND au.is_active = 1                    
+                    ORDER BY au.is_delivery DESC, au.address DESC
+                    LIMIT 1 
+                )
             ) AS 'customer',  
             CASE WHEN o.com_shipping IS NULL THEN 0.00 ELSE o.com_shipping END AS 'com_shipping', 
             delivery_type.name AS 'delivery_name',      
@@ -157,7 +186,7 @@ class Checkout extends Table {
                 'flag', CONCAT('/img/flags/1x1/', CASE WHEN a_c.id IS NULL THEN 'fr' ELSE LOWER(a_c.country_iso) END, '.svg'),
                 'type', delivery_type.name,
                 'cost', CASE WHEN o.com_shipping IS NULL THEN 0.00 ELSE o.com_shipping END
-            ) END  AS 'delivery', 
+            ) END  AS 'delivery',            
             (SELECT 
                 JSON_OBJECT(
                     'firstname', CASE WHEN au.firstname IS NOT NULL THEN au.firstname ELSE u.firstname END,

@@ -25,11 +25,7 @@
         <label for="pickup">Récupérez votre colis directement en magasin</label>
         <b class="cost">Gratuit</b>
     </p> 
-    <div id="pickup-address" data-id="52742">
-        <p class="address_line_1">KUTVEK</p>
-        <p class="address_line_2">ZA Pont de Vaux Est</p>
-        <p><span class="postal_code">01190</span><span class="admin_area_2">Saint Bénigne</span></p>
-    </div>
+    <?=$cart->pickup_address;?>        
 </div>
 </div>
 <div class="accordion">
@@ -50,8 +46,7 @@
             <input name="admin_area_2" id="search-city" type="text" class="field-input" data-i18n="city" value="<?=$cart->default_city;?>" required />
         </div>
         <input type="hidden" name="country_code" value="FR"/>                       
-        <button class="contained dark" type="submit"><span class="icon material-symbols-rounded">&#xe8b6;</span> Rechercher</button>
-    
+        <button class="contained dark" type="submit"><span class="icon material-symbols-rounded">&#xe8b6;</span> Rechercher</button>    
     </form>
     <div class="map-container">
         <div class="sidebar">                              
@@ -63,32 +58,34 @@
 </div>                   
 </div>     
 <div class="accordion">
-<input type="checkbox" name="shipping_method[]"  id="home-method" />    
-<label for="home-method" class="header">
-    <span class="icon material-symbols-rounded">&#xe558;</span>
-    <span data-i18n="">Livraison à domicile</span>
-    <span class="icon material-symbols-rounded">&#xe316;</span>
-</label>                         
-<div class="content">
-    <p class="cost-line">
-        <input type="radio" name="delivery[cost]" data-ctrl="delivery.setAddress" value="13" id="classic" class="onchange" data-type="4" data-address="<?=$cart->addressId();?>" form="checkout-next" required />
-        <label for="classic">livraison en boite à lettre</label>
-        <b class="cost">13 €</b>
-    </p>
-    <p class="cost-line">
-        <input type="radio" name="delivery[cost]" data-ctrl="delivery.setAddress" value="18" id="signature" class="onchange" data-type="4" data-address="<?=$cart->addressId();?>" form="checkout-next" required />
-        <label for="signature">remise contre signature</label>
-        <b class="cost">18 €</b>
-    </p>
-    <p class="cost-line">
-        <input type="radio" name="delivery[cost]" data-ctrl="delivery.setAddress" value="22" id="express" class="onchange" data-type="4" data-address="<?=$cart->addressId();?>" form="checkout-next" required />
-        <label for="express">livraison express</label>
-        <b class="cost">22 €</b>
-    </p>                    
-    <?=$cart->delivery_address;?>                           
+    <input type="checkbox" name="shipping_method[]"  id="home-method" />    
+    <label for="home-method" class="header">
+        <span class="icon material-symbols-rounded">&#xe558;</span>
+        <span data-i18n="">Livraison à domicile</span>
+        <span class="icon material-symbols-rounded">&#xe316;</span>
+    </label>                         
+    <div class="content">
+        <p class="cost-line">
+            <input type="radio" name="delivery[cost]" data-ctrl="delivery.setAddress" value="13" id="classic" class="onchange" data-type="4" data-address="<?=$cart->customer_address_id;?>" form="checkout-next" required />
+            <label for="classic">livraison en boite à lettre</label>
+            <b class="cost">13 €</b>
+        </p>
+        <p class="cost-line">
+            <input type="radio" name="delivery[cost]" data-ctrl="delivery.setAddress" value="18" id="signature" class="onchange" data-type="4" data-address="<?=$cart->customer_address_id;?>" form="checkout-next" required />
+            <label for="signature">remise contre signature</label>
+            <b class="cost">18 €</b>
+        </p>
+        <p class="cost-line">
+            <input type="radio" name="delivery[cost]" data-ctrl="delivery.setAddress" value="22" id="express" class="onchange" data-type="4" data-address="<?=$cart->customer_address_id;?>" form="checkout-next" required />
+            <label for="express">livraison express</label>
+            <b class="cost">22 €</b>
+        </p>                         
+        <?=$cart->customer_address;?>
+        <div class="edit-address">
+            <a href="<?=$this->url('checkout.addShippingAddress', ['queries' => ['id'=>$cart->id]]);?>" class="btn outlined primary click" data-ctrl="delivery.addShippingAddress"><span class="material-symbols-rounded">&#xe745;</span><span data-i18n="modify-address">Modifier l'adresse</span></a>
+        </div>                         
+    </div>
 </div>
-</div>
-
 <div class="accordion">  
 <input type="checkbox" id="debug-method" />                 
 <label for="debug-method" class="header">
@@ -102,14 +99,18 @@
 </div>            
 </div>             
 <div id="checkout" class="checkout-info">
-<p class="cost-line">
-<b data-i18n="sub-total">Sous-total</b>
-<span id="item-total"><?=$cart->amount->breakdown->item_total->format;?></span>                
-</p>
+    <?php if($cart->amount->breakdown->discount->value > 0):?>
+        <p class="cost-line">
+            <b data-i18n="sub-total">Sous-total</b>
+            <span id="item-total"><?=$cart->amount->breakdown->item_total->format;?></span>
+        </p>
+        <p class="cost-line"><b data-i18n="taxes-rate">Taxes / TVA : </b><span><?= $cart->amount->breakdown->tax_total->format;?></span></p>   
+    <?php endif; ?>
+<p class="cost-line"><b data-i18n="delivery">Livraison</b><span class="shipping-cost"><?= $cart->amount->breakdown->shipping->format;?></span></p>
 <?php if($cart->amount->breakdown->discount->value > 0): $c = count($cart->discounts);?>
 <p class="cost-line discounts">
     <b>Réductions : </b>
-    <span class="amount negative"><?= $cart->amount->breakdown->discount->format;?></span>
+    <b class="amount negative"><?= $cart->amount->breakdown->discount->format;?></b>
 </p>
 <?php for ($i=0; $i < $c; $i++): $discount = $cart->discounts[$i];?>
     <p class="cost-line">                                                       
@@ -117,14 +118,7 @@
         <small class="negative"><?= $discount->value_format; ?></small>
     </p>
 <?php endfor; ?>
-<?php endif; ?>
-<p class="cost-line"><b>Taxes : </b>
-<span><?= $cart->amount->breakdown->tax_total->format;?></span>
-</p>
-<p class="cost-line">
-<b>Livraison</b>
-<span class="shipping-cost"><?= $cart->amount->breakdown->shipping->format;?></span>
-</p>  
+<?php endif; ?>  
 <div class="shipping-address"></div>  
 <p class="cost-line cost-total"><b>Total : </b><b id="total-amount"><?= $cart->amount->value_format;?></b></p>
 <div>

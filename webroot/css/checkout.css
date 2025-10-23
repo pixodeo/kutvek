@@ -57,9 +57,6 @@ h1 span.step {
     background-color: #689F38;
 }
 
-
-
-
 .checkout-actions {
 	grid-column: 1 / span 12;
     position: sticky;
@@ -72,7 +69,10 @@ h1 span.step {
 .checkout-voucher {margin-top: 3.2rem; margin-bottom: 4.8rem;}	
 p.cost-line {display: flex;justify-content: space-between;}
 p.cost-line label {padding-left:1.2rem;}
+p.cost-line label::first-letter {text-transform: capitalize;}
 b.cost {margin-right:0;margin-left:auto;}
+span.amount.negative::before,b.amount.negative::before, small.amount.negative::before { content: '-';}
+small.discount {font-weight: 600;text-transform: uppercase;padding: 0 0.8rem;color: #FF0000;}
 .cost-line.cost-total {margin-top: 3.2rem;}
 .checkout-header {
     display: flex;   
@@ -83,6 +83,7 @@ b.cost {margin-right:0;margin-left:auto;}
     background-color: #000000;
     padding-top: .8rem;
     padding-left: .8rem;
+    z-index: 10;
 }
 .checkout-header .back-to-site img {height: 4.8rem;width: auto;}
 .checkout-header > .continue {max-width: 24rem;}
@@ -106,6 +107,12 @@ b.cost {margin-right:0;margin-left:auto;}
 .cart-item .item-delete {width: 4.8rem;height: 4.8rem;font-size: 1.6rem;line-height: 4.8rem;vertical-align:bottom;padding-left:.8rem;}
 .cart-item .item-delete i {font-size: 3.2rem;}
 .pad2 {padding: 20px;color:#404040;}
+.shipping-address, .address{
+    margin-top: 2.4rem;
+    padding-left: 1.2rem;
+    font-size: 1.4rem;
+}
+.shipping-address > .title, .address > .title {display:block; margin-bottom:.8rem; color:#24445C;font-weight: 600;}
 .map {   
     top: 0;
     right: 0; 
@@ -118,14 +125,15 @@ b.cost {margin-right:0;margin-left:auto;}
 .map button{ min-width: auto !important;}
 .heading {background: #fff;border-bottom: .2rem solid #eee;}
 .heading > h2 {font-size: 2.4rem;margin: 0;}
-#search-place {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(24rem, 36rem));
-    align-items: end;   
-}
+
 #search-place > div {margin: 0!important;}
 #search-place input,#search-place button {height: 4rem !important;}
-#search-place button {max-width: 24rem;}
+#search-place button {
+    max-width: 24rem;
+    margin-left: 1.2rem;
+    margin-top: 1.2em;
+    cursor: pointer;
+}
 .sidebar {min-width: 32rem; max-width: 36rem;}
 .listings .item {
     flex-direction: column;
@@ -145,6 +153,8 @@ b.cost {margin-right:0;margin-left:auto;}
 .listings .item.active .title,
 .listings .item .title:hover { color: #24445c; }
 .listings .item.active {background-color: #f8f8f8;}
+.edit-address {margin: 2.4rem 0;}
+.edit-address .btn {height:4.8rem;}
 .opening {font-size:1.2rem;}
 .listings::-webkit-scrollbar {
     width: 3px;
@@ -244,6 +254,12 @@ label.carrier + input[type="radio"] {display: none;}
     .checkout-actions.pay {grid-column: 1 / span 9;}
     .delivery-methods, .payment-methods {grid-column: 1 / span 9;padding-right: 2.4rem;}
     .checkout-info {grid-column:  10 / span 3;padding-left: 2.4rem;}
+    #search-place {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(24rem, 36rem));
+        align-items: end;   
+    }
+    #search-place button {margin-top:0;}
     .map-container {
         display: flex;
         position: relative;  

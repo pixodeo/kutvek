@@ -26,7 +26,7 @@ class Cart extends Entity {
     }
 
     public function addressId(){
-        return property_exists($this->delivery, 'address') ? $this->delivery->address->id : (property_exists($this->bill, 'address') ? $this->bill->address->id : false);
+        return property_exists($this->delivery, 'address') ? 'd-'.$this->delivery->address->id : (property_exists($this->bill, 'address') ? 'd-'.$this->bill->address->id : false);
     }
 
 	private function _delivery_address(){
@@ -40,9 +40,9 @@ class Cart extends Entity {
         $phones = array_filter([$this->delivery->phone, $this->delivery->phone2]);
         $contact = implode(' / ', $phones);
         return <<<TEXT
-        <div id="personal-address" data-id="{$address['id']}" >
+        <div id="personal-address" class="address" data-id="d-{$address['id']}" >
         <p class="address-head">$head</p>
-        <p><b>{$name}</b><p>
+        <p class="title">{$name}<p>
         $line_1
         $line_2
         $line_3
@@ -51,8 +51,32 @@ class Cart extends Entity {
         TEXT;     
     }
 
-    
+    private function _customer_address(){        
+        $address = (array)$this->customer->shipping_at->address;  
+        if(empty($address)) return '';
+        $this->customer_address_id =  "d-{$address['id']}";     
+        $line_1 = !empty($address['address_line_1']) ? "<p>{$address['address_line_1']}</p>" : "";
+        $line_2 = !empty($address['address_line_2']) ? "<p>{$address['address_line_2']}</p>" : "";
+        $line_3 = isset($address['admin_area_1']) ? "<p>{$address['admin_area_1']}, {$address['admin_area_2']}, {$address['postal_code']}, {$address['country_name']} </p>" : "<p>{$address['admin_area_2']}, {$address['postal_code']}, {$address['country_name']} </p>"; 
+        $name =  $this->customer->shipping_at->fullname;
+        $phones = array_filter([$this->customer->shipping_at->phone, $this->customer->shipping_at->phone2]);
+        $contact = implode(' / ', $phones);
+        return <<<TEXT
+        <div id="personal-address" class="address" data-id="d-{$address['id']}" >        
+        <p class="title">{$name}<p>
+        $line_1
+        $line_2
+        $line_3
+        <p>$contact</p>
+        </div>
+        TEXT;     
+    }
 
+    private function _customer_address_id(){
+        $address = (array)$this->customer->shipping_at->address;  
+        if(empty($address)) return '';
+        return "d-{$address['id']}";    
+    }
 
     private function _default_zipcode(){
         $address = (array)$this->delivery->address;
@@ -80,12 +104,15 @@ class Cart extends Entity {
     }
 
     private function _pickup_address() {
+        $name = $this->customer->fullname ?? '';
         return <<<ADDRESS
+        <div id="pickup-address" class="address" data-id="52742">
+        <p class="title">{$name}<p>
         <p class="address_line_1">KUTVEK</p>
         <p class="address_line_2">ZA Pont de Vaux Est</p>
-        <p><span class="postal_code">01190</span><span class="admin_area_2">Saint Bénigne</span></p>
+        <p><span class="postal_code">01190</span>. <span class="admin_area_2">Saint Bénigne</span>, <span>FR</span></p>
+        </div>
         ADDRESS;
-
     }
 
     public function amount(){

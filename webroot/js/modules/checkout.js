@@ -36,8 +36,7 @@ const checkout = {
 		if(req.ok){
 			const text = await req.text();
 			const old = document.querySelector('#cart-preview');
-			let cart = document.createRange().createContextualFragment(text);
-			
+			let cart = document.createRange().createContextualFragment(text);			
 			if(old) old.parentNode.replaceChild(cart, old);
 			else document.body.appendChild(cart);
 
