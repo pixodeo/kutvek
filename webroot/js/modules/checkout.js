@@ -53,6 +53,14 @@ const checkout = {
 	validate: async function() {		
 		const url = decodeURIComponent(window.atob(this._elem.getAttribute("data-obf")));
 		console.log(url);
+		const data = new FormData(this._elem);
+		const req = await fetch(url, {method: 'POST', mode: 'cors', credentials: 'include', body: data, redirect: 'follow'});
+		if(req.redirected)
+        {
+            window.location.assign(req.url); // on a la valeur de location en 3xx
+            return;
+        }
+		const json = await req.json();
 	},
 	showButton: function(){
 		const btn = document.getElementById(this._elem.getAttribute('data-btn'));

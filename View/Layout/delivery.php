@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="<?= $this->auto_version('/css/front/popup.css'); ?>" type="text/css" media="screen">
 	<link rel="stylesheet" href="<?= $this->auto_version('/css/front/grid.css'); ?>" type="text/css" media="screen">	
 	<link rel="stylesheet" href="<?= $this->auto_version('/css/grid-layout.css'); ?>" type="text/css" media="screen">	
-	<link rel="stylesheet" href="<?= $this->auto_version('/css/checkout.css'); ?>" media="screen">
+	<link rel="stylesheet" href="<?= $this->auto_version('/css/shipping.css'); ?>" type="text/css" media="screen">
 	<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.css' rel='stylesheet' />  
 	<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.0.1/mapbox-gl-geocoder.css' type='text/css' /> 	
 	<link rel="preconnect" href="https://fonts.googleapis.com">

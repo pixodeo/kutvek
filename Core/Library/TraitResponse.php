@@ -63,9 +63,9 @@ trait TraitResponse {
         if(strpos($this->_view, '.')) $this->_view = ucfirst($this->_view);
         
         if(!$this->_path) $dir = VIEW_PATH;
-        else $dir = $this->_path.DS.'View';
+        else $dir = $this->_path.DS.'View'.DS;
 
-        require($dir . DS . str_replace('.', DS, $this->_view) . '.php');
+        require($dir .  str_replace('.', DS, $this->_view) . '.php');
         return ob_get_clean();
     }
 

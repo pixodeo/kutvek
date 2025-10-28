@@ -89,6 +89,16 @@ $router->delete('/carts/:id/items/:item', 'cart.deleteItem')
 ->with('id', '([0-9]+)')
 ->with('item', '([0-9]+)');
 
+// Auth
+$router->post('/login', 'auth.signIn');
+$router->post('/signin', 'auth.signIn');
+$router->get('/login', 'auth.logIn');
+$router->get('/logout', 'auth.logOut');
+
+// Customer
+$router->get('/account/dashboard', 'customer.dashboard');
+
+
 // Checkout
 $router->get('/checkout/cart', 'checkout.cart')
     ->middleware('PoweredBy');
@@ -97,6 +107,9 @@ $router->get('/checkout/cart-overview', 'cart.overview')
     ->middleware('PoweredBy');  
 
 $router->get('/checkout/shipping', 'checkout.shipping')
+    ->middleware('PoweredBy'); 
+
+$router->post('/checkout/shipping', 'checkout.shipping')
     ->middleware('PoweredBy');  
 
 $router->get('/checkout/pay', 'checkout.payment')
@@ -121,7 +134,10 @@ $router->get('/checkout/next', 'checkout.next')
     ->middleware('PoweredBy');
 
 $router->get('/cart/stores', 'checkout.mapboxPoints')
-    ->middleware('PoweredBy');    
+    ->middleware('PoweredBy'); 
+
+$router->get('/chronospost/relay-info', 'checkout.chronopost.relayPointInfo')
+    ->middleware('PoweredBy');        
 
 $router->get('vehicle/:id/years', 'vehicle.graphicYears') 
     ->with('id', '([0-9]+)')

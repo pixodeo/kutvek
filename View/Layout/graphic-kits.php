@@ -14,6 +14,7 @@
 	<link rel="icon" type="image/x-icon" href="/favicon.ico">
 	<link rel="stylesheet" href="<?= $this->auto_version('/css/front/basics.css') ?>" type="text/css" media="screen">	
 	<link rel="stylesheet" href="<?= $this->auto_version('/css/front/header.css'); ?>" type="text/css" media="screen">	
+	<link rel="stylesheet" href="<?= $this->auto_version('/css/cart-overview.css'); ?>" type="text/css" media="screen">	
 	<link rel="stylesheet" href="<?= $this->auto_version('/css/product.css') ?>" type="text/css" media="screen">
 	<link rel="stylesheet" href="<?= $this->auto_version('/css/options.css') ?>" type="text/css" media="screen">	
 	<link rel="stylesheet" href="<?= $this->auto_version('/css/event/tabs.css'); ?>" type="text/css" media="screen">	
@@ -56,7 +57,7 @@
         </div>        
     </div>
     <div class="baseline">
-        <a href="<?= $this->uri('page.homepage', []) ?>" class="logo"><img class="logo-kutvek" src="<?= HALLOWEEN === 1 ? '/img/charter/logo_kutvek_orange.png' : '/img/charter/logo_kutvek.png';?>" alt="Logo KUTVEK"></a>
+        <a href="<?= $this->url('page.homepage', []) ?>" class="logo"><img class="logo-kutvek" src="<?= HALLOWEEN === 1 ? '/img/charter/logo_kutvek_orange.png' : '/img/charter/logo_kutvek.png';?>" alt="Logo KUTVEK"></a>
         <div class="red">
             <img class="logo-footer" src="/img/charter/logo-footer.png" />
             <?=$this->topNav();?>
@@ -66,19 +67,15 @@
                 <div class="action search" id="search-doofinder">                 
                 <span class="icon material-symbols-rounded"></span>
                 </div>
-                <span data-obf="<?= base64_encode($this->uri('identities.login')) ?>" class="action user-account">
-                    <span class="click obf" id="user-name" data-i18n="login" data-obf="<?= base64_encode($this->uri('customers.dashboard')) ?>" data-ctrl="user.dashboard"><span class="icon material-symbols-rounded account-circle">&#xe853;</span></span>
-                </span>
+                <span class="obflink pointer" id="user-name" data-i18n="login" data-obf="<?= base64_encode($this->url('customer.dashboard')) ?>"><span class="icon material-symbols-rounded account-circle">&#xe853;</span></span>
                 <div class="action contact-us">
                     <label class="icon material-symbols-rounded" for="see-phone"></label>
                     <input type="checkbox" id="see-phone" hidden />
                     <a class="phone" href="tel:<?= $this->intlphone;?>"><span ><?=$this->phone; ?></span></a>
                 </div>   <!--  $this->widgetSlugs($this->getContent()->slugs); -->
                 </div>          
-                <?php $obf = $this->uri('checkout.cart', ['queries'=>['id'=>':id']]); ?>
-                <span id="cart-btn" data-count="0" class="cart action click" data-ctrl="checkout.cart" data-obf="<?= base64_encode($obf) ?>">
-                    <span class="icon material-symbols-rounded">&#xe8cc;</span>                    
-                </span>
+                <?php $obf = base64_encode($this->url('cart.overview', ['queries'=>['id'=>':id']])); ?>
+                 <a id="shopping-cart" class="click shopping-cart" data-obf="<?=$obf;?>" data-count="0" href="#" data-ctrl="cart.overview"><span class="icon material-symbols-rounded">&#xe8cc;</span>  </a>
                 <a href="#" class="menu click" data-ctrl="app.menu" data-target="main-nav"><span class="icon material-symbols-rounded">&#xe5d2;</span></a>
             </div>
         </div>
@@ -88,6 +85,7 @@
 	<main>
 		<?= $this->_content; ?>
 	</main>	
+	<aside id="cart-preview" class="cart-overview"></aside>
 	<?= $this->footer(); ?>	
 	<script type="module" src="<?= $this->auto_version('/js/main.js') ?>"></script>
 	<script src="<?= $this->auto_version('/js/section.js') ?>"></script>

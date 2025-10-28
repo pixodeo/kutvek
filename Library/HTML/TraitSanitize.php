@@ -3,16 +3,16 @@ declare(strict_types=1);
 namespace Library\HTML;
 
 trait TraitSanitize {
-	public function sanitizeSpecialChars(?string $string = null): ?string
+	public function sanitizeSpecialChars(?string $string = null, bool $double_encode = true): ?string
 	{
 		if($string === null) return '';
-		return !empty(trim($string)) ? htmlspecialchars($string, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML5) : null;
+		return !empty(trim($string)) ? htmlspecialchars($string, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML5, null , $double_encode) : null;
 	}
 
-	public function sanitizeEntities(?string $string = null): ?string
+	public function sanitizeEntities(?string $string = null, bool $double_encode = true): ?string
 	{
 		if($string === null) return '';
-		return !empty(trim($string)) ? htmlentities($string, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML5) : null;
+		return !empty(trim($string)) ? htmlentities($string, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML5, null, $double_encode) : null;
 	}
 
 	public function entities_decode(?string $string = null): ?string

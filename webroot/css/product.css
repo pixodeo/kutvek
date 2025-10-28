@@ -24,7 +24,7 @@
 			font-family: 'Montserrat';		
 }
 		main {padding: 1.6rem;}
-		article.item {
+		article.product {
 			display: grid;
 			row-gap: 1.6rem;
 			margin-bottom: 2.4rem;
@@ -273,7 +273,7 @@
     		h1.designation {/*font-size: 3.2rem;*/}
     		.options {justify-content: start; justify-content: flex-start;}
 
-			article.item {				
+			article.product {				
 			    grid-template-columns: 37.5% 37.5% 1fr;
 			    column-gap: .8rem;			    
 			}

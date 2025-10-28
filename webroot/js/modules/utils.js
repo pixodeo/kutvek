@@ -52,8 +52,11 @@ const utils = {
     {       
         const popup = window.open(this._elem.getAttribute('data-uri') || this._elem.href, 'example', 'width=1024,height=768', 'location=no');  
     },
-    autoHeight: function(){
+   /* autoHeight: function(){
         this._elem.parentNode.parentNode.classList.toggle('auto-height');
+    },*/
+    autoHeight: function(){
+        document.getElementById('form-filter').classList.add('visible');
     },
     picker: function() {
         const picker = document.querySelector(this._elem.hash);

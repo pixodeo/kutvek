@@ -36,28 +36,9 @@
 			border-radius: 50%;
 			background-color: #000000;
 			font-family: 'Montserrat';		
-		}
-		.cards {
-			display: grid;
-		    grid-template-columns: repeat(auto-fill, 29rem);
-		    column-gap: 1.6rem;
-		    row-gap: 1.6rem;
-		}
-		.card {position: relative;display: flex;flex-direction: column;min-height: 31.05rem;padding:1.2rem;}
-		.card a {position: absolute; top:0; right:0; bottom: 0; left: 0;}
-		.card > div {padding:1.2rem;}
-		.card img {background-color: #eee; height: auto; width:29rem;}
-		.card .designation {font-size: 2rem;margin-top:1.6rem; margin-bottom:.8rem;line-height: 1.2;}
-		.card .prices {
-			font-size: 1.4rem;   
-    		font-family: 'Montserrat';
-    		font-weight: 500;
-    		margin: auto 0 0 0;
-    		flex: unset;    		
-    		text-align: right;
-		}
-		.prices .max-price::before {content: " - ";}	
-			
+		}		
+		.card > div {padding:1.2rem;}		
+		.prices .max-price::before {content: " - ";}		
 		.section-title {margin-top: 3.2rem;font-weight: 500;}
 		.short-description a, .description a {  text-decoration: underline; color: #000000; font-weight:500;}
 		.widget-filter label {font-size: 1.2rem;padding-left: .8rem; vertical-align: bottom;}	
@@ -113,9 +94,7 @@
                 <div class="action search" id="search-doofinder">                 
                 <span class="icon material-symbols-rounded"></span>
                 </div>
-                <span data-obf="<?= base64_encode($this->uri('identities.login')) ?>" class="action user-account">
-                    <span class="click obf" id="user-name" data-i18n="login" data-obf="<?= base64_encode($this->uri('customers.dashboard')) ?>" data-ctrl="user.dashboard"><span class="icon material-symbols-rounded account-circle">&#xe853;</span></span>
-                </span>
+                <span class="obflink pointer" id="user-name" data-i18n="login" data-obf="<?= base64_encode($this->url('customer.dashboard')) ?>"><span class="icon material-symbols-rounded account-circle">&#xe853;</span></span>
                 <div class="action contact-us">
                     <label class="icon material-symbols-rounded" for="see-phone"></label>
                     <input type="checkbox" id="see-phone" hidden />
@@ -123,7 +102,7 @@
                 </div>   <!--  $this->widgetSlugs($this->getContent()->slugs); -->
             </div>          
                 <?php $obf = base64_encode($this->uri('cart.overview', ['queries'=>['id'=>':id']])); ?>
-                <a id="shopping-cart" class="click" data-obf="<?=$obf;?>" data-count="0" href="#" data-ctrl="cart.overview"><span class="icon material-symbols-rounded">&#xe8cc;</span></a>
+                <a id="shopping-cart" class="shopping-cart click" data-obf="<?=$obf;?>" data-count="0" href="#" data-ctrl="cart.overview"><span class="icon material-symbols-rounded">&#xe8cc;</span></a>
 	            <a href="#" class="menu click" data-ctrl="app.menu" data-target="main-nav"><span class="icon material-symbols-rounded">&#xe5d2;</span></a>
             </div>
         </div>

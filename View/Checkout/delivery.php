@@ -130,7 +130,7 @@
 <input type="hidden" class="input-amount" name="amount[tax]" value="<?=$cart->amount->breakdown->tax_total->value;?>">
 </div>            
 <div class="checkout-actions">
-<?php $url = base64_encode($this->uri('checkout.payment', ['fqdn' => 1,'queries'=>['id'=> $cart->id]]));?> 
+<?php $url = base64_encode($this->url('checkout.shipping', ['fqdn' => 1,'queries'=>['id'=> $cart->id]], 'POST'));?> 
 <form id="checkout-next" data-obf="<?=$url;?>" data-ctrl="checkout.next">
     <input type="hidden" id="address-id" name="delivery_address" />
     <input type="hidden" id="type-id" name="delivery_type" />

@@ -8,9 +8,10 @@ class Form {
     public function text(string $name, array $opts = []): string
     {            
         $label = isset($opts['label']) ? $opts['label'] : false ;
-        $required = false;
-        $for = $opts['id'] ?? $name;
+        $required = false; 
+        $disabled = false;       
         $id = $opts['id'] ?? $name;
+        $for = $id;
         unset($opts['id']);
         $direction = $opts['direction'] ?? '';
         $attributes = ['type' => ' type="text"']; 
@@ -19,6 +20,8 @@ class Form {
             $required = in_array('required', $opts['attributes']);
             unset($opts['attributes']);
         } 
+        if(in_array('required', $opts)){$required = true;$attributes[] = 'required';}
+        if(in_array('disabled', $opts)){$disabled = true;$attributes[] = 'disabled';}
 
         $o = ['attributes' => $attributes , 'value' => null, 'class' => [], 'access' => []];  
         $params = array_merge($o, $opts);
@@ -34,6 +37,7 @@ class Form {
         if($required) {
             $wrapper .= ' required ';
         }
+        
         $wrapper .= implode(' ', $params['class']);
         $wrapper .= '">';
         if($label) $wrapper .= "<label for=\"{$for}\">{$label}</label>";
@@ -41,13 +45,52 @@ class Form {
         $wrapper .= '</div>';
         return $wrapper;
     }
+    public function email(string $name, array $opts = []): string
+    {            
+        $label = isset($opts['label']) ? $opts['label'] : false ;
+        $required = false; 
+        $disabled = false;       
+        $id = $opts['id'] ?? $name;
+        $for = $id;
+        unset($opts['id']);
+        $direction = $opts['direction'] ?? '';
+        $attributes = []; 
+        if(array_key_exists('attributes', $opts)){
+            $attributes = array_merge($attributes, $opts['attributes']);
+            $required = in_array('required', $opts['attributes']);
+            unset($opts['attributes']);
+        } 
+        if(in_array('required', $opts)){$required = true;$attributes[] = 'required';}
+        if(in_array('disabled', $opts)){$attributes[] = 'disabled';}
 
+        $o = ['attributes' => $attributes , 'value' => null, 'class' => [], 'access' => []];  
+        $params = array_merge($o, $opts);
+
+        $input = '<input type="email" name="' . $name .'" id="' .$id . '" ';
+        if(isset($params['placeholder'])) $input .= ' placeholder="' . $params['placeholder'] . '"';
+        $input .= implode(' ', $params['attributes']);
+        if($params['value'] !== null) $input .= ' value="' . $params['value'] . '" ';
+        $input .= implode(' ', $params['access']);
+        $input .= ' />';
+
+        $wrapper = '<div class="field-wrapper ' . $direction;
+        if($required) {
+            $wrapper .= ' required ';
+        }
+        
+        $wrapper .= implode(' ', $params['class']);
+        $wrapper .= '">';
+        if($label) $wrapper .= "<label for=\"{$for}\">{$label}</label>";
+        $wrapper .= $input;
+        $wrapper .= '</div>';
+        return $wrapper;
+    }
     public function password($name, array $opts = []){
         $attributes = array('type' =>'type="password"');
         if(array_key_exists('attributes', $opts))
             $attributes = array_merge($attributes, $opts['attributes']);      
         $opts['attributes'] = $attributes;       
-        return $this->input($name, $opts);
+        return $this->text($name, $opts);
     }
 
     public function longText(string $name,  array $opts = []):string {
@@ -310,12 +353,14 @@ class Form {
     }
 
     public function checkbox(string $name, array $opts = []){         
-        $label = isset($opts['label']) ? $opts['label'] : false ;        
-        $for = $opts['id'] ?? $name;
+        $label = isset($opts['label']) ? $opts['label'] : false;   
+        $required = false;             
         $id = $opts['id'] ?? $name;
+        $for = $id;
         $direction = $opts['direction'] ?? '';
         unset($opts['id']);
-        $attributes = ['type' => ' type="checkbox"'];        
+        $attributes = ['type' => ' type="checkbox"'];  
+        if(in_array('required', $opts)){$required = true;}      
         if(array_key_exists('attributes', $opts)){
             $attributes = array_merge($attributes, $opts['attributes']);
             unset($opts['attributes']);
@@ -329,10 +374,8 @@ class Form {
         $input .= implode(' ', $params['access']);
 
         if(array_key_exists('checked', $params) && $params['checked'] > 0) 
-            $input .= ' checked';
-        
+            $input .= ' checked';        
         $input .= ' />';
-
         $wrapper = '<div class="field-wrapper checkbox ' . $direction . ' ';
         $wrapper .= implode(' ', $params['class']);
         $wrapper .= '">';
@@ -379,17 +422,19 @@ class Form {
         }
         $select .= implode(' ', $options);
         $select .= '</select>';
-        return $select;
-
-        
+        return $select;        
     }
 
     public function select(string $name, array $opts): string
     {       
         $required = false;
+        $disabled = false;
         if(array_key_exists('attributes', $opts)){
             $required = in_array('required', $opts['attributes']);
         }
+        if(in_array('required', $opts)){$required = true;$attributes[] = 'required';}
+        if(in_array('disabled', $opts)){$disabled = true;$attributes[] = 'disabled';}
+
         $uri = array_key_exists('data-uri', $opts) ? " data-uri=\"{$opts['data-uri']}\"" : '';
         unset($opts['data-uri']);
         $label = isset($opts['label']) ? $opts['label']: false ;
@@ -397,14 +442,11 @@ class Form {
         $css = $opts['class'] ?? [];
         $wrapper = isset($opts['wrapper']) ? $opts['wrapper'] : true;
         $opt_css = $opts['opt_class'] ?? [];
-        if(!empty($opt_css)): $opt_css = implode(' ', $opt_css);
-            
+        if(!empty($opt_css)): $opt_css = implode(' ', $opt_css);            
         else:
             $opt_css = null;
-        endif;     
-
-        $for = $opts['id'] ?? $name;
-        
+        endif; 
+        $for = $opts['id'] ?? $name;        
         $keys = $opts['keys'] ?? false;
         $dataset = $opts['dataset'] ?? false;
         unset($opts['keys']);

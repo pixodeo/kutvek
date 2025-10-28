@@ -1,4 +1,4 @@
-<article class="item">
+<article class="product">
 <div>
 	<div class="gallery" id="g-1" data-uri="<?=$this->url('product.gallery', ['fqdn'=>1,  'queries' => ['id' => ':id']]);?>">
 		<?php

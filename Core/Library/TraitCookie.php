@@ -17,9 +17,5 @@ trait TraitCookie {
 
     private function _base64url_decode($data) {
         return base64_decode(str_pad(strtr($data, '-_', '+/'), 4 - ((strlen($data) % 4) ?: 4), '=', STR_PAD_RIGHT));
-    }
-
-    public function is_expired(){
-        
-    }
+    }    
 }

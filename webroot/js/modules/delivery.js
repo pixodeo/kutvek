@@ -273,7 +273,30 @@ const delivery = {
         }
         const json = await req.json();
         // console.debug(json);
-
+    },
+    saveShippingAddress: async function(){
+        const body = new FormData(this._elem);
+        const req = await fetch(this._elem.action, {method: 'POST', mode: 'cors', credentials: 'include', body: body});
+        if(req.ok && req.status === 201){
+            //document.location.reload();
+        }
+    },
+    countryWithStates: function(){
+        let msg;
+        const selected = this._elem.options[this._elem.selectedIndex];
+        const field = document.getElementById('admin-area-1');
+        if(selected.getAttribute('data-with-states') > 0){
+            field.disabled = false;
+            field.parentNode.parentNode.classList.remove('hide');
+            msg = 'Country with states';
+        } 
+        else {
+            field.disabled = true;
+            field.parentNode.parentNode.classList.add('hide');
+            msg = 'Country without states';
+        }
+        document.getElementById('country-id').value = selected.getAttribute('data-country-id');
+        console.info(msg);
     },
     setAddress: function(){
         const _id = this._elem.getAttribute('data-address');

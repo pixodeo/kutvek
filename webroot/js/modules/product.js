@@ -82,6 +82,9 @@ const product = {
 		}
 		const json = await request.json();
 	},
+	closeFilters: function(){
+		this._elem.parentNode.classList.remove('visible');
+	},
 	addToCart: async function(){
 	//console.log(this._elem.action);
 		const form = this._elem;

@@ -5,7 +5,15 @@ use Core\Domain\Table;
 use Domain\Entity\Checkout\Cart;
 
 class Checkout extends Table { 
-    protected $table = '_order';   
+    protected $table = '_order'; 
+    protected int|false $userSessionId = false;
+    protected int $orderId;
+
+    public function setUserSessionId(int|false $userSessionId): void {
+        $this->userSessionId = $userSessionId;
+    }
+
+    public function setOrderId(int $id): void {$this->orderId = $id;}
 
     public function cart(int $id): ?Cart {
         $items = $this->items($id);
@@ -257,7 +265,7 @@ class Checkout extends Table {
             o.invoice
             FROM _order o 
             JOIN order_item oi  ON oi.id_order = o.id           
-            LEFT JOIN user u ON u.id = o.id_user
+            LEFT JOIN user u ON u.id = CASE WHEN o.id_user IS NOT NULL THEN o.id_user ELSE :uid END
             LEFT JOIN business_customer bc ON bc.id = u.id            
             LEFT JOIN addresses a ON a.id = (
                 CASE WHEN o.delivery_address IS NOT NULL THEN o.delivery_address 
@@ -277,7 +285,7 @@ class Checkout extends Table {
             WHERE o.id = :id ;
         ";
 
-        return $this->query($sql, ['id' => $order_id]);
+        return $this->query($sql, ['id' => $order_id, 'uid' => $this->userSessionId ? $this->userSessionId : null]);
     }
 
     public function state(int $id):int{
@@ -370,5 +378,32 @@ class Checkout extends Table {
             $tax_total += ($tax * $item->qty);    
         } 
         return ($item_total + $tax_total) >= $min_purchase;
-    }   
+    } 
+
+
+    public function countries(){
+        $sql ="SELECT c.id AS 'country_id',
+        c.country_iso AS 'country_code',
+        c.name_fr AS 'country_name',
+        c.states AS 'with_states'
+        FROM country c
+        JOIN country_domains c_d ON (c_d.country = c.id AND c_d.domain_name = :ws)
+        WHERE c_d.visible_on_preferences = 1
+        ORDER BY c_d.position_on_preferences DESC, c.name_fr ASC;";
+        return $this->query($sql, ['ws' => WEBSITE_ID]);
+    }
+
+    public function userId(): null|int {
+        $sql = "SELECT id_user FROM _order WHERE id = :id;";
+        $q = $this->query($sql,['id'=> $this->orderId ], true);
+        if($q) return $q->id_user;
+        return  null;
+    }
+
+    public function countryId(string $country_code = 'FR'): null|int{
+        $sql = "SELECT id FROM country WHERE country_iso = :c;";
+        $q = $this->query($sql,['c'=>$country_code], true);
+        if($q) return (int)$q->id;
+        return null;
+    }
 }
