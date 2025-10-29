@@ -229,6 +229,7 @@ class Router implements RouterInterface {
         $method = $method == 'UPDATE' ? 'PUT' : $method;
         if(array_key_exists('queries', $params)) $queries = $params['queries'];
         else $queries = [];
+
         $filter = array_filter(
             $this->routing[$method], 
             function($route)use($name, $params, $queries){ 
@@ -243,6 +244,7 @@ class Router implements RouterInterface {
                return  ($route->callable === $name && $_matchParams);
             }
         );
+        
         if(!empty($filter))
         {
             $route = array_pop($filter);            

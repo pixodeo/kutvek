@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="<?=$this->getLang();?>" data-layout="cart" data-currency="<?=$currency_code;?>">
+<html lang="<?=$this->getLang();?>" data-layout="payments" data-currency="<?=$currency_code;?>">
 <head>
 	<!-- Google Tag Manager -->
 	
@@ -19,20 +19,19 @@
 		span.label {font-family: 'Oswald';   font-size: 1.8rem;}
 		span.label + span {   font-size: 1.4rem;}		
 		.btn.contained.paypal, .btn.contained.pro {margin-top: 1.6rem;width: 100%;height: 4.8rem;max-width: 36rem;border-radius: .4rem !important;}
-		iframe.component-frame .paypal-button {border-radius:.1rem !important}	
-
+		iframe.component-frame .paypal-button {border-radius:.1rem !important}
 	</style>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,300&amp;family=Oswald:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 	<link rel="icon" type="image/x-icon" href="/favicon.ico">
 	<link rel="stylesheet" href="<?= $this->auto_version('/css/front/basics.css') ?>" type="text/css" media="screen">	
 	<link rel="stylesheet" href="<?= $this->auto_version('/css/event/tabs.css'); ?>" type="text/css" media="screen">	
 	<link rel="stylesheet" href="<?= $this->auto_version('/css/front/popup.css'); ?>" type="text/css" media="screen">
 	<link rel="stylesheet" href="<?= $this->auto_version('/css/front/grid.css'); ?>" type="text/css" media="screen">	
 	<link rel="stylesheet" href="<?= $this->auto_version('/css/grid-layout.css'); ?>" type="text/css" media="screen">
-	<link rel="stylesheet" href="<?= $this->auto_version('/css/checkout.css'); ?>" media="screen">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,300&amp;family=Oswald:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+	<link rel="stylesheet" href="<?= $this->auto_version('/css/checkout.css'); ?>" media="screen">	
 	<script src="https://www.paypal.com/sdk/js?components=buttons,hosted-fields&client-id=<?= $this->paypal->getClientID(); ?>&enable-funding=paylater&currency=<?= $this->paypal->getCurrencyCode(); ?>" data-client-token="<?= $this->paypal->getClientToken(); ?>"></script>
 </head>
 <body>
@@ -42,7 +41,7 @@
 	<?= $this->_content; ?>
 	<script type="module" src="<?= $this->auto_version('/js/main.js') ?>"></script>
 	<script type="module" src="<?= $this->auto_version('/js/modules/paypal.js') ?>"></script>
-	<script>	   		
+	<script>	
 		let orderId;
 		const storage = JSON.parse(localStorage.getItem('cart'));
 		const thanksUrl = document.getElementById('thanks').value;
@@ -94,7 +93,7 @@
 		    	const json = await req.json();
 		    	if(req.ok) {
 		    		console.log('ok');		   			
-		   			//window.location.assign(thanksUrl);
+		   			window.location.assign(thanksUrl);
 		   		}else {
 		   			console.log(json);
 		   		}

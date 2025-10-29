@@ -115,6 +115,9 @@ $router->post('/checkout/shipping', 'checkout.shipping')
 $router->get('/checkout/pay', 'checkout.payment')
     ->middleware('PoweredBy');
 
+$router->get('/checkout/thanks', 'checkout.thanks')
+    ->middleware('PoweredBy');
+
 $router->get('/checkout/:id/add-shipping-address', 'checkout.addShippingAddress')
     ->with('id', '([0-9]+)');
 $router->post('/checkout/:id/add-shipping-address', 'checkout.addShippingAddress')
@@ -125,6 +128,7 @@ $router->post('/checkout/:order/:psp', 'checkout.create')
     ->with('psp', '([a-z\-]+)')
     ->middleware('PoweredBy');
 
+
 $router->post('/checkout/:order/:psp/capture', 'checkout.capture')    
     ->with('order', '([0-9]+)')   
     ->with('psp', '([a-z\-]+)')
@@ -132,6 +136,10 @@ $router->post('/checkout/:order/:psp/capture', 'checkout.capture')
 
 $router->get('/checkout/next', 'checkout.next')
     ->middleware('PoweredBy');
+
+$router->get('/analytics/purchase', 'checkout.analytics.purchase')
+    ->middleware('PoweredBy');
+
 
 $router->get('/cart/stores', 'checkout.mapboxPoints')
     ->middleware('PoweredBy'); 

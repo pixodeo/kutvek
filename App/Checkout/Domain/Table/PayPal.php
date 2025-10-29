@@ -7,7 +7,6 @@ use Core\Domain\Table;
 class PayPal extends Table {
 
     public function items(int $order_id){
-        //$this->setEntity('Item');
         $sql = " SELECT
             DATE_FORMAT(o.created, '%d/%m/%Y %H:%i') AS 'created',
             o.id AS 'order_id',
@@ -30,88 +29,46 @@ class PayPal extends Table {
             ) AS 'customer',  
             CASE WHEN o.com_shipping IS NULL THEN 0.00 ELSE o.com_shipping END AS 'com_shipping', 
             delivery_type.name AS 'delivery_name',      
-            CASE 
-            WHEN o.delivery_type = 1 THEN (
-                SELECT 
-                JSON_OBJECT(                        
-                    'firstname', c_rc.firstname,
-                    'lastname', c_rc.lastname,
-                    'fullname', CONCAT_WS(' - ', UPPER(c_rc.company), CONCAT_WS(' ', c_rc.firstname, UPPER(c_rc.lastname))),
-                    'company', c_rc.company,
-                    'phone', c_rc.cellphone,
-                    'phone2', c_rc.phone,
-                    'address', JSON_OBJECT(
-                        'id', a.id,
-                        'postal_code', a.zipcode,
-                        'admin_area_2', a.city,
-                        'admin_area_1', UPPER(a.line4),
-                        'address_line_1', CONCAT_WS('<br>',  CONCAT_WS('',c_r.type, c_r.id), c_r.name, a.line1),
-                        'address_line_2', a.line2,
-                        'country_code', UPPER(a_c.country_iso),
-                        'country_name', UPPER(a_c.name_fr)
-                    ),
-                    'flag', CONCAT('/img/flags/1x1/', CASE WHEN a_c.id IS NULL THEN 'fr' ELSE LOWER(a_c.country_iso) END, '.svg'),
-                    'type', delivery_type.name,
-                    'cost', CASE WHEN o.com_shipping IS NULL THEN 0.00 ELSE o.com_shipping END
-                )
-                FROM chrono_relay c_r 
-                LEFT JOIN chrono_relay_customers c_rc ON (c_rc.chronoRelay = c_r.id AND c_rc.orderId = o.id)
-                WHERE c_r.address = o.delivery_address                      
-            ) 
-            WHEN o.delivery_type = 2 THEN (
-                SELECT 
-                JSON_OBJECT(         
-                    'address', JSON_OBJECT(                       
-                        'postal_code', a.zipcode,
-                        'admin_area_2', a.city,
-                        'admin_area_1', UPPER(a.line4),
-                        'address_line_1', a.line1,
-                        'address_line_2', a.line2,
-                        'country_code', UPPER(a_c.country_iso)                        
-                    ),   
-                    'name', JSON_OBJECT(
-                        'full_name', CONCAT_WS(' - ', UPPER(pickup.company), CONCAT_WS(' ', pickup.firstname, UPPER(pickup.lastname)))   
-                    ),
-                    'contact', JSON_OBJECT(
-                        'phone', pickup.phone,
-                        'cellphone', pickup.cellphone
-                    ),                
-                    'type', 'PICKUP_IN_PERSON',
-                    'cost', 0.00
-                )               
-                FROM pickup_customers pickup
-                WHERE pickup.orderId = o.id
-                ORDER BY pickup.id DESC 
-                LIMIT 1                     
-            ) 
-            WHEN o.delivery_type = 4 THEN JSON_OBJECT (                      
-                'address', JSON_OBJECT(                    
+            JSON_OBJECT (                
+                'address',
+                JSON_OBJECT(
+                    'id', a.id,                    
+                    'address_line_1', 
+                    CASE 
+                        WHEN o.delivery_type = 1 THEN a.relay_name
+                        ELSE a.line1 
+                    END,                     
+                    'address_line_2', 
+                    CASE 
+                        WHEN o.delivery_type = 1 THEN CONCAT_WS(' ', a.line1, a.line2)
+                        ELSE a.line2
+                    END,                                        
                     'postal_code', a.zipcode,
                     'admin_area_2', a.city,
                     'admin_area_1', UPPER(a.line4),
-                    'address_line_1', a.line1,
-                    'address_line_2', a.line2,
-                    'country_code', UPPER(a_c.country_iso)                    
-                ), 
-                'name', JSON_OBJECT(
-                    'full_name', CONCAT_WS(
-                        ' - ', 
-                        UPPER(CASE WHEN a_o.address IS NOT NULL THEN a_o.company ELSE a_u.company END), 
-                        CONCAT_WS(
-                            ' ', 
-                            CASE WHEN a_o.address IS NOT NULL THEN a_o.firstname ELSE a_u.firstname END, 
-                            UPPER(CASE WHEN a_o.address IS NOT NULL THEN a_o.lastname ELSE a_u.lastname END)
-                            )
-                        )  
-                    ),
-                'contact', JSON_OBJECT(
-                    'phone', CASE WHEN a_o.address IS NOT NULL THEN a_o.phone ELSE a_u.phone END,
-                    'cellphone', CASE WHEN a_o.address IS NOT NULL THEN a_o.cellphone ELSE a_u.cellphone END
-                ),               
-                'type', 'SHIPPING',
-                'cost', CASE WHEN o.com_shipping IS NULL THEN 0.00 ELSE o.com_shipping END
-            )                    
-            END  AS 'delivery',    
+                    'country_code', UPPER(a_c.country_iso),
+                    'country_name', UPPER(a_c.name_fr),
+                    'relay_name', a.relay_name,
+                    'relay_id', a.relay_id
+                ),
+                'name', 
+                JSON_OBJECT(
+                    'full_name',
+                    CONCAT_WS(' - ', UPPER(CASE WHEN a_u.company IS NOT NULL THEN a_u.company ELSE bc.company END), CONCAT_WS(' ', CASE WHEN a_u.firstname IS NOT NULL THEN a_u.firstname ELSE u.firstname END, UPPER(CASE WHEN a_u.lastname IS NOT NULL THEN a_u.lastname ELSE u.lastname END)))   
+                ),
+                'contact', 
+                JSON_OBJECT(
+                    'phone', CASE WHEN a_u.phone IS NOT NULL THEN  a_u.phone ELSE u.phone END,
+                    'cellphone', CASE WHEN a_u.cellphone IS NOT NULL THEN  a_u.cellphone ELSE u.cellphone END
+                ),
+                'type', 
+                CASE 
+                    WHEN o.delivery_type = 2 THEN 'PICKUP_IN_PERSON'
+                    ELSE 'SHIPPING'
+                END,               
+                'cost', 
+                CASE WHEN o.com_shipping IS NULL THEN 0.00 ELSE o.com_shipping END
+            ) AS 'delivery',        
             REPLACE(oi.description, '/', '-') AS 'name',   
             oi.qty,
             CASE WHEN oi.item_price IS NULL THEN JSON_OBJECT('product', oi.webshop_price) ELSE oi.item_price END AS 'item_price',
@@ -140,20 +97,8 @@ class PayPal extends Table {
             FROM _order o 
             JOIN order_item oi  ON oi.id_order = o.id           
             LEFT JOIN user u ON u.id = o.id_user 
-            LEFT JOIN business_customer bc ON bc.id = o.id_user         
-            LEFT JOIN address_order a_o ON a_o._order = o.id
-            LEFT JOIN addresses a ON a.id = (
-                CASE WHEN o.delivery_address IS NOT NULL THEN o.delivery_address 
-                ELSE (
-                    SELECT au.address 
-                    FROM address_user au 
-                    WHERE au.user = o.id_user 
-                    AND au.is_active = 1 
-                    AND au.is_delivery = 1 
-                    ORDER BY au.address DESC
-                    LIMIT 1) 
-                END
-            )
+            LEFT JOIN business_customer bc ON bc.id = o.id_user          
+            LEFT JOIN addresses a ON a.id = o.delivery_address
             LEFT JOIN address_user a_u ON (a_u.address = a.id AND a_u.user = o.id_user)
             LEFT JOIN country a_c ON a_c.id = a.country
             LEFT JOIN currency AS cur ON cur.currency_id = oi.currency

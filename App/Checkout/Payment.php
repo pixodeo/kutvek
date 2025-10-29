@@ -4,6 +4,7 @@ namespace App\Checkout;
 
 use App\AppAction;
 use Domain\Table\Checkout;
+use Domain\Table\CheckoutPay;
 use App\Checkout\PSP\PayPal\Sandbox AS PayPal;
 
 class Payment extends AppAction {
@@ -13,11 +14,16 @@ class Payment extends AppAction {
 
 	public function __invoke(int $id)
 	{
-		$this->_checkoutTable = new Checkout($this->_setDb());
+		$this->_checkoutTable = new CheckoutPay($this->_setDb());
 		$this->_checkoutTable->setRoute($this->_route);
 		try {
-			$method = __METHOD__;
 			$cart = $this->_checkoutTable->cart($id);
+			if($cart === null || !$cart->ready_to_ship):
+				$this->_response = $this->_response->withStatus(303);
+				$location = $this->url('checkout.shipping', ['fqdn' => 1,'queries'=>['id'=> $id]]);
+				$this->_response = $this->_response->withHeader('Location', $location);
+				return $this->_response;
+			endif;
 			$this->paypal = new PayPal($this->_route);
 			$this->paypal->setCurrencyCode($cart->currency_code);
 			$this->_view = 'checkout.payments';	

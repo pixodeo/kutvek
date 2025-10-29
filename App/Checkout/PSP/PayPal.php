@@ -170,7 +170,7 @@ abstract class PayPal extends Component implements ServiceProvider {
         $this->table->setRoute($this->_route);
         $this->table->setTable('_order');
         $data = [
-            'order_state',
+            'order_state' => 7,
             'paid' => 1, 
             'retour' => json_encode($transac), 
             'platform' => 'fr', 

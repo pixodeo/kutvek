@@ -4,7 +4,7 @@
 <main>
     <nav id="progress">
     <a href="<?=$url?>"><span class="step ok">1</span><span>Panier</span></a>
-    <span><span class="step ok">2</span><span>Livraison</span></span>
+    <a href="<?= $this->url('checkout.shipping', ['fqdn' => 1,'queries'=>['id'=> $id]]);?>" title=""><span class="step ok">2</span><span>Livraison</span></a>
     <span><span class="step">3</span><span>Paiement</span></span>
     </nav>   
     <h1  class="titles top"><span class="step">3</span><span data-i18n="choose-payment-method">Sélectionnez votre moyen de paiement</span></h1>
@@ -120,8 +120,22 @@
                 <b>Livraison</b>
                 <span class="shipping-cost"><?= $cart->amount->breakdown->shipping->format;?></span>
             </p>  
-            <div class="shipping-address"></div>  
-            <hr>      
+            <div class="shipping-address">
+                <?=$cart->delivery_address;?>
+                <div>
+                    <a class="btn primary lcase" href="<?= $this->url('checkout.shipping', ['fqdn' => 1,'queries'=>['id'=> $id]]);?>">
+                    <span class="btn-icon material-symbols-rounded">&#xe745;</span>Modifier</a>
+                </div>
+            </div>
+            <div class="bill-address">
+                <p><b data-i18n="invoice-address">Facturation</b> :</p>
+                <div class="address">
+                    <?= $cart->billing_address; ?>
+                    <div>
+                        <a class="btn primary lcase" href="#"><span class="btn-icon material-symbols-rounded">&#xe745;</span>Modifier</a>
+                    </div>
+                </div>                
+            </div>              
             <p class="cost-line cost-total"><b>Total : </b><b id="total-amount"><?= $cart->amount->value_format;?></b></p>
             <div>
                 <input type="hidden" class="input-amount" name="amount[shipping]" value="<?=$cart->amount->breakdown->shipping->value;?>">
@@ -130,8 +144,7 @@
                 <input type="hidden" class="input-amount" name="amount[discount]" value="<?=$cart->amount->breakdown->discount->value;?>">
                 <input type="hidden" class="input-amount" name="amount[total]" value="<?=$cart->amount->breakdown->item_total->value;?>">
                 <input type="hidden" class="input-amount" name="amount[tax]" value="<?=$cart->amount->breakdown->tax_total->value;?>">
-            </div>
-           
+            </div>                      
             <div class="checkout-tranquility">                    
                 <div class="accordion">
                     <input type="checkbox" id="return-policy">                   
@@ -152,29 +165,30 @@
                 </div>                
             </div>    
         </div> 
-        <div class="checkout-actions pay">                
+        <div class="checkout-actions pay"> 
+            <div class="cgv-info">
                 <input type="checkbox" name="cgv" id="cgv" data-url="/order/:id/cgv" class="" data-ctrl="checkout.cgv" form="checkout-validate">
-                <label data-i18n="accept-cgv" for="cgv">Je reconnais avoir lu et accepté les <a target="_blank" href="/cgv~c17.html" class="link">Conditions générales de vente</a>.</label>                
-                <div id="cgv-error" data-i18n="check-cgv" class="warning hide">Veuillez accepter les conditions générales de vente pour poursuivre
-                </div>                
-                <div id="paypal-creditcard" class="payment-btn hide">
-                    <button  value="submit" id="submit" form="card-form" class="btn contained dark paypal">
-                            <span class="icon material-symbols-rounded">credit_card</span>
-                            <span data-i18n="pay-creditcard">Payer avec votre carte</span>
-                    </button>                    
-                </div>                   
-                <div id="paypal-button-container" class="payment-btn hide"></div> 
-                <div id="btn-pro" class="payment-btn hide">
-                    <button type="submit" class="btn contained dark pro"  data-url="/api/payLater/orders/:order/approve" form="checkout-validate">
-                        <span class="icon material-symbols-rounded"></span>
-                        <span data-i18n="pay-later">Terminer la commande</span>
-                    </button>
-                </div>
-                <form  id="checkout-validate" data-ctrl="checkout.pay">
-                    <?php $url = base64_encode($this->uri('checkout.pay', ['fqdn' => 1,'queries'=>['id'=> $cart->id]]));?>  
-                    <input type="hidden" id="thanks" value="/checkout/thanks" />  
-                </form>
-
+                <label data-i18n="accept-cgv" for="cgv">Je reconnais avoir lu et accepté les <a target="_blank" href="/cgv~c17.html" class="link">Conditions générales de vente</a>.</label>    
+            </div>                          
+            <div id="cgv-error" data-i18n="check-cgv" class="warning hide">Veuillez accepter les conditions générales de vente pour poursuivre
+            </div>                
+            <div id="paypal-creditcard" class="payment-btn hide">
+                <button  value="submit" id="submit" form="card-form" class="btn contained dark paypal">
+                        <span class="icon material-symbols-rounded">credit_card</span>
+                        <span data-i18n="pay-creditcard">Payer avec votre carte</span>
+                </button>                    
+            </div>                   
+            <div id="paypal-button-container" class="payment-btn hide"></div> 
+            <div id="btn-pro" class="payment-btn hide">
+                <button type="submit" class="btn contained dark pro"  data-url="/api/payLater/orders/:order/approve" form="checkout-validate">
+                    <span class="icon material-symbols-rounded"></span>
+                    <span data-i18n="pay-later">Terminer la commande</span>
+                </button>
+            </div>
+            <form  id="checkout-validate" data-ctrl="checkout.pay">
+                <?php $url = base64_encode($this->url('checkout.thanks', ['fqdn' => 1,'queries'=>['id'=> $cart->id]]));?>  
+                <input type="hidden" id="thanks" value="/checkout/thanks" />  
+            </form>
         </div>         
     </div>
 </main>

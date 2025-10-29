@@ -33,6 +33,7 @@ class Cart extends Entity {
         
         $address = (array)$this->delivery->address; 
         $head = $this->delivery->type; 
+        $relay_name = !empty($address['relay_name']) ? "<p>{$address['relay_name']}</p>" : "";
         $line_1 = !empty($address['address_line_1']) ? "<p>{$address['address_line_1']}</p>" : "";
         $line_2 = !empty($address['address_line_2']) ? "<p>{$address['address_line_2']}</p>" : "";
         $line_3 = isset($address['admin_area_1']) ? "<p>{$address['admin_area_1']}, {$address['admin_area_2']}, {$address['postal_code']}, {$address['country_name']} </p>" : "<p>{$address['admin_area_2']}, {$address['postal_code']}, {$address['country_name']} </p>"; 
@@ -40,13 +41,14 @@ class Cart extends Entity {
         $phones = array_filter([$this->delivery->phone, $this->delivery->phone2]);
         $contact = implode(' / ', $phones);
         return <<<TEXT
-        <div id="personal-address" class="address" data-id="d-{$address['id']}" >
-        <p class="address-head">$head</p>
-        <p class="title">{$name}<p>
-        $line_1
-        $line_2
-        $line_3
-        <p>$contact</p>
+        <div id="personal-address" data-id="d-{$address['id']}" >
+        <p class="address-head"><span>{$head}</span></p>
+        <p><b>{$name}</b><p>
+        {$relay_name}
+        {$line_1}
+        {$line_2}
+        {$line_3}
+        <p>{$contact}</p>
         </div>
         TEXT;     
     }
@@ -114,6 +116,8 @@ class Cart extends Entity {
         </div>
         ADDRESS;
     }
+
+
 
     public function amount(){
 		$tax_total = 0;

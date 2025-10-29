@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html lang="<?=$this->getLang();?>" data-layout="graphic-kits">
 <head>
-	<!-- Google Tag Manager -->
-	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-	})(window,document,'script','dataLayer','GTM-58SGQCK');</script>
+	<!-- Google Tag Manager -->	
 	<!-- End Google Tag Manager -->
 	<meta charset="utf-8">	
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,58 +27,56 @@
 </head>
 <body>
 	<!-- Google Tag Manager (noscript) -->
-	<noscript>
-		<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-58SGQCK" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-	</noscript>
+	
 	<!-- End Google Tag Manager (noscript) -->
 	<header class="primary-header">
-    <div class="message-bar">    	
-        <a href="https://www.youtube.com/user/kutvekkitgraphik" target="_blank"><img src="/img/pictos/youtube.png"></a>
-        <a href="https://www.facebook.com/Kutvek" target="_blank"><img src="/img/pictos/facebook.png"></a>
-        <a href="https://www.instagram.com/kutvek" target="_blank"><img src="/img/pictos/instagram.png"></a>
-    </div>
-    <div class="infos">
-        <div>
-            <div class="trust"></div>
-            <div class="action contact-us click" data-ctrl="app.contact">
-                <img src="/img/pictos/phone.png" class="picto phone" alt="">
-                <a href="tel:<?= $this->intlphone;?>"><span class="phone"><?=$this->phone; ?></span></a>
-            </div>
-        </div>
-        <div>
-            <span data-i18n="lang" class="choose-lang">Langue</span>
-            <div class="action trads-container">
-                <?= $this->l10ns(); ?>
-            </div>
-            <?= $this->widgetCountries(); ?>
-        </div>        
-    </div>
-    <div class="baseline">
-        <a href="<?= $this->url('page.homepage', []) ?>" class="logo"><img class="logo-kutvek" src="<?= HALLOWEEN === 1 ? '/img/charter/logo_kutvek_orange.png' : '/img/charter/logo_kutvek.png';?>" alt="Logo KUTVEK"></a>
-        <div class="red">
-            <img class="logo-footer" src="/img/charter/logo-footer.png" />
-            <?=$this->topNav();?>
-            
-            <!-- $this->topMenu(); -->   
-            <div class="user-actions">
-                <div class="action search" id="search-doofinder">                 
-                <span class="icon material-symbols-rounded"></span>
-                </div>
-                <span class="obflink pointer" id="user-name" data-i18n="login" data-obf="<?= base64_encode($this->url('customer.dashboard')) ?>"><span class="icon material-symbols-rounded account-circle">&#xe853;</span></span>
-                <div class="action contact-us">
-                    <label class="icon material-symbols-rounded" for="see-phone"></label>
-                    <input type="checkbox" id="see-phone" hidden />
-                    <a class="phone" href="tel:<?= $this->intlphone;?>"><span ><?=$this->phone; ?></span></a>
-                </div>   <!--  $this->widgetSlugs($this->getContent()->slugs); -->
-                </div>          
-                <?php $obf = base64_encode($this->url('cart.overview', ['queries'=>['id'=>':id']])); ?>
-                 <a id="shopping-cart" class="click shopping-cart" data-obf="<?=$obf;?>" data-count="0" href="#" data-ctrl="cart.overview"><span class="icon material-symbols-rounded">&#xe8cc;</span>  </a>
-                <a href="#" class="menu click" data-ctrl="app.menu" data-target="main-nav"><span class="icon material-symbols-rounded">&#xe5d2;</span></a>
-            </div>
-        </div>
-    </div>  
-    <?= $this->megamenu(); ?>
-</header>
+	    <div class="message-bar">    	
+	        <a href="https://www.youtube.com/user/kutvekkitgraphik" target="_blank"><img src="/img/pictos/youtube.png"></a>
+	        <a href="https://www.facebook.com/Kutvek" target="_blank"><img src="/img/pictos/facebook.png"></a>
+	        <a href="https://www.instagram.com/kutvek" target="_blank"><img src="/img/pictos/instagram.png"></a>
+	    </div>
+	    <div class="infos">
+	        <div>
+	            <div class="trust"></div>
+	            <div class="action contact-us click" data-ctrl="app.contact">
+	                <img src="/img/pictos/phone.png" class="picto phone" alt="">
+	                <a href="tel:<?= $this->intlphone;?>"><span class="phone"><?=$this->phone; ?></span></a>
+	            </div>
+	        </div>
+	        <div>
+	            <span data-i18n="lang" class="choose-lang">Langue</span>
+	            <div class="action trads-container">
+	                <?= $this->l10ns(); ?>
+	            </div>
+	            <?= $this->widgetCountries(); ?>
+	        </div>        
+	    </div>
+	    <div class="baseline">
+	        <a href="<?= $this->url('page.homepage', []) ?>" class="logo"><img class="logo-kutvek" src="<?= HALLOWEEN === 1 ? '/img/charter/logo_kutvek_orange.png' : '/img/charter/logo_kutvek.png';?>" alt="Logo KUTVEK"></a>
+	        <div class="red">
+	            <img class="logo-footer" src="/img/charter/logo-footer.png" />
+	            <?=$this->topNav();?>
+	            
+	            <!-- $this->topMenu(); -->   
+	            <div class="user-actions">
+	                <div class="action search" id="search-doofinder">                 
+	                <span class="icon material-symbols-rounded"></span>
+	                </div>
+	                <span class="obflink pointer" id="user-name" data-i18n="login" data-obf="<?= base64_encode($this->url('customer.dashboard')) ?>"><span class="icon material-symbols-rounded account-circle">&#xe853;</span></span>
+	                <div class="action contact-us">
+	                    <label class="icon material-symbols-rounded" for="see-phone"></label>
+	                    <input type="checkbox" id="see-phone" hidden />
+	                    <a class="phone" href="tel:<?= $this->intlphone;?>"><span ><?=$this->phone; ?></span></a>
+	                </div>   <!--  $this->widgetSlugs($this->getContent()->slugs); -->
+	                </div>          
+	                <?php $obf = base64_encode($this->url('cart.overview', ['queries'=>['id'=>':id']])); ?>
+	                 <a id="shopping-cart" class="click shopping-cart" data-obf="<?=$obf;?>" data-count="0" href="#" data-ctrl="cart.overview"><span class="icon material-symbols-rounded">&#xe8cc;</span>  </a>
+	                <a href="#" class="menu click" data-ctrl="app.menu" data-target="main-nav"><span class="icon material-symbols-rounded">&#xe5d2;</span></a>
+	            </div>
+	        </div>
+	    </div>  
+	    <?= $this->megamenu(); ?>
+	</header>
 	<main>
 		<?= $this->_content; ?>
 	</main>	

@@ -277,6 +277,8 @@ button.icon, .btn.icon {padding-left: 1.2rem;}
 .btn.wide, button.wide {width: 100%;}
 .btn.small, button.small {height: 3.2rem !important;}
 .btns-end {text-align: right;}
+.btn.lcase, button.lcase {text-transform: capitalize !important;font-size: 1.4rem !important; font-weight: 500 !important;}
+.btn-icon {margin: 0 .4rem 0 0;font-size: 2rem;font-variation-settings: 'FILL' 0, 'wght' 600, 'GRAD' 0, 'opsz' 48;}
 #kutvek_infos_pro {max-height: 30px;}
 header.main {padding-left: .8rem;padding-top: .8rem;}
 .bloc-header {
