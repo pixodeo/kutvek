@@ -1,6 +1,6 @@
 <?php 
 declare(strict_types=1);
-namespace Domain\Table\Table;
+namespace Domain\Table;
 use Core\Domain\Table;
 use stdClass;
 

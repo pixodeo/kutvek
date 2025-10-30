@@ -75,9 +75,7 @@ class Section extends Catalog {
 			m_l10n.meta_title,
 			m_l10n.meta_description,
 			m_l10n.files,
-			m_w.filters,
-			m_w.attr,
-			m_w.category,
+			m_w.filters,		
 			CASE 
 				WHEN m_w.department_store IS NOT NULL THEN m_w.department_store 
 				ELSE (
@@ -91,8 +89,8 @@ class Section extends Catalog {
 					ORDER BY m2.node_left DESC LIMIT 1
 				) 
 			END AS 'department_store',
-			(SELECT JSON_ARRAYAGG(menu_product_types.product_type) FROM menu_product_types WHERE menu_product_types.menu = m.id) AS 'product_types',
-			m_w.categories		                   
+			(SELECT JSON_ARRAYAGG(menu_product_types.product_type) FROM menu_product_types WHERE menu_product_types.menu = m.id AND menu_product_types.website = m_w.website) AS 'product_types',
+			(SELECT JSON_ARRAYAGG(menu_categories.category) FROM menu_categories WHERE menu_categories.menu = m.id AND menu_categories.website = m_w.website) AS 'categories'	                   
 			FROM menu_l10ns m_l10n
 			JOIN menus m ON m.id = m_l10n.menu
 			JOIN menu_websites m_w ON (m_w.website = :ws AND m_w.menu = m_l10n.menu)
@@ -320,6 +318,51 @@ class Section extends Catalog {
 		$sql .= "GROUP BY i.vehicle  ORDER BY v.name";
 		$q = $this->query($sql, $params);
 		return $q;
+	}
+
+	/**
+	 * La liste de tous les véhicule liés aux categories de produit pour le filtre Vehicle
+	 * filtrer par behavior, et model
+	 */
+	public function filtervehicles(): array {
+		$this->setEntity(null);
+		if(isset($this->section->model) && count($this->section->model) > 0):
+			
+			$params = ['store' => $this->section->department_store, 'l10n_id' => $this->getL10nId()];
+			$plh_1 = $this->namedPlaceHolder($this->section->product_types, 't');		
+			$plh_2 = $this->namedPlaceHolder($this->section->categories, 'c');
+			$plh_3 = $this->namedPlaceHolder($this->section->model, 'model');
+			$params = array_merge($params, $plh_1->values,$plh_2->values,$plh_3->values);
+			$sql = "SELECT i.vehicle AS 'id', v.name
+				FROM item_stores i_s
+				JOIN vue_catalog i ON i.item = i_s.item
+				JOIN vue_vehicle_2 v ON (v.id = i.vehicle AND v.l10n = :l10n_id)
+				WHERE i_s.store = :store 
+				AND i_s.status = 1 
+				AND i.behavior IN ({$plh_1->place_holder})
+				AND i.department IN ({$plh_2->place_holder})
+				AND v.model IN 	({$plh_3->place_holder})
+				GROUP BY i.vehicle  ORDER BY v.name;		
+			";			
+			$q = $this->query($sql, $params);
+			return $q; 
+		endif;
+		return [];
+
+
+		/**
+		 * SELECT i.vehicle AS 'id', v.name
+			FROM item_stores i_s
+			JOIN vue_catalog i ON i.item = i_s.item
+			JOIN vue_vehicle_2 v ON (v.id = i.vehicle AND v.l10n = 1)
+			WHERE i_s.store = 1 
+			AND i_s.status = 1 
+			AND i.behavior IN (1,2)
+			AND i.department IN (186,235,236,237,238,239,54)
+			AND v.model IN (197,213)
+			GROUP BY v.id
+			ORDER BY v.name
+		*/
 	}
 
 

@@ -5,16 +5,13 @@ use Core\Domain\Entity;
 use Library\HTML\TraitSanitize;
 use NumberFormatter;
 
-class Section extends Entity {
-	
+class Section extends Entity {	
 	use TraitSanitize;
 	private NumberFormatter $_numFormatter; 
 	public $locale = 'fr';
 	public function __construct()
 	{
-		$this->_numFormatter = new NumberFormatter($this->locale, NumberFormatter::CURRENCY);
-		
-		$this->bla = [];
+		$this->_numFormatter = new NumberFormatter($this->locale, NumberFormatter::CURRENCY);	
 	}
 
 	public function __get($key) {		

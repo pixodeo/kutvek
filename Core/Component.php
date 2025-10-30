@@ -14,6 +14,7 @@ abstract class Component
 
 
     public function __construct(protected RouteInterface $_route){}
+    
     protected function _setDb($dbConf = null) {
             $app = App::getInstance();
             return $app->setDb($dbConf);           

@@ -2,11 +2,11 @@
 declare(strict_types=1);
 namespace App\Cart;
 
-use Core\Action;
+use App\AppAction;
 use Domain\Table\Checkout;
 use Domain\Entity\Checkout\Cart as CheckoutCart;
 
-class DeleteItem extends Action {
+class DeleteItem extends AppAction {
 	private Checkout $_checkoutTable;	
 
 	public function __invoke()

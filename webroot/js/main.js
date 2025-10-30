@@ -334,16 +334,9 @@ window.addEventListener("DOMContentLoaded", function(e) {
 		i18ns.i18n();
 	}
 	let cart = JSON.parse(localStorage.getItem('cart'));
-	const btnCart = document.getElementById('cart-btn');
-	const nbItems = document.getElementById('nbItems');
-	if(cart !== null){
-		if(nbItems)
-			nbItems.textContent = cart.items;
-		if(btnCart) btnCart.setAttribute('data-count', cart.items);
-	} else {
-
-		if(nbItems)
-			nbItems.textContent = 0;
+	const btnCart = document.getElementById('shopping-cart');
+	if(cart !== null){		
+		if(btnCart) btnCart.setAttribute('data-count', cart.qty);
 	}    
 	if(window.location.hash) {        
 		let a = document.querySelector('a[href="' + window.location.hash + '"]');        

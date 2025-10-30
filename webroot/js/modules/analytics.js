@@ -3,11 +3,12 @@ const analytics = {
   	_ev: null,
   	_store: JSON.parse(localStorage.getItem('cart')),
   	_counter: document.getElementById('nbItems'),
+  	_url: document.documentElement.getAttribute('data-analytics'),
+  	lang: document.documentElement.lang,
   	_transactionId: null,
-	setElem: function (elem) {
-	    this._elem = elem;
-	},
-	setEvent: function (event) {
+	setElem: function (elem) {this._elem = elem;},
+	setEvent: function (event)
+	{
 	    this._ev = event;
 	},
 	uniquid: function(){
@@ -28,9 +29,20 @@ const analytics = {
 		}       	
         localStorage.removeItem('cart');
         this._store = null;
-        this._counter.textContent = 0;*/
-        document.getElementById('transaction-id').textContent = this._store.id;
-        //document.getElementById('transaction-email').textContent =  json.transactionEmail;   
+        this._counter.textContent = 0;*/       
+        const urlParams = new URLSearchParams();
+        urlParams.append('id',this._store.id);
+        const url = new URL(this._url, document.location.origin);
+        url.search = urlParams;
+        const req = await fetch( url, { method: 'GET', mode: 'cors', credentials: 'include'});
+        const json = await req.json();
+        if(req.ok){
+        	document.getElementById('transaction-id').textContent = this._store.id;
+        	document.getElementById('transaction-email').textContent =  json.transactionEmail; 
+        	//dataLayer.push({ecommerce: null });
+			//dataLayer.push(json.purchase); 
+			//localStorage.removeItem('cart');		
+        }       
 	},
 	beginCheckout: async function(){
 		// check begin_checkout infos to send in dataLayer

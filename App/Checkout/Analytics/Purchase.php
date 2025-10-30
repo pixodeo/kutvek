@@ -1,14 +1,15 @@
 <?php 
 declare(strict_types=1);
 namespace App\Checkout\Analytics;
-use Core\Component;
-use Domain\Table\Table\AnalyticsEvent;
+
+use Core\Action;
+use Domain\Table\AnalyticsEvent;
 use Exception;
 
 /**
  *  Envoi à analytics (GA4) l'event purchase via js (push dans le dataLayer) 
  */
-class Purchase  extends Component{
+class Purchase  extends Action {
 	protected AnalyticsEvent $table;
 
 	public function __invoke(int $id){
@@ -17,15 +18,15 @@ class Purchase  extends Component{
 			$this->table = new AnalyticsEvent($this->_setDb());    
         	$this->table->setRoute($this->_route);
         	$dataLayer = $this->table->eventPurchase($id);
-        	$this->_response->getBody()->write($dataLayer);
+        	$json = json_encode($dataLayer, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
+        	$this->_response->getBody()->write($json);
         	return $this->_response;
 	    }
 	    catch(Exception $e){
 	    	$this->_response = $this->_response->withStatus(400);
-	    	$json = (object)['msg' => $e->getMessage()];
+	    	$json = json_encode((object)['msg' => $e->getMessage()]);
 	    	$this->_response->getBody()->write($json);
-	    	return $this->_response;
-				
+	    	return $this->_response;				
 		}
     }
 }

@@ -21,15 +21,7 @@ trait TraitResponse {
     protected $scriptBottom = []; 
     protected $_payload;   
     
-    protected function _render($variables = []) : string
-    {        
-        ob_start(); 
-        extract($variables);
-        $this->_content = $this->partial($variables);
-        require($this->_path . DS . 'View' . DS .  'Layout' . DS . $this->_layout . '.php');
-        return ob_get_clean();
-    }
-
+    
     /**
      * Return HTML with only layout, the content is created by the Controller
      *
@@ -51,8 +43,6 @@ trait TraitResponse {
         return ob_get_clean();
     }
 
-
-
     /**
      *  du contenu secondaire comme un menu
      * @return string 
@@ -70,23 +60,7 @@ trait TraitResponse {
     }
 
     public function uri(string $name, ?array $params = [], string $method = 'GET'): string {
-        $uri =  $this->_router->uri($name, $params, $method);         
-       
-        // Soit on cherche en-fr et on le dégage ou on le cherche et on met pas de prefix        
-        $last = substr($uri, -1);
-        if($last == '/') $uri = substr($uri, 0, -1);
-
-        $ds = (\strpos($uri, '/') !== 0) ? DS : '';
-        
-        if($this->_prefixUrl){
-            $uri = strlen($uri) > 0 ?  $this->_prefixUrl .$ds. $uri :  $this->_prefixUrl;
-        }
-
-        if(array_key_exists('fqdn',$params)):
-            return strlen($uri) > 0 ? DOMAIN . $ds . $uri : DOMAIN . $ds;
-        else:
-            return strlen($uri) > 0 ? $ds . $uri : $ds;
-        endif;        
+        return $this->url($name, $params, $method);      
     }
 
     public function url(string $name, ?array $params = [], string $method = 'GET'): string {

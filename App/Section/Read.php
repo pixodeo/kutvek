@@ -2,8 +2,8 @@
 declare(strict_types=1);
 namespace App\Section;
 use App\AppAction;
-use App\Product\Read as ProductRead;
-use App\Section\Filters\{Color, Design, Model};
+use App\Product\Read as Product;
+use App\Section\Filters\{Color, Design, Model, Vehicle};
 use Core\Component;
 use Core\Request\UrlQueryResult;
 use Domain\Table\Section;
@@ -31,10 +31,22 @@ final class Read extends AppAction implements UrlQueryResult {
         	$slug = $this->_route->slug;
         	$section = $this->_table->readBySlug($slug);
 			if(!$section):
-				$this->_middleware = new ProductRead($this->_router);				
+				$this->_middleware = new Product($this->_router);				
 				return $this->handle($this->getRequest());           
 			endif;
 			$this->section = $section;
+			$filterVehicle = (int)$this->getRequest()->getHeaderLine('x-vehicle');
+			if($filterVehicle > 0):
+				$middleware = new VehicleFilter($this->_router);
+				$queryResult = (object)[
+					'department_store' 	=> $this->section->department_store,
+					'categories'		=> $this->section->categories,
+					'product_types'		=> $this->section->product_types
+				];				
+				$middleware->setQueryResult($queryResult);
+				$this->_middleware = $middleware;
+				return $this->handle($this->getRequest());
+			endif;
 			// si on est sur du xhr/fetch js on envoie à filter			
 			$withFilters = (int)$this->getRequest()->getHeaderLine('x-filtering');			
 			if($withFilters > 0):
@@ -71,8 +83,7 @@ final class Read extends AppAction implements UrlQueryResult {
 			$this->_path = false;
 			$this->_layout = 'section';			
 			$this->_response->getBody()->write($this->_print());
-			return $this->_response;
-			
+			return $this->_response;			
 		}
 		catch(Exception $e){
 			$this->_response = $this->_response->withStatus(400);
@@ -89,7 +100,7 @@ final class Read extends AppAction implements UrlQueryResult {
 			'model' => new Model($this->_route),
 			'design' => new Design($this->_route),
 			'color' => new Color($this->_route),
-			//'vehicle' => new Vehicle($this->_route, $this->section->vehicle),
+			'vehicle' => new Vehicle($this->_route),
 			default => ''
 			};
 			if($f instanceof Component) :

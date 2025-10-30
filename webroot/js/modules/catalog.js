@@ -94,9 +94,10 @@ const catalog = {
         }  
         // Lorsqu'on filtre, on repars à zéro niveau pagination, ne pas envoyer le paramètre 
         url.searchParams.delete('page');
-        const headers = {'X-Filtering': '1' }  
+        const headers = {'X-Filtering': '1' } 
+        this.updateVehiclesFilter(url); 
         const req = await fetch(url,{ method: 'GET', mode: 'cors', credentials: 'include',headers: headers});
-        if(req.status === 200){
+        if(req.status === 200) {
             const json = await req.json();
             let frag = document.createRange().createContextualFragment(json.cards); 
             let frag_pagination = document.createRange().createContextualFragment(json.pagination);                
@@ -111,7 +112,24 @@ const catalog = {
         const json = await req.json();
         console.error(json.msg);
         return; 
-    },    
+    }, 
+    /**
+     * Si le filtre véhicules existe
+     *
+     * @param  {string}  url
+     */
+    updateVehiclesFilter: async function(url){        
+        const filter = document.querySelector('#filter-vehicles');
+        if(filter == null) return;
+        const headers = {'X-Vehicle': '1' };
+        const req = await fetch(url,{ method: 'GET', mode: 'cors', credentials: 'include',headers: headers});
+        if(req.ok){
+            const text = await req.text();
+            const frag = document.createRange().createContextualFragment(text);
+            const old = filter.parentNode.querySelector('ul');
+            old.parentNode.replaceChild(frag.querySelector('ul'), old);
+        }
+    },   
     paginate: async function () { 
         const form = document.getElementById('form-filter');
         const origin = new URL(form.action || window.location.href).origin;       

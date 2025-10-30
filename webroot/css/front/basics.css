@@ -219,6 +219,22 @@ br {line-height: 1.6rem;}
 	'GRAD' 0,
 	'opsz' 48
 }
+#shopping-cart {position: relative;margin-right: 1.6rem;}
+#shopping-cart::after{
+	content: attr(data-count);
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    border-radius: 50%;
+    background-color: #000000;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+
+}
 .pagination {align-items: center;margin: 3.2rem 0 4.8rem;}
 .pagination > .pages, .pagination { display:flex; justify-content:end; justify-content:flex-end; }
 .pagination .page {  
@@ -304,14 +320,15 @@ p.form-title {
 	text-transform: uppercase;
 }
 p.form-title .icon {vertical-align: middle;}
+
 .cards {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(32rem, 39rem));
-	column-gap: 1.6rem;
+	grid-template-columns: repeat(auto-fill, 17rem);
+	column-gap: .8rem;
 	row-gap: 1.6rem;
 	justify-content: center;
 }
-.card {position: relative;display: flex;flex-direction: column;min-height: 31.05rem;padding:1.2rem;}
+.card {position: relative;display: flex;flex-direction: column;min-height: 18rem;padding:1.2rem;}
 .card a {position: absolute; top:0; right:0; bottom: 0; left: 0;}
 .card > div {padding:1.2rem;}
 .card img {background-color: #eee; height: auto; width:29rem;}	
@@ -321,14 +338,13 @@ p.form-title .icon {vertical-align: middle;}
     border-top-style: solid;
     padding-top: .8rem;
 }
-	.card .prices {
-		font-size: 1.4rem;   
-	    font-family: 'Montserrat';
-	    font-weight: 500;
-	    margin: auto 0 0 0;
-	    flex: unset;    		
-	    text-align: right;
-	}
+.card .prices {	
+    font-family: 'Montserrat';
+    font-weight: 500;
+    margin: auto 0 0 0;
+    flex: unset;    		
+    text-align: right;
+}
 	.prices .max-price::before {content: " - ";}
 	.section-title {
 		font-family: 'Oswald';
@@ -616,10 +632,7 @@ p.form-title .icon {vertical-align: middle;}
     	border: none;
 	}
 	.item-footer form button {color: #FFFFFF;}
-	#pay {
-		padding: 1.6rem 1.6rem 0;
-		
-	}	
+	#pay {padding: 1.6rem 1.6rem 0;}	
 	#card-fields {max-width: 36rem;margin: 2.4rem auto;}
 	#card-form {display: grid;grid-gap: .8rem;grid-template-columns: repeat(2, minmax(12rem, 1fr));}
 	#card-form > div:nth-child(1), #card-form > div:nth-child(4), #card-form > div:nth-child(5) {grid-column: 1 / span 3;}
@@ -657,17 +670,21 @@ p.form-title .icon {vertical-align: middle;}
 	}
 	#paypal-creditcard {text-align: center;}
 	#btn-pro {margin-top:1.2rem;margin-bottom: 2.4rem;text-align: center;}
+
+
+	@media only screen and (min-width: 400px) {
+		.cards {grid-template-columns: repeat(auto-fill, 19rem);}
+	}
 	@media only screen and (min-width: 700px) {
 		a.logo img {max-height: 6rem;}
 		.short-description {margin: 0 0 4rem;}
 	}
-	@media only screen and (min-width: 800px) {
-		
+	@media only screen and (min-width: 800px) {		
 		#card-form {grid-template-columns: repeat(3, minmax(8rem, 1fr));}
 		#card-form > div:nth-child(1), #card-form > div:nth-child(4), #card-form > div:nth-child(5) {grid-column: 1 / span 4;}
 		#card-form > div:nth-child(2){grid-column: 1 / span 1;}
-
 	}
+
 	@media only screen and (min-width:1024px){
 		main { display: block; padding: 3.2rem 2.4rem 2.4rem;}
 		nav[aria-label="breadcrumb"]{margin-top:0;padding-left:0;}
@@ -677,7 +694,14 @@ p.form-title .icon {vertical-align: middle;}
 		}
 		.field-wrapper.column {max-width: unset;}
 		.widget-filter label, .widget-filter ul > li > label {font-size: 1.2rem;}	
-		.cards {justify-content: initial;}
+		.cards {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(32rem, 39rem));
+			column-gap: 1.6rem;
+			row-gap: 1.6rem;
+			justify-content: initial;
+		}
+		.card {min-height:31.05rem;}
 		.cart-item .cart-item-info {max-width: unset;flex:1;}
 		.widget-filter > div > span {font-size: 1.4rem;}
 		.btn-filter button { height: 4rem !important;}
@@ -697,7 +721,7 @@ p.form-title .icon {vertical-align: middle;}
 		.bloc-widgets-filter .close {display: none;}
 		.grid-footer {padding-left: 4rem; padding-right: 4rem;}
 		.column-filter {max-height: unset; max-height: max-content;padding-bottom: 0;}
-		.btn-filter {margin-top: 3.2rem;margin-bottom: 1.6rem;height: 4.8rem;justify-content: initial;}	
+		.btn-filter {/*margin-top: 3.2rem;margin-bottom: 1.6rem;*/height: 4.8rem;justify-content: initial;}	
 		.cards {grid-template-columns: repeat(auto-fill, 29rem);}	
 		.column-filter::-webkit-scrollbar {width: 4px;}
 		.column-filter::-webkit-scrollbar-thumb {background-color: rgba(0, 0, 0, 0.33);}
